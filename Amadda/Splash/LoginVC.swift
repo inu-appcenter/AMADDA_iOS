@@ -14,7 +14,8 @@ class LoginVC: UIViewController {
     @IBAction func LoginBtn(_ sender: Any) {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         guard let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else {return}
-        present(mainVC, animated: true, completion: nil)
+        let mainNavigationController = mainStoryboard.instantiateViewController(withIdentifier: "MainNavigationController")
+        present(mainNavigationController, animated: true, completion: nil)
     }
     
     
