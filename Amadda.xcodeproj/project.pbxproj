@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		FA8EC1B323EBCBDB007633D9 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EC1B223EBCBDB007633D9 /* Splash.storyboard */; };
 		FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1B423EBCBE7007633D9 /* SplashVC.swift */; };
 		FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1B623EBCC21007633D9 /* LoginVC.swift */; };
+		FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		FA8EC1B223EBCBDB007633D9 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		FA8EC1B423EBCBE7007633D9 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		FA8EC1B623EBCC21007633D9 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,6 @@
 				0231E7220A6F7AB855BEA8CD /* Pods-Amadda.debug.xcconfig */,
 				3ACD5353E7F3F5BC7B5EB138 /* Pods-Amadda.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -89,6 +90,7 @@
 				FA8EC19D23EBC991007633D9 /* AppDelegate.swift */,
 				FA8EC1A323EBC991007633D9 /* Main.storyboard */,
 				FA8EC1A123EBC991007633D9 /* MainVC.swift */,
+				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
 				FA8EC1A623EBC995007633D9 /* Assets.xcassets */,
 				FA8EC1A823EBC995007633D9 /* LaunchScreen.storyboard */,
 				FA8EC1AB23EBC995007633D9 /* Info.plist */,
@@ -223,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
+				FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
 				FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */,
 				FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */,
