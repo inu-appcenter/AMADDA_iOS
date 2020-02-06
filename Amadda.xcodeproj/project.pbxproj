@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBE727E06295343FA0346F /* Pods_Amadda.framework */; };
 		FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC19D23EBC991007633D9 /* AppDelegate.swift */; };
 		FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1A123EBC991007633D9 /* MainVC.swift */; };
 		FA8EC1A523EBC991007633D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EC1A323EBC991007633D9 /* Main.storyboard */; };
@@ -18,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0231E7220A6F7AB855BEA8CD /* Pods-Amadda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadda.debug.xcconfig"; path = "Target Support Files/Pods-Amadda/Pods-Amadda.debug.xcconfig"; sourceTree = "<group>"; };
+		3ACD5353E7F3F5BC7B5EB138 /* Pods-Amadda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadda.release.xcconfig"; path = "Target Support Files/Pods-Amadda/Pods-Amadda.release.xcconfig"; sourceTree = "<group>"; };
+		4FFBE727E06295343FA0346F /* Pods_Amadda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EC19A23EBC991007633D9 /* Amadda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amadda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EC19D23EBC991007633D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8EC1A123EBC991007633D9 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28A76FA17697043FFB5D372A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4FFBE727E06295343FA0346F /* Pods_Amadda.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D3A396AB1953FC51633C44E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0231E7220A6F7AB855BEA8CD /* Pods-Amadda.debug.xcconfig */,
+				3ACD5353E7F3F5BC7B5EB138 /* Pods-Amadda.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FA8EC19123EBC991007633D9 = {
 			isa = PBXGroup;
 			children = (
 				FA8EC19C23EBC991007633D9 /* Amadda */,
 				FA8EC19B23EBC991007633D9 /* Products */,
+				7D3A396AB1953FC51633C44E /* Pods */,
+				28A76FA17697043FFB5D372A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA8EC1AE23EBC995007633D9 /* Build configuration list for PBXNativeTarget "Amadda" */;
 			buildPhases = (
+				1A90441A7EA11D20002C0C08 /* [CP] Check Pods Manifest.lock */,
 				FA8EC19623EBC991007633D9 /* Sources */,
 				FA8EC19723EBC991007633D9 /* Frameworks */,
 				FA8EC19823EBC991007633D9 /* Resources */,
+				67C442B15AEAA7CF99543143 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +174,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A90441A7EA11D20002C0C08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Amadda-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67C442B15AEAA7CF99543143 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA8EC19623EBC991007633D9 /* Sources */ = {
@@ -298,6 +367,7 @@
 		};
 		FA8EC1AF23EBC995007633D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0231E7220A6F7AB855BEA8CD /* Pods-Amadda.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -317,6 +387,7 @@
 		};
 		FA8EC1B023EBC995007633D9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ACD5353E7F3F5BC7B5EB138 /* Pods-Amadda.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
