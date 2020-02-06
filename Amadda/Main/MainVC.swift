@@ -10,9 +10,16 @@ import UIKit
 import Floaty
 
 class MainVC: UIViewController {
-
+    @IBOutlet var navigationItemBar: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        var dateFormatter = DateFormatter()
+        let date = Date()
+        dateFormatter.dateFormat = "MMM d일 eeee"
+        dateFormatter.locale = Locale(identifier: "ko-KR")
+        navigationItemBar.title = dateFormatter.string(from: Date())
+        
         // MARK: Pod 'Floaty'
         let floaty = Floaty()
                 
