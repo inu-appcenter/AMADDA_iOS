@@ -16,12 +16,15 @@ class MainVC: UIViewController {
         // MARK: Pod 'Floaty'
         let floaty = Floaty()
                 
-        floaty.addItem("공유 일정", icon: UIImage(), handler: {item in print("공유일정")})
+        floaty.addItem("공유 일정", icon: UIImage(), handler: {item in
+            print("공유일정")
+            guard let AddShareEventVC = self.storyboard?.instantiateViewController(withIdentifier: "ADdShareEventVC") as? AddShareEventVC else {return}
+            self.present(AddShareEventVC, animated: true, completion: nil)
+        })
         floaty.addItem("개인 일정", icon: UIImage(), handler: {item in
             print("개인일정")
             guard let AddPersonalEventVC = self.storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventVC") as? AddPersonalEventVC else {return}
             guard let AddPersonalEventNavigation = self.storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventNavigation") else {return}
-//            self.present(AddPersonalEventVC, animated: true, completion: nil)
             self.present(AddPersonalEventNavigation, animated: true, completion: nil)
         })
         floaty.addItem("수업 추가", icon: UIImage(), handler: {item in
