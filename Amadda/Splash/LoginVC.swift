@@ -10,6 +10,14 @@ import Foundation
 import UIKit
 
 class LoginVC: UIViewController {
+    
+    @IBAction func LoginBtn(_ sender: Any) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let mainVC = mainStoryboard.instantiateViewController(withIdentifier: "MainVC") as? MainVC else {return}
+        present(mainVC, animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         
     }
