@@ -17,7 +17,11 @@ class MainVC: UIViewController {
         let floaty = Floaty()
                 
         floaty.addItem("공유 일정", icon: UIImage(), handler: {item in print("공유일정")})
-        floaty.addItem("개인 일정", icon: UIImage(), handler: {item in print("개인일정")})
+        floaty.addItem("개인 일정", icon: UIImage(), handler: {item in
+            print("개인일정")
+            guard let AddPersonalEventVC = self.storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventVC") as? AddPersonalEventVC else {return}
+            self.present(AddPersonalEventVC, animated: true, completion: nil)
+        })
         floaty.addItem("수업 추가", icon: UIImage(), handler: {item in
             guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseVC") as? AddCourseVC else {return}
             self.present(AddCourseVC, animated: true, completion: nil)

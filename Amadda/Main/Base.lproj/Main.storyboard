@@ -23,6 +23,21 @@
             </objects>
             <point key="canvasLocation" x="139" y="102"/>
         </scene>
+        <!--Add Personal EventVC-->
+        <scene sceneID="5Bm-Oy-x9v">
+            <objects>
+                <viewController storyboardIdentifier="AddPersonalEventVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oeS-Cs-DAu" customClass="AddPersonalEventVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zt4-DZ-brh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ECD-oL-yNi"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYJ-Ha-ici" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1074" y="309"/>
+        </scene>
         <!--Add CourseVC-->
         <scene sceneID="PuW-do-Adf">
             <objects>
@@ -36,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcW-lC-5hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="-636"/>
+            <point key="canvasLocation" x="1074" y="-411"/>
         </scene>
     </scenes>
 </document>
