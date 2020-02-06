@@ -37,7 +37,6 @@ class StaticTableVC: UITableViewController {
                 startDatePicker.isHidden = !startDatePicker.isHidden
                 UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     self.tableView.beginUpdates()
-                    // apple bug fix - some TV lines hide after animation
                     self.tableView.deselectRow(at: indexPath, animated: true)
                     self.tableView.endUpdates()
                 })
@@ -45,10 +44,14 @@ class StaticTableVC: UITableViewController {
                 endDatePicker.isHidden = !endDatePicker.isHidden
                 UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     self.tableView.beginUpdates()
-                    // apple bug fix - some TV lines hide after animation
                     self.tableView.deselectRow(at: indexPath, animated: true)
                     self.tableView.endUpdates()
                 })
+            }else if tableView.cellForRow(at: indexPath)?.reuseIdentifier == "share"{
+                print("share!")
+                guard let ShareSelectVC = self.storyboard?.instantiateViewController(withIdentifier: "ShareSelectVC") as? ShareSelectVC else {return}
+                self.parent?.navigationController?.pushViewController(ShareSelectVC, animated: true)
+                
             }
         }
     }

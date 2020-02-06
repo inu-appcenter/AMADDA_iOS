@@ -19,6 +19,7 @@
 		FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */; };
 		FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */; };
 		FA8EC1BF23EBE218007633D9 /* StaticTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */; };
+		FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseVC.swift; sourceTree = "<group>"; };
 		FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonalEventVC.swift; sourceTree = "<group>"; };
 		FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableVC.swift; sourceTree = "<group>"; };
+		FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
 				FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */,
 				FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */,
+				FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 			files = (
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
 				FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */,
+				FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */,
 				FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
 				FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */,
