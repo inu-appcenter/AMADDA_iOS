@@ -1,24 +1,24 @@
 //
-//  ViewController.swift
+//  MainCalendarVC.swift
 //  Amadda
 //
-//  Created by mong on 2020/02/06.
+//  Created by mong on 2020/02/10.
 //  Copyright © 2020 mong. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Floaty
+import FSCalendar
 
-class MainVC: UIViewController {
+class MainCalendarVC: UIViewController {
     @IBOutlet var navigationItemBar: UINavigationItem!
-
+    
     @IBAction func changeCalendar(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 1
+        self.tabBarController?.selectedIndex = 0
     }
     
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
         
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
@@ -59,9 +59,5 @@ class MainVC: UIViewController {
         floaty.paddingY = 40
         
         self.view.addSubview(floaty)
-                
     }
-
-
 }
-

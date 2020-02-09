@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks.sh
+${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework

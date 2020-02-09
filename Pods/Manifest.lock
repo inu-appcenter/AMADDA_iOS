@@ -1,16 +1,20 @@
 PODS:
   - Floaty (4.2.0)
+  - FSCalendar (2.8.1)
 
 DEPENDENCIES:
   - Floaty (~> 4.2.0)
+  - FSCalendar
 
 SPEC REPOS:
   trunk:
     - Floaty
+    - FSCalendar
 
 SPEC CHECKSUMS:
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
 
-PODFILE CHECKSUM: 9031c2aaf3263344f081e7e9d738dda9b323ff2a
+PODFILE CHECKSUM: c367c30acc0acb78d40f64eb8e20c718a6200d1b
 
 COCOAPODS: 1.8.4

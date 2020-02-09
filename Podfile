@@ -5,5 +5,6 @@ target 'Amadda' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
     pod 'Floaty', '~> 4.2.0'
+    pod 'FSCalendar'
   # Pods for Amadda
 end
