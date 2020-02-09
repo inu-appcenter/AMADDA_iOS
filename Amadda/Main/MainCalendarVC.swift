@@ -11,15 +11,41 @@ import UIKit
 import Floaty
 import FSCalendar
 
-class MainCalendarVC: UIViewController {
+class MainCalendarVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
+    let testEventDate: [String] = ["2020/02/10", "2020/02/01"]
+    
     @IBOutlet var navigationItemBar: UINavigationItem!
+    @IBOutlet var calendar: FSCalendar!
+    @IBOutlet var dateTitleLabel: UILabel!
     
     @IBAction func changeCalendar(_ sender: Any) {
         self.tabBarController?.selectedIndex = 0
     }
+    func calendarCurrentPageDidChange(_ calendar: FSCalendar) {
+        let date = calendar.currentPage
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY년 MM월"
+        dateFormatter.locale = Locale(identifier: "ko-KR")
+        dateTitleLabel.text = dateFormatter.string(from: date)
+    }
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.locale = Locale.init(identifier: "ko_KR")
+
+        for dateStr in testEventDate{
+            if(dateFormatter.string(from: date) == dateStr)
+            {
+                return 1
+            }
+        }
+        return 0
+    }
+    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+        return calendar.dequeueReusableCell(withIdentifier: "cell", for: date, at: position)
+    }
     
     override func viewDidLoad() {
-        
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
         var dateFormatter = DateFormatter()
@@ -27,6 +53,20 @@ class MainCalendarVC: UIViewController {
         dateFormatter.dateFormat = "MMM d일 eeee"
         dateFormatter.locale = Locale(identifier: "ko-KR")
         navigationItemBar.title = dateFormatter.string(from: Date())
+        
+        let titledate = calendar.currentPage
+        let titleDateFormatter = DateFormatter()
+        titleDateFormatter.dateFormat = "YYYY년 MM월"
+        titleDateFormatter.locale = Locale(identifier: "ko-KR")
+        dateTitleLabel.text = titleDateFormatter.string(from: date)
+        
+        // MARK: FSCalendar
+        calendar.dataSource = self
+        calendar.delegate = self
+        calendar.register(CustomCalendarCell.self, forCellReuseIdentifier: "cell")
+        calendar.calendarHeaderView.isHidden = true
+        calendar.locale = Locale(identifier: "ko_KR")
+        calendar.calendarWeekdayView.weekdayLabels[0].textColor = UIColor.red
         
         // MARK: Floaty
         let floaty = Floaty()
@@ -59,5 +99,29 @@ class MainCalendarVC: UIViewController {
         floaty.paddingY = 40
         
         self.view.addSubview(floaty)
+    }
+}
+
+// MARK: FSCalender Custom Cell
+class CustomCalendarCell: FSCalendarCell {
+    
+    private lazy var newDotView: UIView = {
+        let view = UIView()
+        return view
+    }()
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        eventIndicator.subviews.first?.alpha = 0.0 // hide dots of library
+        
+        let newDotRect = CGRect(x: 0,
+                                y: -self.frame.height + 5,
+                                width: self.frame.width,
+                                height: 5)
+
+        newDotView.frame = newDotRect
+        newDotView.backgroundColor = .red // {You want}
+        eventIndicator.addSubview(newDotView)
     }
 }

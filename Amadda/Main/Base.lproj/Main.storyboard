@@ -355,7 +355,48 @@
                     <view key="view" contentMode="scaleToFill" id="xsM-bc-KIG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KSV-gH-vh0" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="142.66666666666663" width="375" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="ilC-Ll-eOK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="weekdayTextSize">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleWeekendColor">
+                                        <color key="value" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
+                                        <color key="value" red="0.30941817160000001" green="0.67580181360000002" blue="0.9725850224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="weekdayTextColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJw-Wr-tpM">
+                                <rect key="frame" x="27" y="109" width="66.333333333333329" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KSV-gH-vh0" firstAttribute="trailing" secondItem="ZiN-2h-OyH" secondAttribute="trailing" id="LTu-aT-q26"/>
+                            <constraint firstItem="KSV-gH-vh0" firstAttribute="top" secondItem="iJw-Wr-tpM" secondAttribute="bottom" id="MSS-IC-qPm"/>
+                            <constraint firstItem="KSV-gH-vh0" firstAttribute="leading" secondItem="ZiN-2h-OyH" secondAttribute="leading" id="aIC-vf-oDQ"/>
+                            <constraint firstItem="iJw-Wr-tpM" firstAttribute="top" secondItem="ZiN-2h-OyH" secondAttribute="top" constant="21" id="tjr-8r-mlI"/>
+                            <constraint firstItem="iJw-Wr-tpM" firstAttribute="leading" secondItem="ZiN-2h-OyH" secondAttribute="leading" constant="27" id="w7m-ym-A5W"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ZiN-2h-OyH"/>
                     </view>
                     <navigationItem key="navigationItem" id="RrF-tL-0pc">
@@ -367,12 +408,14 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="calendar" destination="KSV-gH-vh0" id="nNv-pb-rAm"/>
+                        <outlet property="dateTitleLabel" destination="iJw-Wr-tpM" id="vEn-ZO-0au"/>
                         <outlet property="navigationItemBar" destination="RrF-tL-0pc" id="Wlv-Yx-i98"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Inw-I9-ALH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="739"/>
+            <point key="canvasLocation" x="2568.8000000000002" y="738.91625615763553"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ZFh-Ra-Gfz">
@@ -380,6 +423,7 @@
                 <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ydG-tb-TBq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lwG-1V-Lwc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
