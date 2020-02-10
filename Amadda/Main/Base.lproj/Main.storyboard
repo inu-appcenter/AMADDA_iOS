@@ -496,6 +496,21 @@
             </objects>
             <point key="canvasLocation" x="4055" y="-403"/>
         </scene>
+        <!--Time LineVC-->
+        <scene sceneID="t3V-S0-Bne">
+            <objects>
+                <viewController storyboardIdentifier="TimeLineVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vrC-es-Jk2" customClass="TimeLineVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N2b-JE-smo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JG2-Ua-Yu3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgj-4H-Jbz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3310" y="436"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lbl-vf-ihx">
             <objects>
@@ -518,10 +533,10 @@
             </objects>
             <point key="canvasLocation" x="4054" y="336"/>
         </scene>
-        <!--Add Shared EvenetVC-->
+        <!--Add Share EventVC-->
         <scene sceneID="S25-jq-Z1e">
             <objects>
-                <viewController storyboardIdentifier="AddSharedEventVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o1N-9f-HzV" customClass="AddSharedEvenetVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddShareEventVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o1N-9f-HzV" customClass="AddShareEventVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJd-Uy-NEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

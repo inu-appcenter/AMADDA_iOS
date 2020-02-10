@@ -39,19 +39,30 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.3
         
-        if indexPath == [0,0] || indexPath == [0,1]{
-            let timeTable = UIView(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: cell.frame.height * 3))
+        if indexPath == [0,0] || indexPath == [0,5]{
+            let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
             timeTable.backgroundColor = UIColor.orange
-            cell.addSubview(timeTable)
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
+            timeTable.addGestureRecognizer(gesture)
+            
+            collectionView.addSubview(timeTable)
             cell.layer.borderColor = UIColor.gray.cgColor
             cell.layer.borderWidth = 0.0
             cell.tag = 1
         }
-        
-        
         return cell
     }
 
+    @objc func timeTableDidSelect(){
+        guard let TimeLineVC = self.storyboard?.instantiateViewController(withIdentifier: "TimeLineVC") as? TimeLineVC else{return}
+        self.navigationController?.pushViewController(TimeLineVC, animated: true)
+    }
+    
+    // MARK: 시간표 아이템 선택 Handler
+    /*
+     위에 collectionView.addSubview(timeTable) 로 해두면 timeTableView에다가 gesture를 달아서 Handler 만들어 줘야 하고,
+     cell.addSubview(timeTable) 로 해두면 각각 cell마다 높이 계산해서 bgColor 지정 해줘야함. 이러면 더 귀찮아질듯 그래서 1안 선택.
+    */
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.cellForItem(at: indexPath)?.tag == 1 {
             print("item exist")
