@@ -20,11 +20,10 @@ class ContainerViewController: UIViewController {
     }
     
     func configureHomeController() {
-        let homeController = self.storyboard?.instantiateViewController(withIdentifier: "homeVC") as! HomeViewController
+        let homeController = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") as! MainVC
 
         homeController.delegate = self
         centerController = UINavigationController(rootViewController: homeController)
-
         view.addSubview(centerController.view)
         addChild(centerController)
         centerController.didMove(toParent: self)
