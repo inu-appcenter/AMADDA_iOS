@@ -30,6 +30,7 @@
 		FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */; };
 		FA8EC1BF23EBE218007633D9 /* StaticTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */; };
 		FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */; };
+		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonalEventVC.swift; sourceTree = "<group>"; };
 		FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableVC.swift; sourceTree = "<group>"; };
 		FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectVC.swift; sourceTree = "<group>"; };
+		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
+				FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */,
 				FA51E85F2406486B00E31FE5 /* TableViewCell.swift */,
 			);
 			path = AddCourse;
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
+				FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,
 				FA51E8602406486B00E31FE5 /* TableViewCell.swift in Sources */,
