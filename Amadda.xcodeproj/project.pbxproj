@@ -13,6 +13,7 @@
 		D1616CB72401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */; };
 		D1616CBB24029DA2002C806B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CBA24029DA2002C806B /* UIColor.swift */; };
 		DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBE727E06295343FA0346F /* Pods_Amadda.framework */; };
+		FA51E8602406486B00E31FE5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51E85F2406486B00E31FE5 /* TableViewCell.swift */; };
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
 		FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2723F16A1500F91372 /* CustomCell.swift */; };
 		FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2923F17BC400F91372 /* TimeLineVC.swift */; };
@@ -40,6 +41,7 @@
 		D1616CB22401C470002C806B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConatinerViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		D1616CBA24029DA2002C806B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		FA51E85F2406486B00E31FE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA78CF2923F17BC400F91372 /* TimeLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
@@ -108,6 +110,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FA51E85E2406483F00E31FE5 /* AddCourse */ = {
+			isa = PBXGroup;
+			children = (
+				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
+				FA51E85F2406486B00E31FE5 /* TableViewCell.swift */,
+			);
+			path = AddCourse;
+			sourceTree = "<group>";
+		};
 		FA8EC19123EBC991007633D9 = {
 			isa = PBXGroup;
 			children = (
@@ -159,7 +170,7 @@
 				FA78CF2723F16A1500F91372 /* CustomCell.swift */,
 				FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */,
 				FA78CF2923F17BC400F91372 /* TimeLineVC.swift */,
-				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
+				FA51E85E2406483F00E31FE5 /* AddCourse */,
 				FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */,
 				FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */,
 				FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */,
@@ -287,6 +298,7 @@
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,
+				FA51E8602406486B00E31FE5 /* TableViewCell.swift in Sources */,
 				D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */,
 				FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */,
 				FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */,

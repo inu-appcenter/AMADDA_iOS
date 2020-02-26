@@ -42,7 +42,6 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         label.textColor = UIColor.black
         cell.addSubview(label)
         
-        cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.3
         
@@ -76,7 +75,7 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 5.0, height: collectionView.bounds.height / CGFloat(testData[0].count))
+        return CGSize(width: collectionView.frame.width / 5.0, height: collectionView.frame.height / CGFloat(13))
     }
     
     @objc func handleMenuToggle() {
@@ -144,6 +143,6 @@ func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectio
     layout.minimumLineSpacing = 0
     layout.minimumInteritemSpacing = 0
 //    layout.itemSize = CGSize(width: collectionView.frame.width / 5.0, height: height / 14.0)
-//    layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     return layout
 }
