@@ -86,6 +86,8 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        networkTest()
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
         navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
         
@@ -136,6 +138,29 @@ class MainVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         self.view.addSubview(floaty)
                 
     }
+}
+
+func networkTest() {
+    let networkManager = NetworkManager()
+ 
+//    networkManager.login(id: "201400900", password: "01050427741") { (response) in
+//        print("\(response)")
+//    }
+    
+//    networkManager.seeProfile() { (result) in
+//        print(result)
+//    }
+    
+//    networkManager.modifypassword(password: "010101", newPassword: "01050427741") { (result) in
+//        print("비밀번호 수정 \(result)")
+//    }
+    
+//    networkManager.setInviteOption(flag: 1)
+    
+//    let img = UIImage(named: "시그모이드 함수")
+//    networkManager.uploadProfileImg(image: img!)
+    
+//    networkManager.addSchedule(name: "test", start: "2020-02-27 10:10:10", end: "2020-02-27 11:11:11", location: "학교", alarm: "2020-02-27 10:10:00", share: 2, memo: nil)
 }
 
 func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectionViewLayout {

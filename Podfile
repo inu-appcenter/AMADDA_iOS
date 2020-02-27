@@ -6,5 +6,6 @@ target 'Amadda' do
   use_frameworks!
     pod 'Floaty', '~> 4.2.0'
     pod 'FSCalendar'
+    pod 'Alamofire'
   # Pods for Amadda
 end

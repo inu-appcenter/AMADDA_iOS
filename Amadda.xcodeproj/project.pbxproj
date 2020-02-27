@@ -12,6 +12,11 @@
 		D1616CB32401C470002C806B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CB22401C470002C806B /* GroupCell.swift */; };
 		D1616CB72401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */; };
 		D1616CBB24029DA2002C806B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CBA24029DA2002C806B /* UIColor.swift */; };
+		D1616CC024063D80002C806B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CBF24063D80002C806B /* NetworkManager.swift */; };
+		D1616CC5240668A6002C806B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CC4240668A6002C806B /* Response.swift */; };
+		D1616CC7240668D7002C806B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CC6240668D6002C806B /* User.swift */; };
+		D1616CC92407575B002C806B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CC82407575B002C806B /* Group.swift */; };
+		D1616CCB24075CDB002C806B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCA24075CDB002C806B /* Schedule.swift */; };
 		DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBE727E06295343FA0346F /* Pods_Amadda.framework */; };
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
 		FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2723F16A1500F91372 /* CustomCell.swift */; };
@@ -40,6 +45,11 @@
 		D1616CB22401C470002C806B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConatinerViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		D1616CBA24029DA2002C806B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		D1616CBF24063D80002C806B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D1616CC4240668A6002C806B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		D1616CC6240668D6002C806B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D1616CC82407575B002C806B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA78CF2923F17BC400F91372 /* TimeLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
@@ -108,6 +118,26 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		D1616CBE24063D46002C806B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D1616CBF24063D80002C806B /* NetworkManager.swift */,
+				D1616CC12406454C002C806B /* Model */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D1616CC12406454C002C806B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D1616CC4240668A6002C806B /* Response.swift */,
+				D1616CC6240668D6002C806B /* User.swift */,
+				D1616CC82407575B002C806B /* Group.swift */,
+				D1616CCA24075CDB002C806B /* Schedule.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FA8EC19123EBC991007633D9 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +159,7 @@
 		FA8EC19C23EBC991007633D9 /* Amadda */ = {
 			isa = PBXGroup;
 			children = (
+				D1616CBE24063D46002C806B /* Network */,
 				D1616CB824029D6B002C806B /* Extension */,
 				D1616CA52401B6C5002C806B /* Sidebar */,
 				FA8EC1B123EBCBCB007633D9 /* Splash */,
@@ -284,12 +315,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1616CC92407575B002C806B /* Group.swift in Sources */,
+				D1616CC024063D80002C806B /* NetworkManager.swift in Sources */,
+				D1616CCB24075CDB002C806B /* Schedule.swift in Sources */,
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,
 				D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */,
+				D1616CC5240668A6002C806B /* Response.swift in Sources */,
 				FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */,
 				FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */,
+				D1616CC7240668D7002C806B /* User.swift in Sources */,
 				FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */,
 				FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
