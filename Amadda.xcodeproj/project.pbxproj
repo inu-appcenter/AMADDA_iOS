@@ -48,11 +48,15 @@
 		D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConatinerViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		D1616CBA24029DA2002C806B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 
+
 		D1616CBF24063D80002C806B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D1616CC4240668A6002C806B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D1616CC6240668D6002C806B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1616CC82407575B002C806B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+
+		FA51E85F2406486B00E31FE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+
 
 		FA51E85F2406486B00E31FE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 
@@ -126,6 +130,7 @@
 			sourceTree = "<group>";
 		};
 
+
 		D1616CBE24063D46002C806B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +151,8 @@
 			path = Model;
             sourceTree = "<group>";
             };
+
+
 
 		FA51E85E2406483F00E31FE5 /* AddCourse */ = {
 			isa = PBXGroup;
