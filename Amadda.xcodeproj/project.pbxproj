@@ -144,6 +144,8 @@
 				D1616CCA24075CDB002C806B /* Schedule.swift */,
 			);
 			path = Model;
+            sourceTree = "<group>";
+            };
 
 		FA51E85E2406483F00E31FE5 /* AddCourse */ = {
 			isa = PBXGroup;
@@ -560,3 +562,4 @@
 	};
 	rootObject = FA8EC19223EBC991007633D9 /* Project object */;
 }
+
