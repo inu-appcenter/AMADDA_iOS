@@ -18,6 +18,7 @@
 		D1616CC92407575B002C806B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CC82407575B002C806B /* Group.swift */; };
 		D1616CCB24075CDB002C806B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCA24075CDB002C806B /* Schedule.swift */; };
 		DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBE727E06295343FA0346F /* Pods_Amadda.framework */; };
+		FA51E8602406486B00E31FE5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51E85F2406486B00E31FE5 /* TableViewCell.swift */; };
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
 		FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2723F16A1500F91372 /* CustomCell.swift */; };
 		FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2923F17BC400F91372 /* TimeLineVC.swift */; };
@@ -34,6 +35,7 @@
 		FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */; };
 		FA8EC1BF23EBE218007633D9 /* StaticTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */; };
 		FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */; };
+		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,11 +47,15 @@
 		D1616CB22401C470002C806B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuConatinerViewControllerTableViewController.swift; sourceTree = "<group>"; };
 		D1616CBA24029DA2002C806B /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+
 		D1616CBF24063D80002C806B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D1616CC4240668A6002C806B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		D1616CC6240668D6002C806B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D1616CC82407575B002C806B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+
+		FA51E85F2406486B00E31FE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA78CF2923F17BC400F91372 /* TimeLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
@@ -68,6 +74,7 @@
 		FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonalEventVC.swift; sourceTree = "<group>"; };
 		FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableVC.swift; sourceTree = "<group>"; };
 		FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectVC.swift; sourceTree = "<group>"; };
+		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,7 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+
 		D1616CBE24063D46002C806B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +144,15 @@
 				D1616CCA24075CDB002C806B /* Schedule.swift */,
 			);
 			path = Model;
+
+		FA51E85E2406483F00E31FE5 /* AddCourse */ = {
+			isa = PBXGroup;
+			children = (
+				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
+				FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */,
+				FA51E85F2406486B00E31FE5 /* TableViewCell.swift */,
+			);
+			path = AddCourse;
 			sourceTree = "<group>";
 		};
 		FA8EC19123EBC991007633D9 = {
@@ -190,7 +207,7 @@
 				FA78CF2723F16A1500F91372 /* CustomCell.swift */,
 				FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */,
 				FA78CF2923F17BC400F91372 /* TimeLineVC.swift */,
-				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
+				FA51E85E2406483F00E31FE5 /* AddCourse */,
 				FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */,
 				FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */,
 				FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */,
@@ -319,8 +336,10 @@
 				D1616CC024063D80002C806B /* NetworkManager.swift in Sources */,
 				D1616CCB24075CDB002C806B /* Schedule.swift in Sources */,
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
+				FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,
+				FA51E8602406486B00E31FE5 /* TableViewCell.swift in Sources */,
 				D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */,
 				D1616CC5240668A6002C806B /* Response.swift in Sources */,
 				FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */,
