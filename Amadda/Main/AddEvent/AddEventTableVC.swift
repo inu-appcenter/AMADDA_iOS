@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class StaticTableVC: UITableViewController {
+class AddEventTableVC: UITableViewController {
     @IBOutlet var startDatePicker: UIDatePicker!
     @IBOutlet var endDatePicker: UIDatePicker!
     @IBOutlet var alarmDatePicker: UIDatePicker!

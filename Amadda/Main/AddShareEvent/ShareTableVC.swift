@@ -1,14 +1,14 @@
 //
-//  AddShareEventVC.swift
+//  ShareTableVC.swift
 //  Amadda
 //
-//  Created by mong on 2020/02/06.
+//  Created by mong on 2020/03/01.
 //  Copyright © 2020 mong. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class AddShareEventVC: UIViewController {
+class ShareTableVC: UITableViewController {
     
 }

@@ -216,7 +216,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mD-m8-I0r">
-                                <rect key="frame" x="0.0" y="163" width="375" height="495"/>
+                                <rect key="frame" x="0.0" y="163" width="375" height="477"/>
                                 <connections>
                                     <segue destination="dvg-bk-4iN" kind="embed" id="LwS-GM-39V"/>
                                 </connections>
@@ -227,8 +227,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pup-y1-zQo">
-                                <rect key="frame" x="40" y="698" width="295" height="30"/>
+                                <rect key="frame" x="71" y="680" width="233" height="48"/>
                                 <color key="backgroundColor" red="0.30941817160000001" green="0.67580181360000002" blue="0.9725850224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="2iL-9U-QlL"/>
+                                    <constraint firstAttribute="height" constant="48" id="Lpi-Yt-fLm"/>
+                                </constraints>
                                 <state key="normal" title="추가하기">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -240,8 +244,6 @@
                             <constraint firstItem="7mD-m8-I0r" firstAttribute="trailing" secondItem="ECD-oL-yNi" secondAttribute="trailing" id="8Ia-3J-LRY"/>
                             <constraint firstItem="Pup-y1-zQo" firstAttribute="top" secondItem="7mD-m8-I0r" secondAttribute="bottom" constant="40" id="8ve-Fw-V8p"/>
                             <constraint firstItem="Pup-y1-zQo" firstAttribute="centerX" secondItem="zt4-DZ-brh" secondAttribute="centerX" id="BAq-sd-f7m"/>
-                            <constraint firstItem="ECD-oL-yNi" firstAttribute="trailing" secondItem="Pup-y1-zQo" secondAttribute="trailing" constant="40" id="W0V-ya-FsD"/>
-                            <constraint firstItem="Pup-y1-zQo" firstAttribute="leading" secondItem="ECD-oL-yNi" secondAttribute="leading" constant="40" id="deT-mx-ovz"/>
                             <constraint firstItem="7mD-m8-I0r" firstAttribute="top" secondItem="0gk-3m-PRp" secondAttribute="bottom" constant="20" id="fEt-VD-MoW"/>
                             <constraint firstItem="0gk-3m-PRp" firstAttribute="top" secondItem="ECD-oL-yNi" secondAttribute="top" constant="20" id="kBd-1M-UMn"/>
                             <constraint firstItem="0gk-3m-PRp" firstAttribute="leading" secondItem="ECD-oL-yNi" secondAttribute="leading" constant="28" id="shb-3j-Nhu"/>
@@ -260,14 +262,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYJ-Ha-ici" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4850" y="335"/>
+            <point key="canvasLocation" x="4848.8000000000002" y="334.72906403940885"/>
         </scene>
-        <!--Static TableVC-->
+        <!--Add Event TableVC-->
         <scene sceneID="NDe-XD-P9V">
             <objects>
-                <tableViewController storyboardIdentifier="StaticTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dvg-bk-4iN" customClass="StaticTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AddEventTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dvg-bk-4iN" customClass="AddEventTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="48" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GPg-L9-8Hn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="495"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -532,7 +534,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h68-ae-8YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5629.6000000000004" y="334.35960591133005"/>
+            <point key="canvasLocation" x="5735" y="739"/>
         </scene>
         <!--Share SelectVC-->
         <scene sceneID="Nif-dQ-8Mi">
@@ -549,7 +551,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxj-Ct-tca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6412" y="306"/>
+            <point key="canvasLocation" x="6572" y="739"/>
         </scene>
         <!--Add CourseVC-->
         <scene sceneID="PuW-do-Adf">
@@ -618,6 +620,9 @@
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -628,20 +633,62 @@
             </objects>
             <point key="canvasLocation" x="4054" y="336"/>
         </scene>
-        <!--Add Share EventVC-->
+        <!--공유 일정 추가-->
         <scene sceneID="S25-jq-Z1e">
             <objects>
                 <viewController storyboardIdentifier="AddShareEventVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o1N-9f-HzV" customClass="AddShareEventVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rJd-Uy-NEB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="일정이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z27-2h-tgK">
+                                <rect key="frame" x="28.000000000000007" y="108" width="100.66666666666669" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYe-XY-dwb">
+                                <rect key="frame" x="75.666666666666686" y="682" width="224" height="46"/>
+                                <color key="backgroundColor" red="0.11764705882352941" green="0.69411764705882351" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Fjo-ps-sch"/>
+                                    <constraint firstAttribute="width" constant="224" id="xQm-pn-iGa"/>
+                                </constraints>
+                                <state key="normal" title="추가하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1p-uc-aQ4">
+                                <rect key="frame" x="0.0" y="163" width="375" height="479"/>
+                                <connections>
+                                    <segue destination="dvg-bk-4iN" kind="embed" id="kau-T2-bYK"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qYe-XY-dwb" firstAttribute="top" secondItem="o1p-uc-aQ4" secondAttribute="bottom" constant="40" id="4cc-iy-nfc"/>
+                            <constraint firstItem="qYe-XY-dwb" firstAttribute="centerX" secondItem="rJd-Uy-NEB" secondAttribute="centerX" id="BqI-GB-OXV"/>
+                            <constraint firstItem="Z27-2h-tgK" firstAttribute="leading" secondItem="miv-SY-lH6" secondAttribute="leading" constant="28" id="O0k-RI-6rV"/>
+                            <constraint firstItem="o1p-uc-aQ4" firstAttribute="top" secondItem="Z27-2h-tgK" secondAttribute="bottom" constant="20" id="QBE-bL-WeZ"/>
+                            <constraint firstItem="o1p-uc-aQ4" firstAttribute="leading" secondItem="miv-SY-lH6" secondAttribute="leading" id="RYe-tp-ZGn"/>
+                            <constraint firstItem="Z27-2h-tgK" firstAttribute="top" secondItem="miv-SY-lH6" secondAttribute="top" constant="20" id="hoz-Dt-T8I"/>
+                            <constraint firstItem="miv-SY-lH6" firstAttribute="bottom" secondItem="qYe-XY-dwb" secondAttribute="bottom" constant="50" id="iPA-fe-Sp4"/>
+                            <constraint firstItem="miv-SY-lH6" firstAttribute="trailing" secondItem="o1p-uc-aQ4" secondAttribute="trailing" id="qzC-mI-qr3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="miv-SY-lH6"/>
                     </view>
+                    <navigationItem key="navigationItem" title="공유 일정 추가" id="zqE-Zw-zqo">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="9o9-eb-XoI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backBtn:" destination="o1N-9f-HzV" id="reg-aF-44N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpw-Ip-qMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4054" y="1057"/>
+            <point key="canvasLocation" x="4849" y="1057"/>
         </scene>
         <!--Main CalendarVC-->
         <scene sceneID="A9H-ti-ca4">
@@ -1367,6 +1414,33 @@
             </objects>
             <point key="canvasLocation" x="4847.1999999999998" y="-430.04926108374389"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aW6-mL-v6D">
+            <objects>
+                <navigationController storyboardIdentifier="AddShareEventNavigation" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PIN-ZL-owv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bX7-e6-FfJ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.69411764710000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.1176470588" green="0.69411764710000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1176470588" green="0.69411764710000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o1N-9f-HzV" kind="relationship" relationship="rootViewController" id="NNk-48-eDZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wSF-Kf-sG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4053.5999999999999" y="1056.6502463054187"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icon_Alarm" width="15" height="15"/>
@@ -1374,4 +1448,7 @@
         <image name="icon_Memo" width="15.333333015441895" height="15"/>
         <image name="icon_Share" width="16" height="18"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kau-T2-bYK"/>
+    </inferredMetricsTieBreakers>
 </document>
