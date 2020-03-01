@@ -17,6 +17,8 @@
 		D1616CC7240668D7002C806B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CC6240668D6002C806B /* User.swift */; };
 		D1616CC92407575B002C806B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CC82407575B002C806B /* Group.swift */; };
 		D1616CCB24075CDB002C806B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCA24075CDB002C806B /* Schedule.swift */; };
+		D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCC2408A73A002C806B /* ScheduleListVC.swift */; };
+		D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCE2408A83F002C806B /* ScheduleCell.swift */; };
 		DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBE727E06295343FA0346F /* Pods_Amadda.framework */; };
 		FA51E8602406486B00E31FE5 /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA51E85F2406486B00E31FE5 /* AddCourseTableViewCell.swift */; };
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
@@ -54,6 +56,9 @@
 		D1616CC82407575B002C806B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		FA51E85F2406486B00E31FE5 /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseTableViewCell.swift; sourceTree = "<group>"; };
+		D1616CCC2408A73A002C806B /* ScheduleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListVC.swift; sourceTree = "<group>"; };
+		D1616CCE2408A83F002C806B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		FA51E85F2406486B00E31FE5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA78CF2923F17BC400F91372 /* TimeLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
@@ -207,6 +212,8 @@
 				FA78CF2723F16A1500F91372 /* CustomCell.swift */,
 				FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */,
 				FA78CF2923F17BC400F91372 /* TimeLineVC.swift */,
+				D1616CCC2408A73A002C806B /* ScheduleListVC.swift */,
+				D1616CCE2408A83F002C806B /* ScheduleCell.swift */,
 				FA51E85E2406483F00E31FE5 /* AddCourse */,
 				FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */,
 				FA8EC1BE23EBE218007633D9 /* StaticTableVC.swift */,
@@ -336,6 +343,7 @@
 				D1616CC024063D80002C806B /* NetworkManager.swift in Sources */,
 				D1616CCB24075CDB002C806B /* Schedule.swift in Sources */,
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
+				D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */,
 				FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,
@@ -347,6 +355,7 @@
 				D1616CC7240668D7002C806B /* User.swift in Sources */,
 				FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */,
 				FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */,
+				D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
 				D1616CA72401B709002C806B /* MenuViewController.swift in Sources */,
 				FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */,
