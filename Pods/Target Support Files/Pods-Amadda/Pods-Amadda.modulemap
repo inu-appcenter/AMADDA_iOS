@@ -1,4 +1,4 @@
-framework module Pods_Amadda {
+module Pods_Amadda {
   umbrella header "Pods-Amadda-umbrella.h"
 
   export *

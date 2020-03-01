@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76D9BF558D4B611E192FABA8 /* libPods-Amadda.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ED79C8D56C6C7880309705C /* libPods-Amadda.a */; };
 		D1616CA72401B709002C806B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CA62401B709002C806B /* MenuViewController.swift */; };
 		D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CA82401B767002C806B /* ContainerViewController.swift */; };
 		D1616CB32401C470002C806B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CB22401C470002C806B /* GroupCell.swift */; };
@@ -19,8 +20,7 @@
 		D1616CCB24075CDB002C806B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCA24075CDB002C806B /* Schedule.swift */; };
 		D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCC2408A73A002C806B /* ScheduleListVC.swift */; };
 		D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCE2408A83F002C806B /* ScheduleCell.swift */; };
-		DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FFBE727E06295343FA0346F /* Pods_Amadda.framework */; };
-		FA15D3BD240B956F009415FC /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA15D3BC240B956F009415FC /* AddCourseTableViewCell.swift */; };
+		FA4E3A03240BD81B00FC6D24 /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E3A02240BD81B00FC6D24 /* AddCourseTableViewCell.swift */; };
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
 		FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2723F16A1500F91372 /* CustomCell.swift */; };
 		FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2923F17BC400F91372 /* TimeLineVC.swift */; };
@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		0231E7220A6F7AB855BEA8CD /* Pods-Amadda.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadda.debug.xcconfig"; path = "Target Support Files/Pods-Amadda/Pods-Amadda.debug.xcconfig"; sourceTree = "<group>"; };
 		3ACD5353E7F3F5BC7B5EB138 /* Pods-Amadda.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Amadda.release.xcconfig"; path = "Target Support Files/Pods-Amadda/Pods-Amadda.release.xcconfig"; sourceTree = "<group>"; };
-		4FFBE727E06295343FA0346F /* Pods_Amadda.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Amadda.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3ED79C8D56C6C7880309705C /* libPods-Amadda.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Amadda.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1616CA62401B709002C806B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D1616CA82401B767002C806B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D1616CB22401C470002C806B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D1616CCC2408A73A002C806B /* ScheduleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListVC.swift; sourceTree = "<group>"; };
 		D1616CCE2408A83F002C806B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
-		FA15D3BC240B956F009415FC /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCourseTableViewCell.swift; path = ../../../AddCourseTableViewCell.swift; sourceTree = "<group>"; };
+		FA4E3A02240BD81B00FC6D24 /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCourseTableViewCell.swift; path = ../../../../../../../.Trash/AddCourseTableViewCell.swift; sourceTree = "<group>"; };
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA78CF2923F17BC400F91372 /* TimeLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAC0599B55E7C1ADE8BA0BB1 /* Pods_Amadda.framework in Frameworks */,
+				76D9BF558D4B611E192FABA8 /* libPods-Amadda.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +95,7 @@
 		28A76FA17697043FFB5D372A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4FFBE727E06295343FA0346F /* Pods_Amadda.framework */,
+				3ED79C8D56C6C7880309705C /* libPods-Amadda.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 				FAC1F6572407AFC500407644 /* TestDataModel.swift */,
 				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
 				FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */,
-				FA15D3BC240B956F009415FC /* AddCourseTableViewCell.swift */,
+				FA4E3A02240BD81B00FC6D24 /* AddCourseTableViewCell.swift */,
 			);
 			path = AddCourse;
 			sourceTree = "<group>";
@@ -241,7 +241,6 @@
 				FA8EC19623EBC991007633D9 /* Sources */,
 				FA8EC19723EBC991007633D9 /* Frameworks */,
 				FA8EC19823EBC991007633D9 /* Resources */,
-				67C442B15AEAA7CF99543143 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -322,23 +321,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		67C442B15AEAA7CF99543143 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Amadda/Pods-Amadda-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -362,7 +344,6 @@
 				FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */,
 				FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */,
 				D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */,
-				FA15D3BD240B956F009415FC /* AddCourseTableViewCell.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
 				D1616CA72401B709002C806B /* MenuViewController.swift in Sources */,
 				FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */,
@@ -370,6 +351,7 @@
 				D1616CBB24029DA2002C806B /* UIColor.swift in Sources */,
 				FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */,
 				FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */,
+				FA4E3A03240BD81B00FC6D24 /* AddCourseTableViewCell.swift in Sources */,
 				FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */,
 				FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */,
 				FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */,
