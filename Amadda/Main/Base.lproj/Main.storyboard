@@ -388,8 +388,8 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="위치" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wHD-ig-TBB">
-                                                    <rect key="frame" x="70" y="15.666666666666664" width="300" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <rect key="frame" x="70" y="14" width="300" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                             </subviews>
@@ -416,23 +416,46 @@
                                                         <constraint firstAttribute="height" constant="15" id="QbX-kl-6AT"/>
                                                     </constraints>
                                                 </imageView>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="알림" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IUg-bh-WqT">
-                                                    <rect key="frame" x="70" y="15.666666666666664" width="300" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0av-a6-uKr">
+                                                    <rect key="frame" x="71" y="14.333333333333334" width="28" height="19.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="0av-a6-uKr" firstAttribute="leading" secondItem="FKB-h7-i10" secondAttribute="trailing" constant="22" id="7CP-J9-qKh"/>
+                                                <constraint firstItem="0av-a6-uKr" firstAttribute="centerY" secondItem="bjD-aB-b1A" secondAttribute="centerY" id="ByI-E6-h5o"/>
                                                 <constraint firstItem="FKB-h7-i10" firstAttribute="centerY" secondItem="bjD-aB-b1A" secondAttribute="centerY" id="M1j-tg-B6Z"/>
                                                 <constraint firstItem="FKB-h7-i10" firstAttribute="leading" secondItem="bjD-aB-b1A" secondAttribute="leading" constant="34" id="OJp-2V-apd"/>
-                                                <constraint firstItem="IUg-bh-WqT" firstAttribute="centerY" secondItem="bjD-aB-b1A" secondAttribute="centerY" id="Q5F-kI-KOv"/>
-                                                <constraint firstAttribute="trailing" secondItem="IUg-bh-WqT" secondAttribute="trailing" constant="5" id="Qfd-f6-1Wp"/>
-                                                <constraint firstItem="IUg-bh-WqT" firstAttribute="leading" secondItem="FKB-h7-i10" secondAttribute="trailing" constant="21" id="qw7-Ey-0St"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="200" id="wtO-sr-glO" userLabel="AlarmDatePicker">
+                                        <rect key="frame" x="0.0" y="615.5" width="375" height="200"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wtO-sr-glO" id="hQp-Qm-gZU">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="uYZ-f2-7RG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                    <locale key="locale" localeIdentifier="ko_KR"/>
+                                                    <connections>
+                                                        <action selector="alarmDatePicker:" destination="dvg-bk-4iN" eventType="valueChanged" id="8jr-pV-oAr"/>
+                                                    </connections>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uYZ-f2-7RG" firstAttribute="top" secondItem="hQp-Qm-gZU" secondAttribute="top" id="EHa-rm-aLW"/>
+                                                <constraint firstAttribute="bottom" secondItem="uYZ-f2-7RG" secondAttribute="bottom" id="XUw-MJ-v8f"/>
+                                                <constraint firstAttribute="trailing" secondItem="uYZ-f2-7RG" secondAttribute="trailing" id="j3A-gJ-ZMf"/>
+                                                <constraint firstItem="uYZ-f2-7RG" firstAttribute="leading" secondItem="hQp-Qm-gZU" secondAttribute="leading" id="tDP-rA-bE6"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="share" rowHeight="48" id="zqO-fQ-FT6" userLabel="Share">
-                                        <rect key="frame" x="0.0" y="615.5" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="815.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zqO-fQ-FT6" id="H6U-sg-ieO">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="48"/>
@@ -461,7 +484,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="48" id="YCW-Xy-Vxd" userLabel="Memo">
-                                        <rect key="frame" x="0.0" y="663.5" width="375" height="48"/>
+                                        <rect key="frame" x="0.0" y="863.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YCW-Xy-Vxd" id="e5c-3T-qi3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -499,6 +522,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="gKO-xF-mhX"/>
                     <connections>
+                        <outlet property="alarmDatePicker" destination="uYZ-f2-7RG" id="djW-q0-pTW"/>
+                        <outlet property="alarmLabel" destination="0av-a6-uKr" id="JNj-Ku-EXy"/>
                         <outlet property="endDatePicker" destination="Dtq-1O-vSp" id="YE4-qi-QqT"/>
                         <outlet property="endLabel" destination="Zcn-QF-yU8" id="US4-J2-gLk"/>
                         <outlet property="startDatePicker" destination="nqy-qd-9fW" id="VHB-9z-xOk"/>

@@ -12,13 +12,16 @@ import UIKit
 class StaticTableVC: UITableViewController {
     @IBOutlet var startDatePicker: UIDatePicker!
     @IBOutlet var endDatePicker: UIDatePicker!
+    @IBOutlet var alarmDatePicker: UIDatePicker!
     
     @IBOutlet var startLabel: UILabel!
     @IBOutlet var endLabel: UILabel!
+    @IBOutlet var alarmLabel: UILabel!
     
     override func viewDidLoad() {
         startDatePicker.isHidden = true
         endDatePicker.isHidden = true
+        alarmDatePicker.isHidden = true
         self.tableView.tableFooterView = UIView(frame: CGRect())
         self.tableView.backgroundColor = UIColor.clear
     }
@@ -30,6 +33,7 @@ class StaticTableVC: UITableViewController {
         dateformatter.timeStyle = .short
         let date = dateformatter.string(from: sender.date)
         startLabel.text = "\(date)"
+        startLabel.textColor = UIColor.textGray
     }
     
     @IBAction func endDatePicker(_ sender: UIDatePicker) {
@@ -38,8 +42,17 @@ class StaticTableVC: UITableViewController {
         dateformatter.timeStyle = .short
         let date = dateformatter.string(from: sender.date)
         endLabel.text = "\(date)"
+        endLabel.textColor = UIColor.textGray
     }
-
+    @IBAction func alarmDatePicker(_ sender: UIDatePicker) {
+        let dateformatter = DateFormatter()
+        dateformatter.dateStyle = .none
+        dateformatter.timeStyle = .short
+        let date = dateformatter.string(from: sender.date)
+        alarmLabel.text = "\(date)"
+        alarmLabel.textColor = UIColor.textGray
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -51,6 +64,13 @@ class StaticTableVC: UITableViewController {
                 })
             }else if indexPath.row == 2 {
                 endDatePicker.isHidden = !endDatePicker.isHidden
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                    self.tableView.beginUpdates()
+                    self.tableView.deselectRow(at: indexPath, animated: true)
+                    self.tableView.endUpdates()
+                })
+            }else if indexPath.row == 5 {
+                alarmDatePicker.isHidden = !alarmDatePicker.isHidden
                 UIView.animate(withDuration: 0.3, animations: { () -> Void in
                     self.tableView.beginUpdates()
                     self.tableView.deselectRow(at: indexPath, animated: true)
@@ -71,6 +91,9 @@ class StaticTableVC: UITableViewController {
                 return height
             }else if indexPath.row == 3 {
                 let height: CGFloat = endDatePicker.isHidden ? 0.0 : 200
+                return height
+            }else if indexPath.row == 6 {
+                let height: CGFloat = alarmDatePicker.isHidden ? 0.0 : 200
                 return height
             }
         }
