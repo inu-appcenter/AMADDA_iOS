@@ -16,6 +16,14 @@ class StaticTableVC: UITableViewController {
     @IBOutlet var startLabel: UILabel!
     @IBOutlet var endLabel: UILabel!
     
+    override func viewDidLoad() {
+        startDatePicker.isHidden = true
+        endDatePicker.isHidden = true
+        self.tableView.tableFooterView = UIView(frame: CGRect())
+        self.tableView.backgroundColor = UIColor.clear
+    }
+    
+    
     @IBAction func startDatePicker(_ sender: UIDatePicker) {
         let dateformatter = DateFormatter()
         dateformatter.dateStyle = .medium
@@ -26,11 +34,12 @@ class StaticTableVC: UITableViewController {
     
     @IBAction func endDatePicker(_ sender: UIDatePicker) {
         let dateformatter = DateFormatter()
-        dateformatter.dateStyle = .medium
+        dateformatter.dateStyle = .none
         dateformatter.timeStyle = .short
         let date = dateformatter.string(from: sender.date)
         endLabel.text = "\(date)"
     }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
@@ -66,10 +75,5 @@ class StaticTableVC: UITableViewController {
             }
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
-    }
-    
-    override func viewDidLoad() {
-        startDatePicker.isHidden = true
-        endDatePicker.isHidden = true
     }
 }
