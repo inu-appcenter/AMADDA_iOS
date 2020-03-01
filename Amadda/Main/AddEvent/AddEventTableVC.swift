@@ -17,6 +17,9 @@ class AddEventTableVC: UITableViewController {
     @IBOutlet var startLabel: UILabel!
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var alarmLabel: UILabel!
+    @IBOutlet var shareLabel: UITextField!
+    
+    var flag: Bool = false
     
     override func viewDidLoad() {
         startDatePicker.isHidden = true
@@ -24,8 +27,8 @@ class AddEventTableVC: UITableViewController {
         alarmDatePicker.isHidden = true
         self.tableView.tableFooterView = UIView(frame: CGRect())
         self.tableView.backgroundColor = UIColor.clear
+        
     }
-    
     
     @IBAction func startDatePicker(_ sender: UIDatePicker) {
         let dateformatter = DateFormatter()
@@ -95,8 +98,11 @@ class AddEventTableVC: UITableViewController {
             }else if indexPath.row == 6 {
                 let height: CGFloat = alarmDatePicker.isHidden ? 0.0 : 200
                 return height
+            }else if indexPath.row == 7 {
+                if flag {return 0.0}
             }
         }
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
+    
 }

@@ -218,7 +218,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7mD-m8-I0r">
                                 <rect key="frame" x="0.0" y="163" width="375" height="477"/>
                                 <connections>
-                                    <segue destination="dvg-bk-4iN" kind="embed" id="LwS-GM-39V"/>
+                                    <segue destination="dvg-bk-4iN" kind="embed" identifier="personalSegue" id="LwS-GM-39V"/>
                                 </connections>
                             </containerView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="일정 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0gk-3m-PRp">
@@ -268,8 +268,8 @@
         <scene sceneID="NDe-XD-P9V">
             <objects>
                 <tableViewController storyboardIdentifier="AddEventTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dvg-bk-4iN" customClass="AddEventTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="48" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GPg-L9-8Hn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="479"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GPg-L9-8Hn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="477"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -456,7 +456,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="share" rowHeight="48" id="zqO-fQ-FT6" userLabel="Share">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="share" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="share" rowHeight="48" id="zqO-fQ-FT6" userLabel="Share">
                                         <rect key="frame" x="0.0" y="815.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zqO-fQ-FT6" id="H6U-sg-ieO">
@@ -528,6 +528,7 @@
                         <outlet property="alarmLabel" destination="0av-a6-uKr" id="JNj-Ku-EXy"/>
                         <outlet property="endDatePicker" destination="Dtq-1O-vSp" id="YE4-qi-QqT"/>
                         <outlet property="endLabel" destination="Zcn-QF-yU8" id="US4-J2-gLk"/>
+                        <outlet property="shareLabel" destination="yCh-lM-Rh6" id="dGE-t3-RVV"/>
                         <outlet property="startDatePicker" destination="nqy-qd-9fW" id="VHB-9z-xOk"/>
                         <outlet property="startLabel" destination="JTS-pg-Sbx" id="T1f-Y6-989"/>
                     </connections>
@@ -1449,6 +1450,6 @@
         <image name="icon_Share" width="16" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kau-T2-bYK"/>
+        <segue reference="LwS-GM-39V"/>
     </inferredMetricsTieBreakers>
 </document>
