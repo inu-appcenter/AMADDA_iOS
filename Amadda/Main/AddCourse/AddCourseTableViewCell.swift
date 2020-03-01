@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class AddCourseTableViewCell: UITableViewCell {
+    @IBOutlet var typeLabel: UILabel!
     
 }

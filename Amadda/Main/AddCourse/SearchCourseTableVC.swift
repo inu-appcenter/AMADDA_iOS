@@ -19,12 +19,13 @@ class SearchCourseTableVC: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return courseType.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as? TableViewCell else {return UITableViewCell()}
+        guard let cell: AddCourseTableViewCell = tableView.dequeueReusableCell(withIdentifier: "AddCourseTableViewCell") as? AddCourseTableViewCell else {return UITableViewCell()}
         
+        cell.typeLabel.text = courseType[indexPath.row]
         return cell
     }
 }
