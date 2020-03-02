@@ -25,6 +25,7 @@ class LoginVC: UIViewController {
             }else {
                 self.showDefaultAlertController(title: "로그인 실패", message: "아이디와 비밀번호를 확인 하세요", completionHandler: nil)
             }
+            print(response)
         })
         
     }
