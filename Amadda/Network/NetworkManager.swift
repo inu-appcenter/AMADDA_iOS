@@ -9,7 +9,7 @@
 import Alamofire
 
 class NetworkManager {
-    private let baseURL = "http://ec2-54-180-95-83.ap-northeast-2.compute.amazonaws.com"
+    private let baseURL = "http://117.16.231.66:7004"
     private let token = UserDefaults.standard.string(forKey: "token")
     
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {

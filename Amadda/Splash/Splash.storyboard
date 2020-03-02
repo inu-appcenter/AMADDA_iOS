@@ -116,13 +116,13 @@
                                                     <constraint firstAttribute="height" constant="15.1" id="gTd-xv-WO4"/>
                                                 </constraints>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E11-nI-I5z">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E11-nI-I5z">
                                                 <rect key="frame" x="52" y="0.0" width="215" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="MKu-5D-vOI"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -195,6 +195,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e8J-tG-v85"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="iEh-Mk-nqP" id="qfI-ZX-3hk"/>
+                        <outlet property="pwTextField" destination="E11-nI-I5z" id="T0n-b0-qh7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XWR-nv-JUL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
