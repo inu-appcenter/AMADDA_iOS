@@ -777,6 +777,7 @@
                     <navigationItem key="navigationItem" id="pnU-YF-ETO"/>
                     <connections>
                         <outlet property="collectionView" destination="pae-dt-d2F" id="IQC-Z7-aIV"/>
+                        <outlet property="scrollView" destination="qfN-9G-1JD" id="Vvz-0H-nac"/>
                         <outlet property="timeLineStackView" destination="mUK-eg-wSm" id="BAT-jd-Xdy"/>
                     </connections>
                 </viewController>
@@ -1571,21 +1572,58 @@
             </objects>
             <point key="canvasLocation" x="5649" y="-430"/>
         </scene>
-        <!--View Controller-->
+        <!--Major TableVC-->
         <scene sceneID="HmR-CE-fte">
             <objects>
-                <viewController id="Xi9-3E-fzA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MajorTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xi9-3E-fzA" customClass="MajorTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V6h-Yq-W0e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="azq-wb-GE0">
+                                <rect key="frame" x="0.0" y="88" width="375" height="362"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" id="5EI-nv-YUA" customClass="MajorTableViewCell" customModule="Amadda" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5EI-nv-YUA" id="qTq-l6-MjR">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqP-Pc-BDm">
+                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="subjectLabel" destination="EqP-Pc-BDm" id="w1x-fV-Pnr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="azq-wb-GE0" firstAttribute="leading" secondItem="gUo-no-9ep" secondAttribute="leading" id="4Vl-nf-rkV"/>
+                            <constraint firstItem="gUo-no-9ep" firstAttribute="trailing" secondItem="azq-wb-GE0" secondAttribute="trailing" id="9xu-6l-qoa"/>
+                            <constraint firstItem="gUo-no-9ep" firstAttribute="bottom" secondItem="azq-wb-GE0" secondAttribute="bottom" id="UK0-Ug-qWX"/>
+                            <constraint firstItem="azq-wb-GE0" firstAttribute="top" secondItem="gUo-no-9ep" secondAttribute="top" id="VWQ-E6-d7r"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gUo-no-9ep"/>
                     </view>
                     <navigationItem key="navigationItem" id="dZo-FA-Kxh"/>
+                    <connections>
+                        <outlet property="tableView" destination="azq-wb-GE0" id="dz7-4f-YO5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLE-5c-ozL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6573" y="-434"/>
+            <point key="canvasLocation" x="6376.8000000000002" y="-430.04926108374389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="90i-ot-Cxq">

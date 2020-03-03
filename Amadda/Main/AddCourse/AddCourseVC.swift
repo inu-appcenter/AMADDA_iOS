@@ -13,6 +13,7 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
 
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var timeLineStackView: UIStackView!
+    @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         // Collection View
