@@ -8,11 +8,14 @@
 
 struct Schedule: Codable {
     let token: String?
-    let name: String?
+    let id: String?
+    let number: Int?
+    let schedule_name: String?
     let start: String?
     let end: String?
     let location: String?
     let alarm: String?
     let share: Int?
+    let key: Int?
     let memo: String?
 }

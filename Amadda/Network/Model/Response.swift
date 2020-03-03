@@ -11,4 +11,6 @@ struct Response: Codable {
     let message: String?
     let token: String?
     let user: User?
+    let schedule: Schedule?
+    let schedules: [Schedule]?
 }

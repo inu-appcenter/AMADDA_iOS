@@ -12,7 +12,10 @@ struct User: Codable {
     let passwd: String?
     let newPasswd: String?
     let name: String?
+    let major: String?
+    let tel: String?
     let email: String?
-    let user_image: String?
+//    let user_image: String?
     let flag: Int?
+    
 }

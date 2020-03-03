@@ -140,25 +140,44 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
 
 func networkTest() {
     let networkManager = NetworkManager()
- 
-//    networkManager.login(id: "201400900", password: "01050427741") { (response) in
-//        print("\(response)")
-//    }
     
-//    networkManager.seeProfile() { (result) in
-//        print(result)
-//    }
+    networkManager.login(id: "201400900", password: "010010") { (result) in
+        print("로그인 \(result)")
+    }
     
-//    networkManager.modifypassword(password: "010101", newPassword: "01050427741") { (result) in
-//        print("비밀번호 수정 \(result)")
-//    }
+    networkManager.seeProfile { (result) in
+        print("프로필 보기 \(result)")
+    }
     
-//    networkManager.setInviteOption(flag: 1)
+    networkManager.modifypassword(password: "010010", newPassword: "01050427741") { (result) in
+        print("비밀번호 수정\(result)")
+    }
     
-//    let img = UIImage(named: "시그모이드 함수")
-//    networkManager.uploadProfileImg(image: img!)
+    networkManager.getTempPassword(id: "201400900", name: "이승환") { (result) in
+        print("임시비밀번호 \(result)")
+    }
     
-//    networkManager.addSchedule(name: "test", start: "2020-02-27 10:10:10", end: "2020-02-27 11:11:11", location: "학교", alarm: "2020-02-27 10:10:00", share: 2, memo: nil)
+    let img = UIImage(named: "시그모이드 함수")
+    networkManager.uploadProfileImg(image: img!)
+    
+    networkManager.uploadProfileImg(image: img!)
+    
+    networkManager.deleteProfileImg()
+    
+    networkManager.setInviteOption(flag: 1)
+    
+    networkManager.addSchedule(name: "테스트3", start: "2020-03-24 10:11:11", end: "2020-03-25 10:11:11", location: nil, alarm: nil, share: nil, memo: "share가 뭐지")
+    
+    networkManager.seeScheduleDetail(number: 34) { (result) in
+        print("스케줄 상세 \(result)")
+    }
+    
+    networkManager.seeAllSchedules { (result) in
+        print("모든 스케줄 \(result)")
+    }
+    
+    networkManager.deleteSchedule(number: 34)
+
 }
 
 func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectionViewLayout {

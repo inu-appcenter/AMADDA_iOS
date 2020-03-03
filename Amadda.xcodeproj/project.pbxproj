@@ -20,7 +20,7 @@
 		D1616CCB24075CDB002C806B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCA24075CDB002C806B /* Schedule.swift */; };
 		D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCC2408A73A002C806B /* ScheduleListVC.swift */; };
 		D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCE2408A83F002C806B /* ScheduleCell.swift */; };
-		FA4E3A03240BD81B00FC6D24 /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4E3A02240BD81B00FC6D24 /* AddCourseTableViewCell.swift */; };
+		D1D6CA0F240EA83400ADC853 /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6CA0E240EA83400ADC853 /* AddCourseTableViewCell.swift */; };
 		FA717589240DE07F00115F55 /* TimeTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */; };
 		FA71758B240DE5E600115F55 /* MajorTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71758A240DE5E600115F55 /* MajorTableVC.swift */; };
 		FA71758D240DE94900115F55 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71758C240DE94900115F55 /* MajorTableViewCell.swift */; };
@@ -61,7 +61,7 @@
 		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D1616CCC2408A73A002C806B /* ScheduleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListVC.swift; sourceTree = "<group>"; };
 		D1616CCE2408A83F002C806B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
-		FA4E3A02240BD81B00FC6D24 /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCourseTableViewCell.swift; path = ../../../../../../../.Trash/AddCourseTableViewCell.swift; sourceTree = "<group>"; };
+		D1D6CA0E240EA83400ADC853 /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseTableViewCell.swift; sourceTree = "<group>"; };
 		FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA71758A240DE5E600115F55 /* MajorTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableVC.swift; sourceTree = "<group>"; };
 		FA71758C240DE94900115F55 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				FAC1F6572407AFC500407644 /* TestDataModel.swift */,
 				FA8EC1B823EBD772007633D9 /* AddCourseVC.swift */,
 				FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */,
-				FA4E3A02240BD81B00FC6D24 /* AddCourseTableViewCell.swift */,
+				D1D6CA0E240EA83400ADC853 /* AddCourseTableViewCell.swift */,
 				FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */,
 				FA71758A240DE5E600115F55 /* MajorTableVC.swift */,
 				FA71758C240DE94900115F55 /* MajorTableViewCell.swift */,
@@ -360,6 +360,7 @@
 				D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */,
 				FA71758B240DE5E600115F55 /* MajorTableVC.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
+				D1D6CA0F240EA83400ADC853 /* AddCourseTableViewCell.swift in Sources */,
 				D1616CA72401B709002C806B /* MenuViewController.swift in Sources */,
 				FA717589240DE07F00115F55 /* TimeTableCollectionViewCell.swift in Sources */,
 				FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */,
@@ -367,7 +368,6 @@
 				D1616CBB24029DA2002C806B /* UIColor.swift in Sources */,
 				FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */,
 				FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */,
-				FA4E3A03240BD81B00FC6D24 /* AddCourseTableViewCell.swift in Sources */,
 				FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */,
 				FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */,
 				FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */,
