@@ -16,15 +16,15 @@ let major = ["디자인학부","정보통신공학과","컴퓨터공학부"]
 struct Design {
     let major = "디자인학부"
     let courseList: [Course] = [
-        Course(subject: "아이덴티티디자인", day: "목", startTime: "1", endTime: "3", place: "SQ999"),
-        Course(subject: "UI/UX", day: "월", startTime: "2", endTime: "4", place: "SQ888")
+        Course(subject: "아이덴티티디자인", day: "4", startTime: "1", endTime: "3", place: "SQ999"),
+        Course(subject: "UI/UX", day: "1", startTime: "2", endTime: "4", place: "SQ888")
         ]
 }
 struct ComputerScience {
     let major = "컴퓨터공학부"
     let courseList: [Course] = [
-        Course(subject: "웹프로그래밍", day: "화", startTime: "5", endTime: "8", place: "SM222"),
-        Course(subject: "디지털공학", day: "월", startTime: "1", endTime: "7", place: "SM444")
+        Course(subject: "웹프로그래밍", day: "2", startTime: "5", endTime: "8", place: "SM222"),
+        Course(subject: "디지털공학", day: "1", startTime: "1", endTime: "7", place: "SM444")
         ]
 }
 

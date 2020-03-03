@@ -28,4 +28,7 @@ class SearchCourseTableVC: UIViewController, UITableViewDelegate, UITableViewDat
         cell.typeLabel.text = courseType[indexPath.row]
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }
