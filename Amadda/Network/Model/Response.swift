@@ -10,5 +10,5 @@ struct Response: Codable {
     let success: Bool?
     let message: String?
     let token: String?
-    let data: User?
+    let user: User?
 }
