@@ -26,7 +26,6 @@
 		FA71758D240DE94900115F55 /* MajorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA71758C240DE94900115F55 /* MajorTableViewCell.swift */; };
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
 		FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2723F16A1500F91372 /* CustomCell.swift */; };
-		FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2923F17BC400F91372 /* TimeLineVC.swift */; };
 		FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8000B123EC32EE00BF7CA7 /* AddShareEventVC.swift */; };
 		FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC19D23EBC991007633D9 /* AppDelegate.swift */; };
 		FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1A123EBC991007633D9 /* MainVC.swift */; };
@@ -67,7 +66,6 @@
 		FA71758C240DE94900115F55 /* MajorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorTableViewCell.swift; sourceTree = "<group>"; };
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		FA78CF2923F17BC400F91372 /* TimeLineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
 		FA8000B123EC32EE00BF7CA7 /* AddShareEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShareEventVC.swift; sourceTree = "<group>"; };
 		FA8EC19A23EBC991007633D9 /* Amadda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amadda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EC19D23EBC991007633D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -233,7 +231,6 @@
 				FA8EC1A123EBC991007633D9 /* MainVC.swift */,
 				FA78CF2723F16A1500F91372 /* CustomCell.swift */,
 				FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */,
-				FA78CF2923F17BC400F91372 /* TimeLineVC.swift */,
 				D1616CCC2408A73A002C806B /* ScheduleListVC.swift */,
 				D1616CCE2408A83F002C806B /* ScheduleCell.swift */,
 				FA51E85E2406483F00E31FE5 /* AddCourse */,
@@ -370,7 +367,6 @@
 				FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */,
 				FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */,
 				FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */,
-				FA78CF2A23F17BC400F91372 /* TimeLineVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
