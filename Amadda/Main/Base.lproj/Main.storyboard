@@ -710,11 +710,8 @@
                                                     </label>
                                                 </subviews>
                                             </stackView>
-
-
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pae-dt-d2F">
                                                 <rect key="frame" x="40" y="40" width="335" height="560"/>
-
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="MMu-dD-1wj">
                                                     <size key="itemSize" width="50" height="30"/>
@@ -723,13 +720,11 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="TimeTableCollectionViewCell" reuseIdentifier="TimeTableCollectionViewCell" id="gg7-lJ-iYo" customClass="TimeTableCollectionViewCell" customModule="Amadda" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3nh-QC-Ljz">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-
                                                             <autoresizingMask key="autoresizingMask"/>
                                                         </collectionViewCellContentView>
                                                     </collectionViewCell>
@@ -742,12 +737,10 @@
                                             <constraint firstItem="mUK-eg-wSm" firstAttribute="width" secondItem="0I0-Bz-xmW" secondAttribute="width" id="D4h-hf-WVs"/>
                                             <constraint firstItem="mUK-eg-wSm" firstAttribute="top" secondItem="0I0-Bz-xmW" secondAttribute="bottom" id="GX4-OV-ikw"/>
                                             <constraint firstItem="0I0-Bz-xmW" firstAttribute="top" secondItem="cal-jM-B1t" secondAttribute="top" id="HT3-We-fNX"/>
-
                                             <constraint firstItem="pae-dt-d2F" firstAttribute="leading" secondItem="mUK-eg-wSm" secondAttribute="trailing" id="PO3-u6-YUV"/>
                                             <constraint firstItem="pae-dt-d2F" firstAttribute="top" secondItem="ENo-8D-tyT" secondAttribute="bottom" constant="2.8421709430404007e-14" id="Q0r-xl-uPX"/>
                                             <constraint firstAttribute="bottom" secondItem="pae-dt-d2F" secondAttribute="bottom" id="ROz-9X-iZP"/>
                                             <constraint firstAttribute="trailing" secondItem="pae-dt-d2F" secondAttribute="trailing" id="RYc-53-uMQ"/>
-
                                             <constraint firstAttribute="height" constant="600" id="YWT-tK-Ax8"/>
                                             <constraint firstItem="mUK-eg-wSm" firstAttribute="height" secondItem="cal-jM-B1t" secondAttribute="height" constant="-40" id="cik-6b-KXk"/>
                                             <constraint firstItem="ENo-8D-tyT" firstAttribute="leading" secondItem="0I0-Bz-xmW" secondAttribute="trailing" id="ec2-EW-P8R"/>
@@ -783,11 +776,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="pnU-YF-ETO"/>
                     <connections>
-
                         <outlet property="collectionView" destination="pae-dt-d2F" id="IQC-Z7-aIV"/>
                         <outlet property="scrollView" destination="qfN-9G-1JD" id="Vvz-0H-nac"/>
                         <outlet property="timeLineStackView" destination="mUK-eg-wSm" id="BAT-jd-Xdy"/>
-
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcW-lC-5hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
