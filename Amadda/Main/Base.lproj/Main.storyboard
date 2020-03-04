@@ -1238,7 +1238,7 @@
         <!--Schedule ListVC-->
         <scene sceneID="6Kb-cg-Iyh">
             <objects>
-                <collectionViewController id="Mjt-g4-kXC" customClass="ScheduleListVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="ScheduleListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mjt-g4-kXC" customClass="ScheduleListVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="edp-jJ-MQR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -25,6 +25,72 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     @IBOutlet var timeLineStackView: UIStackView!
     @IBOutlet var dayStackView: UIStackView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    
+        showAlertController(title: "networkTest", message: "실행?", completionHandler: {(_) in
+            networkTest()
+        })
+        
+        // MARK: Default Setting
+        self.tabBarController?.tabBar.isHidden = true
+        var dateFormatter = DateFormatter()
+        let date = Date()
+        dateFormatter.dateFormat = "MMM d일 eeee"
+        dateFormatter.locale = Locale(identifier: "ko-KR")
+        navigationItemBar.title = dateFormatter.string(from: Date())
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        // MARK: StackView Border Layer
+        for subview in dayStackView.arrangedSubviews {
+            subview.layer.borderColor = UIColor.lightGray.cgColor
+            subview.layer.borderWidth = 0.3
+        }
+        for subview in timeLineStackView.arrangedSubviews {
+            subview.layer.borderColor = UIColor.lightGray.cgColor
+            subview.layer.borderWidth = 0.3
+        }
+        
+        // MARK: CollectionView (TimeTable)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.isScrollEnabled = false
+        collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
+        
+        // MARK: Floaty
+        let floaty = Floaty()
+                
+        floaty.addItem("공유 일정", icon: UIImage(), handler: {item in
+            print("공유일정")
+            guard let AddShareEventNavigation = self.storyboard?.instantiateViewController(withIdentifier: "AddShareEventNavigation") else {return}
+            self.present(AddShareEventNavigation, animated: true, completion: nil)
+        })
+        floaty.addItem("개인 일정", icon: UIImage(), handler: {item in
+            print("개인일정")
+            guard let AddPersonalEventNavigation = self.storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventNavigation") else {return}
+            self.present(AddPersonalEventNavigation, animated: true, completion: nil)
+        })
+        floaty.addItem("수업 추가", icon: UIImage(), handler: {item in
+            guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseVC") as? AddCourseVC else {return}
+            self.present(AddCourseVC, animated: true, completion: nil)
+        })
+
+        floaty.items[0].iconImageView.frame = CGRect(x: -100, y: -30, width: 150, height: 50)
+        floaty.items[0].iconImageView.tintColor = UIColor.clear
+        floaty.items[0].buttonColor = UIColor.clear
+                
+        floaty.items[1].itemBackgroundColor = UIColor.clear
+        floaty.items[1].buttonColor = UIColor.clear
+        floaty.items[1].titleColor = UIColor.white
+                
+        floaty.paddingX = 30
+        floaty.paddingY = 40
+        
+        self.view.addSubview(floaty)
+    }
+    
     @IBAction func changeCalendar(_ sender: Any) {
         self.tabBarController?.selectedIndex = 1
     }
@@ -68,8 +134,8 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     }
 
     @objc func timeTableDidSelect(){
-        guard let TimeLineVC = self.storyboard?.instantiateViewController(withIdentifier: "TimeLineVC") as? TimeLineVC else{return}
-        self.navigationController?.pushViewController(TimeLineVC, animated: true)
+        guard let ScheduleListVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleListVC") as? ScheduleListVC else{return}
+        self.navigationController?.pushViewController(ScheduleListVC, animated: true)
     }
     
     // MARK: 시간표 아이템 선택 Handler
@@ -88,75 +154,6 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     
     @objc func handleMenuToggle() {
         delegate?.handleMenuToggle()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    
-        showAlertController(title: "networkTest", message: "실행?", completionHandler: {(_) in
-            networkTest()
-        })
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-        
-        // MARK: StackView Border Layer
-        for subview in dayStackView.arrangedSubviews {
-            subview.layer.borderColor = UIColor.lightGray.cgColor
-            subview.layer.borderWidth = 0.3
-        }
-        for subview in timeLineStackView.arrangedSubviews {
-            subview.layer.borderColor = UIColor.lightGray.cgColor
-            subview.layer.borderWidth = 0.3
-        }
-        
-        
-        // MARK: Default Setting
-        self.tabBarController?.tabBar.isHidden = true
-        var dateFormatter = DateFormatter()
-        let date = Date()
-        dateFormatter.dateFormat = "MMM d일 eeee"
-        dateFormatter.locale = Locale(identifier: "ko-KR")
-        navigationItemBar.title = dateFormatter.string(from: Date())
-        
-        // MARK: CollectionView (TimeTable)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.isScrollEnabled = false
-        collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
-        
-        // MARK: Floaty
-        let floaty = Floaty()
-                
-        floaty.addItem("공유 일정", icon: UIImage(), handler: {item in
-            print("공유일정")
-            guard let AddShareEventNavigation = self.storyboard?.instantiateViewController(withIdentifier: "AddShareEventNavigation") else {return}
-            self.present(AddShareEventNavigation, animated: true, completion: nil)
-        })
-        floaty.addItem("개인 일정", icon: UIImage(), handler: {item in
-            print("개인일정")
-            guard let AddPersonalEventNavigation = self.storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventNavigation") else {return}
-            self.present(AddPersonalEventNavigation, animated: true, completion: nil)
-        })
-        floaty.addItem("수업 추가", icon: UIImage(), handler: {item in
-            guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseVC") as? AddCourseVC else {return}
-            self.present(AddCourseVC, animated: true, completion: nil)
-        })
-
-        floaty.items[0].iconImageView.frame = CGRect(x: -100, y: -30, width: 150, height: 50)
-        floaty.items[0].iconImageView.tintColor = UIColor.clear
-        floaty.items[0].buttonColor = UIColor.clear
-                
-        floaty.items[1].itemBackgroundColor = UIColor.clear
-        floaty.items[1].buttonColor = UIColor.clear
-        floaty.items[1].titleColor = UIColor.white
-                
-        floaty.paddingX = 30
-        floaty.paddingY = 40
-        
-        self.view.addSubview(floaty)
-                
     }
 }
 
