@@ -19,11 +19,13 @@ var testData = [    ["1-1","1-2","1-3","1-4","1-5","1-6","1-7","1-8","1-9","1-10
 class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: HomeViewControllerDelegate?
+    let floaty = Floaty()
     
     @IBOutlet var navigationItemBar: UINavigationItem!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var timeLineStackView: UIStackView!
     @IBOutlet var dayStackView: UIStackView!
+    @IBOutlet var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,14 +55,14 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             subview.layer.borderWidth = 0.3
         }
         
+        // MARK: ScrollView
+        scrollView.delegate = self
         // MARK: CollectionView (TimeTable)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.isScrollEnabled = true
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
         
         // MARK: Floaty
-        let floaty = Floaty()
                 
         floaty.addItem("공유 일정", icon: UIImage(), handler: {item in
             print("공유일정")
@@ -95,6 +97,16 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         self.tabBarController?.selectedIndex = 1
     }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        UIView.transition(with: view, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.floaty.isHidden = true
+        })
+    }
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        UIView.transition(with: view, duration: 0.3, options: .transitionCrossDissolve, animations: {
+            self.floaty.isHidden = false
+        })
+    }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return testData.count
     }
