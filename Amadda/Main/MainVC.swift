@@ -56,7 +56,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         // MARK: CollectionView (TimeTable)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.isScrollEnabled = false
+        collectionView.isScrollEnabled = true
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
         
         // MARK: Floaty

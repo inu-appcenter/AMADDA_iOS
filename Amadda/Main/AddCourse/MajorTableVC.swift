@@ -40,6 +40,5 @@ class MajorTableVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let cellFrame = AddCourseVC.collectionView.cellForItem(at: IndexPath(row: 13, section: 0))!.frame
         let rect: CGRect = CGRect(x: cellFrame.origin.x, y: cellFrame.origin.y + cellFrame.height, width: cellFrame.width, height: cellFrame.height)
         AddCourseVC.scrollView.scrollRectToVisible(rect, animated: true)
-        
     }
 }

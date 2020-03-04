@@ -921,7 +921,8 @@
                         <viewLayoutGuide key="safeArea" id="ZiN-2h-OyH"/>
                     </view>
                     <navigationItem key="navigationItem" id="RrF-tL-0pc">
-                        <barButtonItem key="rightBarButtonItem" title="Index1" id="piX-4W-jEc">
+                        <barButtonItem key="rightBarButtonItem" image="icon_Calendar" id="piX-4W-jEc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="changeCalendar:" destination="Ub4-Oh-Qa6" id="pVV-GB-kgc"/>
                             </connections>
