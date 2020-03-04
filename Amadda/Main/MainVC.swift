@@ -23,72 +23,14 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     @IBOutlet var navigationItemBar: UINavigationItem!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var timeLineStackView: UIStackView!
-    
-    @IBAction func changeCalendar(_ sender: Any) {
-        self.tabBarController?.selectedIndex = 1
-    }
-    
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return testData.count
-    }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return testData[section].count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else {return UICollectionViewCell()}
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 20))
-        label.text = "\(testData[indexPath.section][indexPath.row])"
-        label.textColor = UIColor.black
-        cell.addSubview(label)
-        
-        cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.borderWidth = 0.3
-        
-        if indexPath == [0,0] || indexPath == [0,5]{
-            let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
-            timeTable.backgroundColor = UIColor.orange
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
-            timeTable.addGestureRecognizer(gesture)
-            
-            collectionView.addSubview(timeTable)
-            cell.layer.borderColor = UIColor.gray.cgColor
-            cell.layer.borderWidth = 0.0
-            cell.tag = 1
-        }
-        return cell
-    }
-
-    @objc func timeTableDidSelect(){
-        guard let TimeLineVC = self.storyboard?.instantiateViewController(withIdentifier: "TimeLineVC") as? TimeLineVC else{return}
-        self.navigationController?.pushViewController(TimeLineVC, animated: true)
-    }
-    
-    // MARK: 시간표 아이템 선택 Handler
-    /*
-     위에 collectionView.addSubview(timeTable) 로 해두면 timeTableView에다가 gesture를 달아서 Handler 만들어 줘야 하고,
-     cell.addSubview(timeTable) 로 해두면 각각 cell마다 높이 계산해서 bgColor 지정 해줘야함. 이러면 더 귀찮아질듯 그래서 1안 선택.
-    */
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView.cellForItem(at: indexPath)?.tag == 1 {
-            print("item exist")
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width / 5.0, height: timeLineStackView.frame.height / CGFloat(14))
-    }
-    
-    @objc func handleMenuToggle() {
-        delegate?.handleMenuToggle()
-    }
+    @IBOutlet var dayStackView: UIStackView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        networkTest()
-        
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
-        navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
+        showAlertController(title: "networkTest", message: "실행?", completionHandler: {(_) in
+            networkTest()
+        })
         
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
@@ -97,11 +39,24 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         dateFormatter.dateFormat = "MMM d일 eeee"
         dateFormatter.locale = Locale(identifier: "ko-KR")
         navigationItemBar.title = dateFormatter.string(from: Date())
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
+        navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        // MARK: StackView Border Layer
+        for subview in dayStackView.arrangedSubviews {
+            subview.layer.borderColor = UIColor.lightGray.cgColor
+            subview.layer.borderWidth = 0.3
+        }
+        for subview in timeLineStackView.arrangedSubviews {
+            subview.layer.borderColor = UIColor.lightGray.cgColor
+            subview.layer.borderWidth = 0.3
+        }
         
         // MARK: CollectionView (TimeTable)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.isScrollEnabled = false
+        collectionView.isScrollEnabled = true
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
         
         // MARK: Floaty
@@ -134,7 +89,71 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         floaty.paddingY = 40
         
         self.view.addSubview(floaty)
-                
+    }
+    
+    @IBAction func changeCalendar(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 1
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return testData.count
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return testData[section].count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else {return UICollectionViewCell()}
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 20))
+        label.text = "\(testData[indexPath.section][indexPath.row])"
+        label.textColor = UIColor.black
+        cell.addSubview(label)
+        
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.borderWidth = 0.3
+        
+        // MARK: 시간표 등록 완료된 item 표시
+        if indexPath == [0,0] || indexPath == [0,5]{
+            let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
+            timeTable.backgroundColor = UIColor.orange
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
+            timeTable.addGestureRecognizer(gesture)
+            
+            collectionView.addSubview(timeTable)
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.layer.borderWidth = 0.0
+            cell.tag = 1
+        }
+        
+        // MARK: 오늘을 나타내는 BG Color Set
+        if getDayOfWeek() == indexPath.section {
+            cell.backgroundColor = UIColor.todayBackGround
+            dayStackView.arrangedSubviews[getDayOfWeek()].backgroundColor = UIColor.todayBackGround
+        }
+        return cell
+    }
+
+    @objc func timeTableDidSelect(){
+        guard let ScheduleListVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleListVC") as? ScheduleListVC else{return}
+        self.navigationController?.pushViewController(ScheduleListVC, animated: true)
+    }
+    
+    // MARK: 시간표 아이템 선택 Handler
+    /*
+     위에 collectionView.addSubview(timeTable) 로 해두면 timeTableView에다가 gesture를 달아서 Handler 만들어 줘야 하고,
+     cell.addSubview(timeTable) 로 해두면 각각 cell마다 높이 계산해서 bgColor 지정 해줘야함. 이러면 더 귀찮아질듯 그래서 1안 선택.
+    */
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.cellForItem(at: indexPath)?.tag == 1 {
+            print("item exist")
+        }
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 5.0, height: timeLineStackView.frame.height / CGFloat(14))
+    }
+    
+    @objc func handleMenuToggle() {
+        delegate?.handleMenuToggle()
     }
 }
 
@@ -180,6 +199,7 @@ func networkTest() {
 
 }
 
+/// CollectionView 시간표 Layout
 func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectionViewLayout {
     let layout: UICollectionViewFlowLayout =  UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
@@ -188,4 +208,26 @@ func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectio
 //    layout.itemSize = CGSize(width: collectionView.frame.width / 5.0, height: height / 14.0)
     layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     return layout
+}
+
+/// return 0 ~ 4 as 월 ~ 금 ( 토 ~ 일, return -1)
+func getDayOfWeek() -> Int {
+    let calendar = Calendar.current
+    let todayValue = calendar.component(.weekday, from: Date())
+    switch todayValue {
+    case 1, 7:
+        return -1
+    case 2:
+        return 0
+    case 3:
+        return 1
+    case 4:
+        return 2
+    case 5:
+        return 3
+    case 6:
+        return 4
+    default:
+        return -1
+    }
 }
