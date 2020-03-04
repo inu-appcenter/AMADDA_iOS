@@ -54,7 +54,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             timeTable.addGestureRecognizer(gesture)
             
             collectionView.addSubview(timeTable)
-            cell.layer.borderColor = UIColor.gray.cgColor
+            cell.layer.borderColor = UIColor.lightGray.cgColor
             cell.layer.borderWidth = 0.0
             cell.tag = 1
         }
@@ -100,6 +100,17 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
         navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        
+        // MARK: StackView Border Layer
+        for subview in dayStackView.arrangedSubviews {
+            subview.layer.borderColor = UIColor.lightGray.cgColor
+            subview.layer.borderWidth = 0.3
+        }
+        for subview in timeLineStackView.arrangedSubviews {
+            subview.layer.borderColor = UIColor.lightGray.cgColor
+            subview.layer.borderWidth = 0.3
+        }
+        
         
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
