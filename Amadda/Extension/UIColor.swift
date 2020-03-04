@@ -33,4 +33,7 @@ extension UIColor {
     @nonobjc class var textGray: UIColor {
         return UIColor(red: 106 / 255.0, green: 106 / 255.0, blue: 106 / 255.0, alpha: 1)
     }
+    @nonobjc class var todayBackGround: UIColor {
+        return UIColor(red: 30 / 255.0, green: 177 / 255.0, blue: 252 / 255.0, alpha: 0.1)
+    }
 }

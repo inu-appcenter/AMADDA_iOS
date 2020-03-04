@@ -23,6 +23,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     @IBOutlet var navigationItemBar: UINavigationItem!
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var timeLineStackView: UIStackView!
+    @IBOutlet var dayStackView: UIStackView!
     
     @IBAction func changeCalendar(_ sender: Any) {
         self.tabBarController?.selectedIndex = 1
@@ -45,6 +46,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.3
         
+        // MARK: 시간표 등록 완료된 item 표시
         if indexPath == [0,0] || indexPath == [0,5]{
             let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
             timeTable.backgroundColor = UIColor.orange
@@ -55,6 +57,12 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             cell.layer.borderColor = UIColor.gray.cgColor
             cell.layer.borderWidth = 0.0
             cell.tag = 1
+        }
+        
+        // MARK: 오늘을 나타내는 BG Color Set
+        if getDayOfWeek() == indexPath.section {
+            cell.backgroundColor = UIColor.todayBackGround
+            dayStackView.arrangedSubviews[getDayOfWeek()].backgroundColor = UIColor.todayBackGround
         }
         return cell
     }
@@ -85,10 +93,13 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        networkTest()
+        showAlertController(title: "networkTest", message: "실행?", completionHandler: {(_) in
+            networkTest()
+        })
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
         navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
@@ -180,6 +191,7 @@ func networkTest() {
 
 }
 
+/// CollectionView 시간표 Layout
 func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectionViewLayout {
     let layout: UICollectionViewFlowLayout =  UICollectionViewFlowLayout()
     layout.scrollDirection = .horizontal
@@ -188,4 +200,26 @@ func setLayout(collectionView: UICollectionView, height: CGFloat) -> UICollectio
 //    layout.itemSize = CGSize(width: collectionView.frame.width / 5.0, height: height / 14.0)
     layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     return layout
+}
+
+/// return 0 ~ 4 as 월 ~ 금 ( 토 ~ 일, return -1)
+func getDayOfWeek() -> Int {
+    let calendar = Calendar.current
+    let todayValue = calendar.component(.weekday, from: Date())
+    switch todayValue {
+    case 1, 7:
+        return -1
+    case 2:
+        return 0
+    case 3:
+        return 1
+    case 4:
+        return 2
+    case 5:
+        return 3
+    case 6:
+        return 4
+    default:
+        return -1
+    }
 }
