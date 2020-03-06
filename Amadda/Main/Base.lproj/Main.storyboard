@@ -273,6 +273,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scheduleNameTextField" destination="0gk-3m-PRp" id="Kwy-ye-AhT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bYJ-Ha-ici" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -542,6 +545,8 @@
                         <outlet property="alarmLabel" destination="0av-a6-uKr" id="JNj-Ku-EXy"/>
                         <outlet property="endDatePicker" destination="Dtq-1O-vSp" id="YE4-qi-QqT"/>
                         <outlet property="endLabel" destination="Zcn-QF-yU8" id="US4-J2-gLk"/>
+                        <outlet property="locationTextField" destination="wHD-ig-TBB" id="lDz-fW-Isv"/>
+                        <outlet property="memoTextField" destination="6DP-HG-BGL" id="fbb-f5-ITZ"/>
                         <outlet property="shareLabel" destination="yCh-lM-Rh6" id="dGE-t3-RVV"/>
                         <outlet property="startDatePicker" destination="nqy-qd-9fW" id="VHB-9z-xOk"/>
                         <outlet property="startLabel" destination="JTS-pg-Sbx" id="T1f-Y6-989"/>
@@ -1931,7 +1936,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkj-Px-PUX">
-                                    <rect key="frame" x="10.333333333333343" y="28" width="354.33333333333326" height="79"/>
+                                    <rect key="frame" x="10.333333333333343" y="28" width="354.33333333333326" height="79.000000000000028"/>
                                     <state key="normal" backgroundImage="btn_addSchedule"/>
                                 </button>
                             </subviews>

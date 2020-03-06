@@ -20,6 +20,8 @@ class AddEventTableVC: UITableViewController {
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var alarmLabel: UILabel!
     @IBOutlet var shareLabel: UITextField!
+    @IBOutlet var locationTextField: UITextField!
+    @IBOutlet var memoTextField: UITextField!
     
     var flag: Bool = false
     

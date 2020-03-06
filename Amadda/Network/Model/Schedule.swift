@@ -18,4 +18,5 @@ struct Schedule: Codable {
     let share: Int?
     let key: Int?
     let memo: String?
+
 }
