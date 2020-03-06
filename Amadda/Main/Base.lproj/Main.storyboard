@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydG-tb-TBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydG-tb-TBq">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -1337,12 +1337,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkJ-1j-Und">
-                                                    <rect key="frame" x="274.66666666666669" y="6.3333333333333321" width="42" height="42"/>
-                                                    <state key="normal" image="btn_emptyCheckBox"/>
+                                                    <rect key="frame" x="295.66666666666669" y="13.666666666666666" width="21" height="27.333333333333336"/>
+                                                    <state key="normal" image="btn_checkBox"/>
+                                                    <connections>
+                                                        <action selector="timeTablePressed:" destination="xQ4-Wl-cYU" eventType="touchUpInside" id="lcR-JZ-2zH"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ei-6u-BLN">
-                                                    <rect key="frame" x="274.66666666666669" y="60.666666666666657" width="42" height="42"/>
+                                                    <rect key="frame" x="295.66666666666669" y="70.666666666666671" width="21" height="22"/>
                                                     <state key="normal" image="btn_emptyCheckBox"/>
+                                                    <connections>
+                                                        <action selector="calendarPressed:" destination="xQ4-Wl-cYU" eventType="touchUpInside" id="3rq-1B-RSj"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1436,7 +1442,7 @@
         <!--프로필 편집-->
         <scene sceneID="9DZ-gJ-uow">
             <objects>
-                <viewController id="GID-KX-Mi1" sceneMemberID="viewController">
+                <viewController id="GID-KX-Mi1" customClass="ProfileVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3xz-QY-oa7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1537,11 +1543,23 @@
                     <navigationItem key="navigationItem" title="프로필 편집" id="Yf1-gM-nGf">
                         <barButtonItem key="rightBarButtonItem" title="확인" id="zbC-6z-Yjq">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="confirmPressed:" destination="GID-KX-Mi1" id="s4S-sY-faW"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="majorTextFiled" destination="H2t-Ti-Fti" id="UMT-nt-rSc"/>
+                        <outlet property="nameTextField" destination="UeV-IY-cBr" id="dOX-4w-yeI"/>
+                        <outlet property="profileImg" destination="jXX-kP-TS9" id="G5g-z9-CPS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MXM-SR-ENb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="waa-ub-oI7"/>
+                <tapGestureRecognizer id="waa-ub-oI7">
+                    <connections>
+                        <action selector="imagePressed:" destination="GID-KX-Mi1" id="zGl-fc-RKY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1769" y="1851"/>
         </scene>
@@ -2062,7 +2080,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqP-Pc-BDm">
-                                                    <rect key="frame" x="35" y="16" width="56.333333333333343" height="28"/>
+                                                    <rect key="frame" x="35" y="16" width="51.333333333333343" height="28"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="irJ-A7-GcO"/>
                                                     </constraints>
@@ -2071,13 +2089,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prof." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmd-9o-uIh">
-                                                    <rect key="frame" x="101.33333333333333" y="19.666666666666668" width="30.666666666666671" height="21.000000000000004"/>
+                                                    <rect key="frame" x="96.333333333333329" y="22" width="29.666666666666671" height="16.333333333333329"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="14"/>
                                                     <color key="textColor" red="0.2784313725" green="0.3294117647" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-b0-py8">
-                                                    <rect key="frame" x="35" y="49" width="26.333333333333329" height="19"/>
+                                                    <rect key="frame" x="35" y="49" width="24.666666666666671" height="19"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="19" id="Piv-1A-EcL"/>
                                                     </constraints>
@@ -2086,7 +2104,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time &amp; Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxg-sY-tEh">
-                                                    <rect key="frame" x="66.333333333333314" y="50.333333333333336" width="65.666666666666686" height="16.333333333333336"/>
+                                                    <rect key="frame" x="64.666666666666657" y="52" width="64.666666666666657" height="13"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="11"/>
                                                     <color key="textColor" red="0.2784313725" green="0.3294117647" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2205,6 +2223,7 @@
         <image name="btn_add" width="24" height="25.333333969116211"/>
         <image name="btn_addSchedule" width="344" height="103"/>
         <image name="btn_cancel2" width="16.333333969116211" height="16.333333969116211"/>
+        <image name="btn_checkBox" width="21" height="27.333333969116211"/>
         <image name="btn_emptyCheckBox" width="21" height="21"/>
         <image name="btn_setting" width="25.666666030883789" height="29"/>
         <image name="icon_Alarm" width="15" height="15"/>
