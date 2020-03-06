@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydG-tb-TBq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydG-tb-TBq">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Spoqa Han Sans Bold.ttf">
+            <string>SpoqaHanSans-Bold</string>
+        </array>
+        <array key="Spoqa Han Sans Regular.ttf">
+            <string>SpoqaHanSans-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
@@ -1132,7 +1140,7 @@
                                                         <fragment content="이메일">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="20" name="SpoqaHanSans-Bold"/>
+                                                                <font key="NSFont" metaFont="system" size="20"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1161,7 +1169,7 @@
                                                         <fragment content="계정 관리">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1189,7 +1197,7 @@
                                                         <fragment content="프로필 편집">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1220,7 +1228,7 @@
                                                         <fragment content="로그아웃">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1248,7 +1256,7 @@
                                                         <fragment content="일반">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="20" name="SpoqaHanSans-Bold"/>
+                                                                <font key="NSFont" metaFont="system" size="20"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1277,7 +1285,7 @@
                                                         <fragment content="기본 화면">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1300,35 +1308,35 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2h-Lx-UAc">
-                                                    <rect key="frame" x="46" y="18" width="82" height="18.666666666666671"/>
+                                                    <rect key="frame" x="46" y="18" width="85" height="18.666666666666671"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="시간표 (주간)">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="16" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="16"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBs-w3-Rgl">
-                                                    <rect key="frame" x="45.999999999999993" y="72.333333333333329" width="68.333333333333314" height="18.666666666666671"/>
+                                                    <rect key="frame" x="45.999999999999993" y="72.333333333333329" width="71.333333333333314" height="18.666666666666671"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="달력 (월간)">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="16" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="16"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkJ-1j-Und">
-                                                    <rect key="frame" x="295.66666666666669" y="16.333333333333332" width="21" height="21.999999999999996"/>
+                                                    <rect key="frame" x="274.66666666666669" y="6.3333333333333321" width="42" height="42"/>
                                                     <state key="normal" image="btn_emptyCheckBox"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ei-6u-BLN">
-                                                    <rect key="frame" x="295.66666666666669" y="70.666666666666671" width="21" height="22"/>
+                                                    <rect key="frame" x="274.66666666666669" y="60.666666666666657" width="42" height="42"/>
                                                     <state key="normal" image="btn_emptyCheckBox"/>
                                                 </button>
                                             </subviews>
@@ -1357,7 +1365,7 @@
                                                         <fragment content="푸쉬 알림 ">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1385,7 +1393,7 @@
                                                         <fragment content="위젯 설정">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1446,7 +1454,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="이름">
                                         <attributes>
-                                            <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -1465,7 +1473,7 @@
                                 <attributedString key="attributedText">
                                     <fragment content="학과">
                                         <attributes>
-                                            <font key="NSFont" size="18" name="SpoqaHanSans-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="18"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -2034,28 +2042,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="azq-wb-GE0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="azq-wb-GE0">
                                 <rect key="frame" x="0.0" y="88" width="375" height="362"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" id="5EI-nv-YUA" customClass="MajorTableViewCell" customModule="Amadda" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MajorTableViewCell" rowHeight="83" id="5EI-nv-YUA" customClass="MajorTableViewCell" customModule="Amadda" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5EI-nv-YUA" id="qTq-l6-MjR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqP-Pc-BDm">
-                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqP-Pc-BDm">
+                                                    <rect key="frame" x="35" y="16" width="56.333333333333343" height="28"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="irJ-A7-GcO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="15"/>
+                                                    <color key="textColor" red="0.27843137254901962" green="0.32941176470588235" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prof." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vmd-9o-uIh">
+                                                    <rect key="frame" x="101.33333333333333" y="19.666666666666668" width="30.666666666666671" height="21.000000000000004"/>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.2784313725" green="0.3294117647" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5jT-b0-py8">
+                                                    <rect key="frame" x="35" y="49" width="26.333333333333329" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="Piv-1A-EcL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="14"/>
+                                                    <color key="textColor" red="0.2784313725" green="0.3294117647" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time &amp; Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hxg-sY-tEh">
+                                                    <rect key="frame" x="66.333333333333314" y="50.333333333333336" width="65.666666666666686" height="16.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="11"/>
+                                                    <color key="textColor" red="0.2784313725" green="0.3294117647" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="5jT-b0-py8" secondAttribute="bottom" constant="15" id="Asn-Us-wxa"/>
+                                                <constraint firstItem="5jT-b0-py8" firstAttribute="top" secondItem="EqP-Pc-BDm" secondAttribute="bottom" constant="5" id="RqK-is-Ifa"/>
+                                                <constraint firstItem="EqP-Pc-BDm" firstAttribute="top" secondItem="qTq-l6-MjR" secondAttribute="topMargin" constant="5" id="U3M-BF-65m"/>
+                                                <constraint firstItem="vmd-9o-uIh" firstAttribute="centerY" secondItem="EqP-Pc-BDm" secondAttribute="centerY" id="bdm-Dz-snS"/>
+                                                <constraint firstItem="vmd-9o-uIh" firstAttribute="leading" secondItem="EqP-Pc-BDm" secondAttribute="trailing" constant="10" id="f5m-L0-ZfF"/>
+                                                <constraint firstItem="Hxg-sY-tEh" firstAttribute="centerY" secondItem="5jT-b0-py8" secondAttribute="centerY" id="gUx-KL-Vdq"/>
+                                                <constraint firstItem="EqP-Pc-BDm" firstAttribute="leading" secondItem="qTq-l6-MjR" secondAttribute="leadingMargin" constant="20" id="obs-vr-L0x"/>
+                                                <constraint firstItem="5jT-b0-py8" firstAttribute="leading" secondItem="EqP-Pc-BDm" secondAttribute="leading" id="rh8-Gf-sge"/>
+                                                <constraint firstItem="Hxg-sY-tEh" firstAttribute="leading" secondItem="5jT-b0-py8" secondAttribute="trailing" constant="5" id="sPY-To-xR3"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <color key="tintColor" red="0.30941817160000001" green="0.67580181360000002" blue="0.9725850224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
+                                            <outlet property="dayLabel" destination="5jT-b0-py8" id="WfO-BP-p53"/>
+                                            <outlet property="professorLabel" destination="vmd-9o-uIh" id="NJk-T0-xXc"/>
                                             <outlet property="subjectLabel" destination="EqP-Pc-BDm" id="w1x-fV-Pnr"/>
+                                            <outlet property="timePlaceLabel" destination="Hxg-sY-tEh" id="YgD-Dd-hmc"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
