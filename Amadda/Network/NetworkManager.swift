@@ -15,7 +15,7 @@ class NetworkManager {
      - 아마존 URL:  http://13.209.87.234:9000/
      */
     
-    private let baseURL = "http://13.209.87.234:9000/"
+    private let baseURL = "http://117.16.231.66:7004/"
     private let token = UserDefaults.standard.string(forKey: "token")
     
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {
