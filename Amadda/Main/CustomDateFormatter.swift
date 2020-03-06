@@ -12,7 +12,7 @@ class CustomDateFormatter: DateFormatter {
     
     override init() {
         super.init()
-
+        
         self.dateFormat = "yyyy. M. d (E)  a  hh:mm"
         self.locale = Locale(identifier: "ko_KR")
     }
