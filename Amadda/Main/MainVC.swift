@@ -185,7 +185,9 @@ func networkTest() {
     
     networkManager.setInviteOption(flag: 1)
     
-    networkManager.addSchedule(name: "테스트3", start: "2020-03-24 10:11:11", end: "2020-03-25 10:11:11", location: nil, alarm: nil, share: nil, memo: "share가 뭐지")
+    networkManager.addSchedule(name: "테스트3", start: "2020-03-24 10:11:11", end: "2020-03-25 10:11:11", location: nil, alarm: nil, share: nil, memo: "share가 뭐지") { (result) in
+        print("스케줄 추가 \(result)")
+    }
     
     networkManager.seeScheduleDetail(number: 34) { (result) in
         print("스케줄 상세 \(result)")

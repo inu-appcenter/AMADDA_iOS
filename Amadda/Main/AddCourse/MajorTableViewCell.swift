@@ -11,5 +11,8 @@ import UIKit
 
 class MajorTableViewCell: UITableViewCell {
     @IBOutlet var subjectLabel: UILabel!
+    @IBOutlet var professorLabel: UILabel!
+    @IBOutlet var dayLabel: UILabel!
+    @IBOutlet var timePlaceLabel: UILabel!
     
 }

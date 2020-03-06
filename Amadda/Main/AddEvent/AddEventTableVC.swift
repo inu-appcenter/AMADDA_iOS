@@ -20,8 +20,12 @@ class AddEventTableVC: UITableViewController {
     @IBOutlet var endLabel: UILabel!
     @IBOutlet var alarmLabel: UILabel!
     @IBOutlet var shareLabel: UITextField!
+    @IBOutlet var locationTextField: UITextField!
+    @IBOutlet var memoTextField: UITextField!
     
     var flag: Bool = false
+    var startDateValue: String?
+    var endDateValue: String?
     
     override func viewDidLoad() {
         startDatePicker.isHidden = true
@@ -34,7 +38,8 @@ class AddEventTableVC: UITableViewController {
     @IBAction func startDatePicker(_ sender: UIDatePicker) {
         let dateformatter = CustomDateFormatter(dateStyle: .medium, timeStyle: .short)
         let date = dateformatter.string(from: sender.date)
-    
+        
+        startDateValue = CustomDateFormatter().string(from: sender.date)
         startLabel.text = "\(date)"
         startLabel.textColor = UIColor.textGray
     }
@@ -43,6 +48,7 @@ class AddEventTableVC: UITableViewController {
         let dateformatter = CustomDateFormatter(dateStyle: .none, timeStyle: .short)
         let date = dateformatter.string(from: sender.date)
         
+        endDateValue = CustomDateFormatter().string(from: sender.date)
         endLabel.text = "\(date)"
         endLabel.textColor = UIColor.textGray
     }

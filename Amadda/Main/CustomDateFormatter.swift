@@ -10,10 +10,11 @@ import UIKit
 
 class CustomDateFormatter: DateFormatter {
     
+    /// 서버로 보낼때 형식
     override init() {
         super.init()
         
-        self.dateFormat = "yyyy. M. d (E)  a  hh:mm"
+        self.dateFormat = "YYYY-MM-dd HH:mm:ss"
         self.locale = Locale(identifier: "ko_KR")
     }
     

@@ -15,7 +15,7 @@ class NetworkManager {
      - 아마존 URL:  http://13.209.87.234:9000/
      */
     
-    private let baseURL = "http://13.209.87.234:9000/"
+    private let baseURL = "http://117.16.231.66:7004/"
     private let token = UserDefaults.standard.string(forKey: "token")
     
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {
@@ -179,7 +179,7 @@ class NetworkManager {
         // 보류
     }
     
-    func addSchedule(name: String, start: String, end: String, location: String?, alarm: String?, share: Int?, memo: String?) {
+    func addSchedule(name: String, start: String, end: String, location: String?, alarm: String?, share: Int?, memo: String?, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/add"
         
         let param = Schedule(token: token!,id: nil, number: nil, schedule_name: name, start: start, end: end, location: location, alarm: alarm, share: share, key: nil, memo: memo)
@@ -194,6 +194,7 @@ class NetworkManager {
            switch response.result {
            case let .success(result):
             print("스케줄 추가 \(result)")
+            completion(result)
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }
