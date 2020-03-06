@@ -39,7 +39,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         dateFormatter.dateFormat = "MMM d일 eeee"
         dateFormatter.locale = Locale(identifier: "ko-KR")
         navigationItemBar.title = dateFormatter.string(from: Date())
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "사이드바", style: .plain, target: self, action: #selector(handleMenuToggle))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "btn_sideBar"), style: .plain , target: self, action: #selector(handleMenuToggle))
         navigationController?.navigationBar.barTintColor = UIColor(red: 0x3C, green: 0xB8, blue: 0xFE)
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
         
@@ -56,7 +56,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         // MARK: CollectionView (TimeTable)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.isScrollEnabled = false
+        collectionView.isScrollEnabled = true
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
         
         // MARK: Floaty

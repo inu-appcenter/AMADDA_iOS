@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
+
 class AddEventTableVC: UITableViewController {
+    
     @IBOutlet var startDatePicker: UIDatePicker!
     @IBOutlet var endDatePicker: UIDatePicker!
     @IBOutlet var alarmDatePicker: UIDatePicker!
@@ -27,31 +29,27 @@ class AddEventTableVC: UITableViewController {
         alarmDatePicker.isHidden = true
         self.tableView.tableFooterView = UIView(frame: CGRect())
         self.tableView.backgroundColor = UIColor.clear
-        
     }
     
     @IBAction func startDatePicker(_ sender: UIDatePicker) {
-        let dateformatter = DateFormatter()
-        dateformatter.dateStyle = .medium
-        dateformatter.timeStyle = .short
+        let dateformatter = CustomDateFormatter(dateStyle: .medium, timeStyle: .short)
         let date = dateformatter.string(from: sender.date)
+    
         startLabel.text = "\(date)"
         startLabel.textColor = UIColor.textGray
     }
     
     @IBAction func endDatePicker(_ sender: UIDatePicker) {
-        let dateformatter = DateFormatter()
-        dateformatter.dateStyle = .none
-        dateformatter.timeStyle = .short
+        let dateformatter = CustomDateFormatter(dateStyle: .none, timeStyle: .short)
         let date = dateformatter.string(from: sender.date)
+        
         endLabel.text = "\(date)"
         endLabel.textColor = UIColor.textGray
     }
     @IBAction func alarmDatePicker(_ sender: UIDatePicker) {
-        let dateformatter = DateFormatter()
-        dateformatter.dateStyle = .none
-        dateformatter.timeStyle = .short
+        let dateformatter = CustomDateFormatter(dateStyle: .none, timeStyle: .short)
         let date = dateformatter.string(from: sender.date)
+        
         alarmLabel.text = "\(date)"
         alarmLabel.textColor = UIColor.textGray
     }

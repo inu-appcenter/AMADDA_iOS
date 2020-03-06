@@ -13,6 +13,11 @@ class MenuViewController: UIViewController {
     var delegate: HomeViewControllerDelegate?
 
     @IBOutlet var tableView: UITableView!
+    @IBAction func settingPressed(_ sender: Any) {
+        let naviController = self.storyboard?.instantiateViewController(withIdentifier: "navi")
+        as! UINavigationController
+        self.present(naviController, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

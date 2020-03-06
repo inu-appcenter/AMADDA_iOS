@@ -22,7 +22,7 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         collectionView.dataSource = self
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
     }
-    
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return testData.count
     }
