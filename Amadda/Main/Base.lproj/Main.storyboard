@@ -1923,14 +1923,17 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkj-Px-PUX">
-                                    <rect key="frame" x="10.333333333333343" y="28" width="354.33333333333326" height="79"/>
+                                    <rect key="frame" x="10.333333333333343" y="27.999999999999993" width="354.33333333333326" height="99.666666666666686"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="Mkj-Px-PUX" secondAttribute="height" multiplier="118:33" id="I4A-4E-MCW"/>
+                                    </constraints>
                                     <state key="normal" backgroundImage="btn_addSchedule"/>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="Mkj-Px-PUX" firstAttribute="centerX" secondItem="bsz-cF-bje" secondAttribute="centerX" id="Nm3-IT-XOb"/>
-                                <constraint firstAttribute="bottomMargin" secondItem="Mkj-Px-PUX" secondAttribute="bottom" constant="60" id="ZT0-ub-xR5"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="Mkj-Px-PUX" secondAttribute="bottom" constant="39.333333333333371" id="ZT0-ub-xR5"/>
                                 <constraint firstItem="Mkj-Px-PUX" firstAttribute="top" secondItem="bsz-cF-bje" secondAttribute="topMargin" constant="20" id="ci9-ds-zh6"/>
                                 <constraint firstItem="Mkj-Px-PUX" firstAttribute="width" secondItem="bsz-cF-bje" secondAttribute="width" multiplier="0.945" id="xWe-67-og7"/>
                             </constraints>
@@ -1943,7 +1946,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46h-lQ-KAF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="1851"/>
+            <point key="canvasLocation" x="2568.8000000000002" y="1850.9852216748768"/>
         </scene>
         <!--Item-->
         <scene sceneID="bzk-MI-V5P">
@@ -2132,7 +2135,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UeL-W5-wy8">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.11764705882352941" green="0.69411764705882351" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.074509803921568626" green="0.69411764705882351" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
