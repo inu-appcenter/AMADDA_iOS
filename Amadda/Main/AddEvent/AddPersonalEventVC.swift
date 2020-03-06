@@ -38,11 +38,14 @@ class AddPersonalEventVC: UIViewController {
     @IBAction func addBtnPressed(_ sender: Any) {
         guard let AddEventTableVC = self.children.last as? AddEventTableVC else {return}
         schedule_name = self.scheduleNameTextField.text ?? ""
-        start = AddEventTableVC.startLabel.text ?? ""
-        end = AddEventTableVC.endLabel.text ?? ""
+        start = AddEventTableVC.startDateValue ?? ""
+        end = AddEventTableVC.endDateValue ?? ""
         location = AddEventTableVC.locationTextField.text ?? ""
         alarm = AddEventTableVC.alarmLabel.text ?? ""
         memo = AddEventTableVC.memoTextField.text ?? ""
+        
+        print(start)
+        print(end)
         
         if start == nil || end == nil || schedule_name == ""{
             showDefaultAlertController(title: "일정 추가 실패", message: "빈칸을 확인하세요", completionHandler: nil)
