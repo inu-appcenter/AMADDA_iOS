@@ -10,6 +10,7 @@ import UIKit
 
 class CustomDateFormatter: DateFormatter {
     
+    /// 서버로 보낼때 형식
     override init() {
         super.init()
         

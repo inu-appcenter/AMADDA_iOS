@@ -44,9 +44,6 @@ class AddPersonalEventVC: UIViewController {
         alarm = AddEventTableVC.alarmLabel.text ?? ""
         memo = AddEventTableVC.memoTextField.text ?? ""
         
-        print(start)
-        print(end)
-        
         if start == nil || end == nil || schedule_name == ""{
             showDefaultAlertController(title: "일정 추가 실패", message: "빈칸을 확인하세요", completionHandler: nil)
         }else {
