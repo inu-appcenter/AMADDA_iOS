@@ -205,6 +205,14 @@
 			path = AddCourse;
 			sourceTree = "<group>";
 		};
+		FA5EEE45241362B200FB1844 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D1D6CA12240FDB0300ADC853 /* CustomDateFormatter.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		FA8EC19123EBC991007633D9 = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +234,7 @@
 		FA8EC19C23EBC991007633D9 /* Amadda */ = {
 			isa = PBXGroup;
 			children = (
+				FA5EEE45241362B200FB1844 /* Util */,
 				D1616CBE24063D46002C806B /* Network */,
 				D1616CB824029D6B002C806B /* Extension */,
 				D1616CA52401B6C5002C806B /* Sidebar */,
@@ -259,7 +268,6 @@
 				FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */,
 				D1616CCC2408A73A002C806B /* ScheduleListVC.swift */,
 				D1616CCE2408A83F002C806B /* ScheduleCell.swift */,
-				D1D6CA12240FDB0300ADC853 /* CustomDateFormatter.swift */,
 				D1D6CA142410E11B00ADC853 /* SettingVC.swift */,
 				D16BEBC02412FDE000F375A1 /* ProfileVC.swift */,
 				FA51E85E2406483F00E31FE5 /* AddCourse */,

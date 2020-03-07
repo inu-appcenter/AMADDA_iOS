@@ -12,7 +12,6 @@ import Floaty
 import FSCalendar
 
 class MainCalendarVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource {
-    let testEventDate: [String] = ["2020/02/10", "2020/02/01"]
     
     @IBOutlet var navigationItemBar: UINavigationItem!
     @IBOutlet var calendar: FSCalendar!
@@ -30,12 +29,15 @@ class MainCalendarVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy/MM/dd"
+        dateFormatter.dateFormat = "YYYY-MM-dd"
         dateFormatter.locale = Locale.init(identifier: "ko_KR")
 
-        for dateStr in testEventDate{
-            if(dateFormatter.string(from: date) == dateStr)
-            {
+        /// 테스트 데이터 나중에 삭제 필
+        let eventData = Schedule(token: UserDefaults.standard.string(forKey: "token"), id: "0", number: 0, schedule_name: "dummy", start: "2020-03-26", end: "2020-03-26", location: "home", alarm: nil, share: nil, key: nil, memo: "birthday")
+        scheduleList.append(eventData)
+        ///
+        for schedule in scheduleList{
+            if(dateFormatter.string(from: date) == schedule.start){
                 return 1
             }
         }
@@ -46,6 +48,7 @@ class MainCalendarVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
     }
     
     override func viewDidLoad() {
+        
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
         var dateFormatter = DateFormatter()
