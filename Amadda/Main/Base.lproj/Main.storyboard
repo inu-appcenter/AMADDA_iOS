@@ -2053,7 +2053,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="WcQ-7n-cHP"/>
                     <connections>
+                        <outlet property="searchTextField" destination="e0d-my-puM" id="LkQ-Mv-r88"/>
                         <outlet property="tableView" destination="bbv-yL-pEa" id="FOd-Gb-qBZ"/>
+                        <outlet property="tableViewBottomConstraint" destination="gG5-vf-yRA" id="niK-iI-1yd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K83-XR-u3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

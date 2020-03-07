@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var pwTextField: UITextField!
     
@@ -30,8 +30,37 @@ class LoginVC: UIViewController {
         
     }
     
-    
     override func viewDidLoad() {
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapGestureOnScreen(_:)))
+        tap.delegate = self
+        self.view.addGestureRecognizer(tap)
     }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            self.view.frame = CGRect(x: view.frame.origin.x, y: view.frame.origin.y - keyboardRectangle.height, width: view.frame.width, height: view.frame.height)
+            
+            UIView.animate(withDuration: 0, animations: {
+                self.view.layoutIfNeeded()
+                }, completion: { (completion) in
+            })
+        }
+    }
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            self.view.frame = CGRect(x: view.frame.origin.x, y: 0, width: view.frame.width, height: view.frame.height)
+                            
+            UIView.animate(withDuration: 0, animations: {
+                self.view.layoutIfNeeded()
+                }, completion: { (completion) in
+            })
+        }
+    }
+    @objc func didTapGestureOnScreen(_ sender: UITapGestureRecognizer?){
+        emailTextField.resignFirstResponder()
+        pwTextField.resignFirstResponder()
+    }
+
 }
