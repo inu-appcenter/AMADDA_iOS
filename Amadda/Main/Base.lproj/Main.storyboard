@@ -573,6 +573,34 @@
             </objects>
             <point key="canvasLocation" x="6572" y="739"/>
         </scene>
+        <!--수업 추가-->
+        <scene sceneID="rC7-pl-3sg">
+            <objects>
+                <viewController storyboardIdentifier="AddCourseManualVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X6C-Pr-x0t" customClass="AddCourseManualVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jWI-Ze-svP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="수업 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coT-Cx-ihu">
+                                <rect key="frame" x="27.999999999999993" y="108" width="113.33333333333331" height="43"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="29"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="coT-Cx-ihu" firstAttribute="leading" secondItem="B4w-cK-Ztm" secondAttribute="leading" constant="28" id="6Am-kS-6nR"/>
+                            <constraint firstItem="coT-Cx-ihu" firstAttribute="top" secondItem="B4w-cK-Ztm" secondAttribute="top" constant="20" id="g5E-n8-rt0"/>
+                            <constraint firstItem="B4w-cK-Ztm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="coT-Cx-ihu" secondAttribute="trailing" constant="28" id="wbi-ba-Sd4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B4w-cK-Ztm"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="수업 추가" id="Zt3-pn-RHe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BFp-4y-MxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5791.1999999999998" y="-860.09852216748777"/>
+        </scene>
         <!--Add CourseVC-->
         <scene sceneID="PuW-do-Adf">
             <objects>
@@ -591,7 +619,7 @@
                                 </connections>
                             </containerView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfN-9G-1JD">
-                                <rect key="frame" x="0.0" y="44" width="375" height="284"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="240"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cal-jM-B1t" userLabel="TimeLineView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
@@ -792,16 +820,37 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Zyf-fX-ZCc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pnU-YF-ETO"/>
+                    <navigationItem key="navigationItem" id="pnU-YF-ETO">
+                        <barButtonItem key="leftBarButtonItem" image="icon_Exit" style="plain" id="ctT-oa-ict">
+                            <connections>
+                                <action selector="dismissBtn:" destination="NVz-yA-9iM" id="04i-x2-fhE"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="완료" id="UuH-5a-V9q">
+                                <connections>
+                                    <action selector="doneBtn:" destination="NVz-yA-9iM" id="gls-XZ-vaN"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="직접 추가" id="A7g-Ak-iPG">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="X6C-Pr-x0t" kind="push" id="IwJ-7X-old"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="pae-dt-d2F" id="IQC-Z7-aIV"/>
                         <outlet property="scrollView" destination="qfN-9G-1JD" id="Vvz-0H-nac"/>
+                        <outlet property="tableViewConstraint" destination="sFr-zM-Ccp" id="Mo9-EL-cFL"/>
                         <outlet property="timeLineStackView" destination="mUK-eg-wSm" id="BAT-jd-Xdy"/>
+                        <outlet property="timeLineViewConstraint" destination="YWT-tK-Ax8" id="mEM-fD-aTW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcW-lC-5hF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4053.5999999999999" y="-430.04926108374389"/>
+            <point key="canvasLocation" x="4996" y="-430.04926108374389"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lbl-vf-ihx">
@@ -1954,7 +2003,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkj-Px-PUX">
-                                    <rect key="frame" x="10.333333333333343" y="28.000000000000007" width="354.33333333333326" height="99.666666666666686"/>
+                                    <rect key="frame" x="10.333333333333343" y="27.999999999999993" width="354.33333333333326" height="99.666666666666686"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Mkj-Px-PUX" secondAttribute="height" multiplier="118:33" id="I4A-4E-MCW"/>
                                     </constraints>
@@ -2060,7 +2109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K83-XR-u3A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5649" y="-430"/>
+            <point key="canvasLocation" x="6543.1999999999998" y="-296.30541871921184"/>
         </scene>
         <!--Major TableVC-->
         <scene sceneID="HmR-CE-fte">
@@ -2151,7 +2200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cLE-5c-ozL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6376.8000000000002" y="-430.04926108374389"/>
+            <point key="canvasLocation" x="7287.1999999999998" y="-296.30541871921184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="90i-ot-Cxq">
@@ -2169,7 +2218,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="khH-hN-y5B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4847.1999999999998" y="-430.04926108374389"/>
+            <point key="canvasLocation" x="5788" y="-296.30541871921184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aW6-mL-v6D">
@@ -2220,6 +2269,25 @@
             </objects>
             <point key="canvasLocation" x="63.200000000000003" y="1850.9852216748768"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2dI-gf-BnH">
+            <objects>
+                <navigationController storyboardIdentifier="AddCourseNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4je-gM-ehh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kCh-Z1-Dz9">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.30941817160000001" green="0.67580181360000002" blue="0.9725850224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NVz-yA-9iM" kind="relationship" relationship="rootViewController" id="Der-QJ-oJZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OMR-sj-wKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4053.5999999999999" y="-430.04926108374389"/>
+        </scene>
     </scenes>
     <resources>
         <image name="btn_add" width="24" height="25.333333969116211"/>
@@ -2230,6 +2298,7 @@
         <image name="btn_setting" width="25.666666030883789" height="29"/>
         <image name="icon_Alarm" width="15" height="15"/>
         <image name="icon_Calendar" width="18" height="18.666666030883789"/>
+        <image name="icon_Exit" width="16.666666030883789" height="16.666666030883789"/>
         <image name="icon_Location" width="18" height="18"/>
         <image name="icon_Memo" width="15.333333015441895" height="15"/>
         <image name="icon_Share" width="16" height="18"/>

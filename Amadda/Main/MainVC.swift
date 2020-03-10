@@ -84,7 +84,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             self.present(AddPersonalEventNavigation, animated: true, completion: nil)
         })
         floaty.addItem("수업 추가", icon: UIImage(), handler: {item in
-            guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseVC") as? AddCourseVC else {return}
+            guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseNavigationController") else {return}
             self.present(AddCourseVC, animated: true, completion: nil)
         })
 
