@@ -586,11 +586,21 @@
                                 <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="29"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xp6-QP-rMC">
+                                <rect key="frame" x="0.0" y="171" width="375" height="607"/>
+                                <connections>
+                                    <segue destination="nis-ib-xON" kind="embed" id="nQw-NX-zYY"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="coT-Cx-ihu" firstAttribute="leading" secondItem="B4w-cK-Ztm" secondAttribute="leading" constant="28" id="6Am-kS-6nR"/>
+                            <constraint firstItem="Xp6-QP-rMC" firstAttribute="top" secondItem="coT-Cx-ihu" secondAttribute="bottom" constant="20" id="CPn-IG-1oi"/>
+                            <constraint firstItem="B4w-cK-Ztm" firstAttribute="bottom" secondItem="Xp6-QP-rMC" secondAttribute="bottom" id="Mxb-0K-lSo"/>
                             <constraint firstItem="coT-Cx-ihu" firstAttribute="top" secondItem="B4w-cK-Ztm" secondAttribute="top" constant="20" id="g5E-n8-rt0"/>
+                            <constraint firstItem="B4w-cK-Ztm" firstAttribute="trailing" secondItem="Xp6-QP-rMC" secondAttribute="trailing" id="hJ9-Sz-I4W"/>
+                            <constraint firstItem="Xp6-QP-rMC" firstAttribute="leading" secondItem="B4w-cK-Ztm" secondAttribute="leading" id="usQ-KG-zc6"/>
                             <constraint firstItem="B4w-cK-Ztm" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="coT-Cx-ihu" secondAttribute="trailing" constant="28" id="wbi-ba-Sd4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B4w-cK-Ztm"/>
@@ -600,6 +610,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFp-4y-MxD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5791.1999999999998" y="-860.09852216748777"/>
+        </scene>
+        <!--Add Course Manual TableVC-->
+        <scene sceneID="u6I-KX-X1x">
+            <objects>
+                <tableViewController storyboardIdentifier="AddCourseManualTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nis-ib-xON" customClass="AddCourseManualTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dDF-l5-Cnx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="X7f-tS-euM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X7f-tS-euM" id="lNI-iL-ISw">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Tfk-kj-Koq">
+                                <rect key="frame" x="0.0" y="80" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tfk-kj-Koq" id="6yU-me-3hL">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="GBK-yf-ZOD">
+                                <rect key="frame" x="0.0" y="132" width="375" height="52"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GBK-yf-ZOD" id="QPW-M3-6RX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="52"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nis-ib-xON" id="zXD-Ob-uzy"/>
+                            <outlet property="delegate" destination="nis-ib-xON" id="KD6-e3-Lfj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nin-K7-YgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6543" y="-812"/>
         </scene>
         <!--Add CourseVC-->
         <scene sceneID="PuW-do-Adf">
@@ -2003,7 +2057,7 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkj-Px-PUX">
-                                    <rect key="frame" x="10.333333333333343" y="27.999999999999993" width="354.33333333333326" height="99.666666666666686"/>
+                                    <rect key="frame" x="10.333333333333343" y="28.000000000000007" width="354.33333333333326" height="99.666666666666686"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="Mkj-Px-PUX" secondAttribute="height" multiplier="118:33" id="I4A-4E-MCW"/>
                                     </constraints>
