@@ -84,20 +84,30 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             self.present(AddPersonalEventNavigation, animated: true, completion: nil)
         })
         floaty.addItem("수업 추가", icon: UIImage(), handler: {item in
-            guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseVC") as? AddCourseVC else {return}
+            guard let AddCourseVC = self.storyboard?.instantiateViewController(withIdentifier: "AddCourseNavigationController") else {return}
             self.present(AddCourseVC, animated: true, completion: nil)
         })
 
-        floaty.items[0].iconImageView.frame = CGRect(x: -100, y: -30, width: 150, height: 50)
+        floaty.itemSpace = 10
+        
+        floaty.items[0].iconImageView.frame = CGRect(x: -95, y: -150, width: 150, height: 250)
+        floaty.items[0].iconImageView.contentMode = .scaleAspectFit
+        floaty.items[0].iconImageView.image = UIImage(named: "bg_Floaty")
         floaty.items[0].iconImageView.tintColor = UIColor.clear
         floaty.items[0].buttonColor = UIColor.clear
+        floaty.items[0].titleColor = UIColor.clear
+//        floaty.items[0].backgroundColor = UIColor.blue
                 
         floaty.items[1].itemBackgroundColor = UIColor.clear
         floaty.items[1].buttonColor = UIColor.clear
-        floaty.items[1].titleColor = UIColor.white
+        floaty.items[1].titleColor = UIColor.clear
+        
+        floaty.items[2].itemBackgroundColor = UIColor.clear
+        floaty.items[2].buttonColor = UIColor.clear
+        floaty.items[2].titleColor = UIColor.clear
                 
-        floaty.paddingX = 30
-        floaty.paddingY = 40
+        floaty.paddingX = 20
+        floaty.paddingY = 34
         
         self.view.addSubview(floaty)
     }

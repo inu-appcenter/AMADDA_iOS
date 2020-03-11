@@ -15,14 +15,31 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet var collectionView: UICollectionView!
     @IBOutlet var timeLineStackView: UIStackView!
     @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var tableViewConstraint: NSLayoutConstraint!
+    @IBOutlet var timeLineViewConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         // Collection View
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
+        
+        // NavigationController Setting
+        UIBarButtonItem.appearance().setTitleTextAttributes(
+            [ NSAttributedString.Key.font : UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        ], for: .normal)
+        /// 시간표 API 받아올 수 있을때 까지 tableView 가립니다
+        tableViewConstraint.constant = 0
+        timeLineViewConstraint.constant = 1000
     }
-
+    @IBAction func dismissBtn(_ sender: Any) {
+        showAlertController(title: "", message: "변경 사항을 저장하지 않고 끝내시겠습니까?", completionHandler: {(action) in
+            self.dismiss(animated: true, completion: nil)
+        })
+    }
+    @IBAction func doneBtn(_ sender: Any) {
+    }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return testData.count
     }
