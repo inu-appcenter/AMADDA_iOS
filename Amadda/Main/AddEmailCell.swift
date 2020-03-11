@@ -1,22 +1,20 @@
 //
-//  SelectedColorCell.swift
+//  AddEmailCell.swift
 //  Amadda
 //
-//  Created by seunghwan Lee on 2020/03/08.
+//  Created by seunghwan Lee on 2020/03/09.
 //  Copyright © 2020 mong. All rights reserved.
 //
 
 import UIKit
 
-class SelectedColorCell: UITableViewCell {
+class AddEmailCell: UITableViewCell {
     
-    var delegate: selectColorDelegate? 
+    var delegate: selectColorDelegate?
 
-    @IBAction func downPressed(_ sender: Any) {
-        print("버튼눌림1")
-        delegate?.open()
+    @IBAction func addPressed(_ sender: Any) {
+        delegate?.add()
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

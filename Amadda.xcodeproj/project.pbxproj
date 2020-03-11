@@ -24,6 +24,8 @@
 		D1616CCB24075CDB002C806B /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCA24075CDB002C806B /* Schedule.swift */; };
 		D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCC2408A73A002C806B /* ScheduleListVC.swift */; };
 		D1616CCF2408A83F002C806B /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CCE2408A83F002C806B /* ScheduleCell.swift */; };
+		D169FBC124161924009E0BFE /* AddEmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D169FBC024161924009E0BFE /* AddEmailCell.swift */; };
+		D169FBC324161B1F009E0BFE /* InviteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D169FBC224161B1F009E0BFE /* InviteCell.swift */; };
 		D16BEBC12412FDE000F375A1 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BEBC02412FDE000F375A1 /* ProfileVC.swift */; };
 		D16BEBC524146D0700F375A1 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BEBC424146D0700F375A1 /* MemoCell.swift */; };
 		D16BEBC724146D3500F375A1 /* SelectedColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16BEBC624146D3500F375A1 /* SelectedColorCell.swift */; };
@@ -75,6 +77,8 @@
 		D1616CCA24075CDB002C806B /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		D1616CCC2408A73A002C806B /* ScheduleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListVC.swift; sourceTree = "<group>"; };
 		D1616CCE2408A83F002C806B /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		D169FBC024161924009E0BFE /* AddEmailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmailCell.swift; sourceTree = "<group>"; };
+		D169FBC224161B1F009E0BFE /* InviteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteCell.swift; sourceTree = "<group>"; };
 		D16BEBC02412FDE000F375A1 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D16BEBC424146D0700F375A1 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		D16BEBC624146D3500F375A1 /* SelectedColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedColorCell.swift; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 				D16BEBC424146D0700F375A1 /* MemoCell.swift */,
 				D16BEBC624146D3500F375A1 /* SelectedColorCell.swift */,
 				D16BEBC824146D4C00F375A1 /* GroupColorCell.swift */,
+				D169FBC024161924009E0BFE /* AddEmailCell.swift */,
+				D169FBC224161B1F009E0BFE /* InviteCell.swift */,
 				FA51E85E2406483F00E31FE5 /* AddCourse */,
 				FA47A309240BA8B00049434F /* AddEvent */,
 			);
@@ -395,6 +401,7 @@
 				D1D6CA152410E11B00ADC853 /* SettingVC.swift in Sources */,
 				D16BEBC724146D3500F375A1 /* SelectedColorCell.swift in Sources */,
 				D1616CC024063D80002C806B /* NetworkManager.swift in Sources */,
+				D169FBC324161B1F009E0BFE /* InviteCell.swift in Sources */,
 				D1616CCB24075CDB002C806B /* Schedule.swift in Sources */,
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
 				FAEF9D34240CC14100C1F20F /* AlertController.swift in Sources */,
@@ -404,6 +411,7 @@
 				D16BEBC12412FDE000F375A1 /* ProfileVC.swift in Sources */,
 				FA71758D240DE94900115F55 /* MajorTableViewCell.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,
+				D169FBC124161924009E0BFE /* AddEmailCell.swift in Sources */,
 				D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */,
 				D1616CC5240668A6002C806B /* Response.swift in Sources */,
 				FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */,
@@ -572,14 +580,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DRZA772VG4;
+				DEVELOPMENT_TEAM = 6D8SYQ63KK;
 				INFOPLIST_FILE = Amadda/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = selfstudy.Amadda;
+				PRODUCT_BUNDLE_IDENTIFIER = LSH.Amadda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -592,14 +600,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DRZA772VG4;
+				DEVELOPMENT_TEAM = 6D8SYQ63KK;
 				INFOPLIST_FILE = Amadda/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = selfstudy.Amadda;
+				PRODUCT_BUNDLE_IDENTIFIER = LSH.Amadda;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

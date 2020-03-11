@@ -1,19 +1,18 @@
 //
-//  SelectedColorCell.swift
+//  InviteCell.swift
 //  Amadda
 //
-//  Created by seunghwan Lee on 2020/03/08.
+//  Created by seunghwan Lee on 2020/03/09.
 //  Copyright © 2020 mong. All rights reserved.
 //
 
 import UIKit
 
-class SelectedColorCell: UITableViewCell {
+class InviteCell: UITableViewCell {
     
-    var delegate: selectColorDelegate? 
-
-    @IBAction func downPressed(_ sender: Any) {
-        print("버튼눌림1")
+    var delegate: selectColorDelegate?
+    
+    @IBAction func addPressed(_ sender: Any) {
         delegate?.open()
     }
     
