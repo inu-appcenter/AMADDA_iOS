@@ -31,9 +31,14 @@ class LoginVC: UIViewController, UIGestureRecognizerDelegate {
     }
     
     override func viewDidLoad() {
+        /// Add Keyboard Dismiss Tap GestureRecognizer
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapGestureOnScreen(_:)))
         tap.delegate = self
         self.view.addGestureRecognizer(tap)
+        
+        /// Add Keyboard Observer
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {

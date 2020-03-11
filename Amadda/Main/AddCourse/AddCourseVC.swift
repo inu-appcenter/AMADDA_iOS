@@ -19,12 +19,12 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     @IBOutlet var timeLineViewConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
-        // Collection View
+        /// Collection View
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = setLayout(collectionView: collectionView, height: timeLineStackView.frame.height)
         
-        // NavigationController Setting
+        /// NavigationController Setting
         UIBarButtonItem.appearance().setTitleTextAttributes(
             [ NSAttributedString.Key.font : UIFont(name: "SpoqaHanSans-Bold", size: 16)
         ], for: .normal)
