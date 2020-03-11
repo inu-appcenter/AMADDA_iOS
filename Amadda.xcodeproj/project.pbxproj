@@ -403,11 +403,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1616CC92407575B002C806B /* Group.swift in Sources */,
-
 				D16BEBC924146D4C00F375A1 /* GroupColorCell.swift in Sources */,
-
 				FA5EEE49241754B300FB1844 /* AddCourseManualTableVC.swift in Sources */,
-
 				D1D6CA152410E11B00ADC853 /* SettingVC.swift in Sources */,
 				D16BEBC724146D3500F375A1 /* SelectedColorCell.swift in Sources */,
 				D1616CC024063D80002C806B /* NetworkManager.swift in Sources */,
