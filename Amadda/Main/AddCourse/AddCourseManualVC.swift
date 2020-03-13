@@ -19,6 +19,19 @@ class AddCourseManualVC: UIViewController, UIGestureRecognizerDelegate {
  
     }
 
+    @IBAction func addCourseBtn(_ sender: Any) {
+        guard let AddCourseManualTableVC = self.children.last as? AddCourseManualTableVC else {
+            print("init AddCourseManualTableVC failure")
+            return
+        }
+        var myCourseArray = [Course]()
+        if let myCourse = UserDefaults.standard.array(forKey: "MyCourse") as? [Course] {
+            myCourseArray = myCourse
+        }
+        let newCourse = Course(subject: courseNameTextField.text!, prof: "", day: "", startTime: AddCourseManualTableVC.startTimeLabel.text!, endTime: AddCourseManualTableVC.endTimeLabel.text!, place: AddCourseManualTableVC.placeTextField.text!)
+        myCourseArray.append(newCourse)
+        print(myCourseArray)
+    }
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
