@@ -12,10 +12,10 @@ class NetworkManager {
     
     /*
      - URL : http://117.16.231.66:7004/
-     - 아마존 URL:  http://13.209.87.234:9000/
+     - 아마존 URL:  http://13.125.115.8:9000/
      */
     
-    private let baseURL = "http://117.16.231.66:7004/"
+    private let baseURL = "http://13.125.115.8:9000/"
     private let token = UserDefaults.standard.string(forKey: "token")
     
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {
@@ -33,7 +33,7 @@ class NetworkManager {
            switch response.result {
            case let .success(result):
 
-            if let token = result.token {
+            if let token = response.response?.allHeaderFields["token"] as? String {
                 UserDefaults.standard.set(token, forKey: "token")
             }
             completion(result)
@@ -52,7 +52,7 @@ class NetworkManager {
                    method: .post,
                    parameters: param,
                    encoder: JSONParameterEncoder.default,
-                   headers: nil)
+                   headers: [HTTPHeader(name: "token", value: UserDefaults.standard.string(forKey: "token")!)])
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {

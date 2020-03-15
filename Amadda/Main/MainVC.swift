@@ -127,9 +127,12 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as? CustomCell else {return UICollectionViewCell()}
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 20))
+        /// 시간표 grid Label (testData)
+        /*
         label.text = "\(testData[indexPath.section][indexPath.row])"
         label.textColor = UIColor.black
         cell.addSubview(label)
+        */
         
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.3
@@ -169,6 +172,28 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 cell.layer.borderColor = UIColor.lightGray.cgColor
                 cell.layer.borderWidth = 0.0
             }
+        }
+        /// 겹치는 시간표 test
+        if indexPath == [0,5] || indexPath == [4,3] {
+            let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
+            timeTable.backgroundColor = UIColor.orange
+            timeTable.alpha = 0.6
+            
+            let eventLabel = UILabel(frame: CGRect(x: 0, y: 0, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+            eventLabel.text = "캘린더 팀 회의"
+            eventLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
+            eventLabel.textColor = UIColor.white
+            eventLabel.lineBreakMode = .byCharWrapping
+            eventLabel.numberOfLines = 0
+            eventLabel.sizeToFit()
+            timeTable.addSubview(eventLabel)
+            
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
+            timeTable.addGestureRecognizer(gesture)
+            
+            collectionView.addSubview(timeTable)
+            cell.layer.borderColor = UIColor.white.cgColor
+            cell.layer.borderWidth = 0.0
         }
         
         // MARK: 오늘을 나타내는 BG Color Set
