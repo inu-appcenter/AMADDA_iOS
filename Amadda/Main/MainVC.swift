@@ -20,6 +20,7 @@ var testData = [    ["1-1","1-2","1-3","1-4","1-5","1-6","1-7","1-8","1-9","1-10
 class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: HomeViewControllerDelegate?
+    let courseData = ComputerScience()
     
     @IBOutlet var navigationItemBar: UINavigationItem!
     @IBOutlet var collectionView: UICollectionView!
@@ -134,16 +135,40 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         cell.layer.borderWidth = 0.3
         
         // MARK: 시간표 등록 완료된 item 표시
-        if indexPath == [0,0] || indexPath == [0,5]{
-            let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
-            timeTable.backgroundColor = UIColor.orange
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
-            timeTable.addGestureRecognizer(gesture)
-            
-            collectionView.addSubview(timeTable)
-            cell.layer.borderColor = UIColor.lightGray.cgColor
-            cell.layer.borderWidth = 0.0
-            cell.tag = 1
+        for course in courseData.courseList {
+            let courseIndexPath = IndexPath(row: Int(course.startTime)!-1, section: Int(course.day)!-1)
+            let courseRange: CGFloat = CGFloat(Int(course.endTime)! - Int(course.startTime)!)
+            if courseIndexPath == indexPath {
+                let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * courseRange))
+                timeTable.backgroundColor = UIColor.lightGray
+                
+                let courseLabel = UILabel(frame: CGRect(x: 0, y: 0, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+//                courseLabel.backgroundColor = UIColor.blue
+                courseLabel.text = course.subject
+                courseLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
+                courseLabel.textColor = UIColor.white
+                courseLabel.lineBreakMode = .byCharWrapping
+                courseLabel.numberOfLines = 0
+                courseLabel.sizeToFit()
+                timeTable.addSubview(courseLabel)
+                
+                let placeLabel = UILabel(frame: CGRect(x: courseLabel.frame.minX, y: courseLabel.frame.maxY + 5, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+//                placeLabel.backgroundColor = UIColor.green
+                placeLabel.text = course.place
+                placeLabel.font = UIFont(name: "SpoqaHanSans-Regular", size: 10)
+                placeLabel.textColor = UIColor.white
+                placeLabel.lineBreakMode = .byCharWrapping
+                placeLabel.numberOfLines = 0
+                placeLabel.sizeToFit()
+                timeTable.addSubview(placeLabel)
+                
+                let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
+                timeTable.addGestureRecognizer(gesture)
+                
+                collectionView.addSubview(timeTable)
+                cell.layer.borderColor = UIColor.lightGray.cgColor
+                cell.layer.borderWidth = 0.0
+            }
         }
         
         // MARK: 오늘을 나타내는 BG Color Set
