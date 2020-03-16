@@ -21,7 +21,7 @@ class NetworkManager {
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/login"
         
-        let param = User(token: nil, id: id, passwd: password, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+        let param = User(id: id, passwd: password, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: nil)
             
         let request = AF.request(url,
                    method: .post,
@@ -46,13 +46,13 @@ class NetworkManager {
     func seeProfile(completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/account"
         
-        let param = User(token: token!, id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
         
         let request = AF.request(url,
                    method: .post,
-                   parameters: param,
-                   encoder: JSONParameterEncoder.default,
-                   headers: [HTTPHeader(name: "token", value: UserDefaults.standard.string(forKey: "token")!)])
+                   headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -67,13 +67,17 @@ class NetworkManager {
     func modifypassword(password: String, newPassword: String, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/passwd"
         
-        let param = User(token: token!, id: nil, passwd: password, newPasswd: newPassword, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let param = User(id: nil, passwd: password, newPasswd: newPassword, name: nil, major: nil, tel: nil, email: nil, flag: nil)
         
         let request = AF.request(url,
                    method: .put,
                    parameters: param,
                    encoder: JSONParameterEncoder.default,
-                   headers: nil)
+                   headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -92,7 +96,7 @@ class NetworkManager {
     func getTempPassword(id: String, name: String, completion: @escaping (Response?) -> Void ) {
         let url = baseURL + "user/tmpPasswd"
         
-        let param = User(token: nil, id: id, passwd: nil, newPasswd: nil, name: name, major: nil, tel: nil, email: nil, flag: nil)
+        let param = User(id: id, passwd: nil, newPasswd: nil, name: name, major: nil, tel: nil, email: nil, flag: nil)
         
         let request = AF.request(url,
                    method: .post,
@@ -112,14 +116,16 @@ class NetworkManager {
     
     func uploadProfileImg(image: UIImage) {
         let url = baseURL + "image"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
         let imageData = image.jpegData(compressionQuality: 1)
         
-        let param = User(token: token!, id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: nil)
-        
         AF.upload(multipartFormData: { multiPart in
-           multiPart.append((param.token)!.data(using: String.Encoding.utf8)!, withName: "token")
            multiPart.append(imageData!, withName: "user_image",fileName: "profile.jpg", mimeType: "image/jpg")
-        }, to: url, method: .post, headers: nil) .uploadProgress(queue: .main, closure: { progress in
+        }, to: url, method: .post, headers: header) .uploadProgress(queue: .main, closure: { progress in
             print("Upload Progress: \(progress.fractionCompleted)")
         }).responseJSON(completionHandler: { data in
             print("upload finished: \(data)")
@@ -136,13 +142,14 @@ class NetworkManager {
     
     func deleteProfileImg() {
         let url = baseURL + "image"
-        let param = User(token: token!, id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
         
         let request = AF.request(url,
         method: .delete,
-        parameters: param,
-        encoder: JSONParameterEncoder.default,
-        headers: nil)
+        headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -154,16 +161,42 @@ class NetworkManager {
         }
     }
     
-    func setInviteOption(flag: Int) {
-        let url = baseURL + "main/beinvited/modify"
+    func withdraw() {
+        let url = baseURL + "user/secession"
         
-        let param = User(token: token!, id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: flag)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .delete,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("회원 탈퇴 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+        
+    }
+    
+    func setInviteOption(flag: Int) {
+        let url = baseURL + "share/invite/users/flag"
+        
+        let header:HTTPHeaders = [
+                   "token": token!
+               ]
+        
+        let param = User(id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: flag)
         
         let request = AF.request(url,
         method: .post,
         parameters: param,
         encoder: JSONParameterEncoder.default,
-        headers: nil)
+        headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -175,20 +208,20 @@ class NetworkManager {
         }
     }
     
-    func makeGroup() {
-        // 보류
-    }
-    
     func addSchedule(name: String, start: String, end: String, location: String?, alarm: String?, share: Int?, memo: String?, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/add"
         
-        let param = Schedule(token: token!,id: nil, number: nil, schedule_name: name, start: start, end: end, location: location, alarm: alarm, share: share, key: nil, memo: memo)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let param = Schedule(id: nil, number: nil, schedule_name: name, start: start, end: end, location: location, alarm: alarm, share: share, key: nil, memo: memo)
         
         let request = AF.request(url,
         method: .post,
         parameters: param,
         encoder: JSONParameterEncoder.default,
-        headers: nil)
+        headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -204,13 +237,17 @@ class NetworkManager {
     func seeScheduleDetail(number: Int, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/detail"
         
-        let param = Schedule(token: token!,id: nil, number: number, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: nil, key: nil, memo: nil)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+
+        let param = Schedule(id: nil, number: number, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: nil, key: nil, memo: nil)
         
         let request = AF.request(url,
         method: .post,
         parameters: param,
         encoder: JSONParameterEncoder.default,
-        headers: nil)
+        headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -225,13 +262,13 @@ class NetworkManager {
     func seeAllSchedules(completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/show/private/0"
         
-        let param = Schedule(token: token!,id: nil, number: nil, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: nil, key: nil, memo: nil)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
         
         let request = AF.request(url,
         method: .post,
-        parameters: param,
-        encoder: JSONParameterEncoder.default,
-        headers: nil)
+        headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -243,16 +280,84 @@ class NetworkManager {
         }
     }
     
+    func seeTodaySchedule(completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "schedule/show/private/1"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .post,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("오늘 일정 보기 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+        
+    }
+    
+    func seeWeekSchedule(completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "schedule/show/private/2"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .post,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("주간 일정 보기 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
+    func seeMonthSchedule(completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "schedule/show/private/3"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .post,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("월간 일정 보기 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
     func deleteSchedule(number: Int) {
         let url = baseURL + "schedule/delete"
         
-        let param = Schedule(token: token!,id: nil, number: number, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: nil, key: nil, memo: nil)
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let param = Schedule(id: nil, number: number, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: nil, key: nil, memo: nil)
         
         let request = AF.request(url,
         method: .delete,
         parameters: param,
         encoder: JSONParameterEncoder.default,
-        headers: nil)
+        headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
@@ -263,5 +368,60 @@ class NetworkManager {
            }
         }
     }
+    
+    func makeGroup(groupName: String, inviters: [String], memo: String? ) {
+        let url = baseURL + "share/group/create"
+        
+        let param = Group(group_name: groupName, inviters: inviters, memo: memo)
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .post,
+        parameters: param,
+        encoder: JSONParameterEncoder.default,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("그룹 생성 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
+    func findInvitee() {
+        // 잠깐 보류
+    }
+    
+    func getGroup() {
+        let url = baseURL + "share/groups/show"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .get,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("내가 속해있는 그룹 가져오기 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
+    func exitGroup() {
+        //잠시 보류 
+    }
+    
 }
 

@@ -7,7 +7,6 @@
 //
 
 struct Schedule: Codable {
-    let token: String?
     let id: String?
     let number: Int?
     let schedule_name: String?
@@ -18,5 +17,4 @@ struct Schedule: Codable {
     let share: Int?
     let key: Int?
     let memo: String?
-
 }

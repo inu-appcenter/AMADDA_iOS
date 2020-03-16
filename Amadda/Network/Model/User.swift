@@ -7,7 +7,6 @@
 //
 
 struct User: Codable {
-    let token: String?
     let id: String?
     let passwd: String?
     let newPasswd: String?

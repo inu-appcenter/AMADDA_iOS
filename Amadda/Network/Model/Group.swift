@@ -7,8 +7,7 @@
 //
 
 struct Group: Codable {
-    let token: String?
-    let roomname: String?
-    let color: String?
+    let group_name: String?
+    let inviters: [String?]?
     let memo: String?
 }

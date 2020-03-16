@@ -33,7 +33,7 @@ class MainCalendarVC: UIViewController, FSCalendarDelegate, FSCalendarDataSource
         dateFormatter.locale = Locale.init(identifier: "ko_KR")
 
         /// 테스트 데이터 나중에 삭제 필
-        let eventData = Schedule(token: UserDefaults.standard.string(forKey: "token"), id: "0", number: 0, schedule_name: "dummy", start: "2020-03-26", end: "2020-03-26", location: "home", alarm: nil, share: nil, key: nil, memo: "birthday")
+        let eventData = Schedule(id: "0", number: 0, schedule_name: "dummy", start: "2020-03-26", end: "2020-03-26", location: "home", alarm: nil, share: nil, key: nil, memo: "birthday")
         scheduleList.append(eventData)
         ///
         for schedule in scheduleList{
