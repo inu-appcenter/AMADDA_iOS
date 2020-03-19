@@ -24,6 +24,10 @@ class AddCourseManualVC: UIViewController, UIGestureRecognizerDelegate {
             print("init AddCourseManualTableVC failure")
             return
         }
+        if AddCourseManualTableVC.startTimeLabel.tag >= AddCourseManualTableVC.endTimeLabel.tag {
+            showDefaultAlertController(title: "", message: "종료 시간을 확인해 주세요", completionHandler: nil)
+            return
+        }
         var myCourseArray = [Course]()
         if let myCourse = UserDefaults.standard.array(forKey: "MyCourse") as? [Course] {
             myCourseArray = myCourse

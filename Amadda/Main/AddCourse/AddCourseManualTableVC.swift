@@ -21,7 +21,7 @@ class AddCourseManualTableVC: UITableViewController, UIPickerViewDelegate, UIPic
     let pickerViewData = [
         ["월", "화", "수", "목", "금"],
         ["오전", "오후"],
-        ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
+        ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
         ["00", "05", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55"]
     ]
     
@@ -42,8 +42,10 @@ class AddCourseManualTableVC: UITableViewController, UIPickerViewDelegate, UIPic
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == endTimePickerView {
             endTimeLabel.text = "\(pickerViewData[1][pickerView.selectedRow(inComponent: 0)] + " " + pickerViewData[2][pickerView.selectedRow(inComponent: 1)] + ":" + pickerViewData[3][pickerView.selectedRow(inComponent: 2)])"
+            endTimeLabel.tag = timeLabelTagValue(sunPosition: pickerViewData[1][pickerView.selectedRow(inComponent: 0)], hour: pickerViewData[2][pickerView.selectedRow(inComponent: 1)], minute: pickerViewData[3][pickerView.selectedRow(inComponent: 2)])
         }else {
             startTimeLabel.text = "\(pickerViewData[0][pickerView.selectedRow(inComponent: 0)] + "요일 " + pickerViewData[1][pickerView.selectedRow(inComponent: 1)] + " " + pickerViewData[2][pickerView.selectedRow(inComponent: 2)] + ":" + pickerViewData[3][pickerView.selectedRow(inComponent: 3)])"
+            startTimeLabel.tag = timeLabelTagValue(sunPosition: pickerViewData[1][pickerView.selectedRow(inComponent: 1)], hour: pickerViewData[2][pickerView.selectedRow(inComponent: 2)], minute: pickerViewData[3][pickerView.selectedRow(inComponent: 3)])
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {

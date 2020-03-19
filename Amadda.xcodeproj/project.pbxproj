@@ -42,6 +42,7 @@
 		FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */; };
 		FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA78CF2723F16A1500F91372 /* CustomCell.swift */; };
 		FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8000B123EC32EE00BF7CA7 /* AddShareEventVC.swift */; };
+		FA8A964C24239ED500D2D775 /* Function.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8A964B24239ED500D2D775 /* Function.swift */; };
 		FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC19D23EBC991007633D9 /* AppDelegate.swift */; };
 		FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1A123EBC991007633D9 /* MainVC.swift */; };
 		FA8EC1A523EBC991007633D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA8EC1A323EBC991007633D9 /* Main.storyboard */; };
@@ -97,6 +98,7 @@
 		FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCalendarVC.swift; sourceTree = "<group>"; };
 		FA78CF2723F16A1500F91372 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		FA8000B123EC32EE00BF7CA7 /* AddShareEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShareEventVC.swift; sourceTree = "<group>"; };
+		FA8A964B24239ED500D2D775 /* Function.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Function.swift; sourceTree = "<group>"; };
 		FA8EC19A23EBC991007633D9 /* Amadda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Amadda.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8EC19D23EBC991007633D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8EC1A123EBC991007633D9 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				D1D6CA12240FDB0300ADC853 /* CustomDateFormatter.swift */,
+				FA8A964B24239ED500D2D775 /* Function.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				D169FBC324161B1F009E0BFE /* InviteCell.swift in Sources */,
 				D1616CCB24075CDB002C806B /* Schedule.swift in Sources */,
 				FA8EC1A223EBC991007633D9 /* MainVC.swift in Sources */,
+				FA8A964C24239ED500D2D775 /* Function.swift in Sources */,
 				FAEF9D34240CC14100C1F20F /* AlertController.swift in Sources */,
 				D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */,
 				FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */,
