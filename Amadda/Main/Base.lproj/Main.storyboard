@@ -1361,7 +1361,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.23529411759999999" green="0.72156862749999995" blue="0.99607843139999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="TLI-h1-dbh">
-                            <rect key="frame" x="0.0" y="611" width="375" height="44"/>
+                            <rect key="frame" x="0.0" y="503" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         </view>
@@ -1378,10 +1378,11 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIb-pm-BKQ">
                                                     <rect key="frame" x="28" y="16" width="319" height="29"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="이메일">
+                                                        <fragment content="학번">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="20"/>
+                                                                <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -1397,36 +1398,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="54" id="pve-cH-BT6">
-                                        <rect key="frame" x="0.0" y="89" width="375" height="54"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pve-cH-BT6" id="QT3-9G-E00">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="54"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-Hi-m2F">
-                                                    <rect key="frame" x="28" y="14" width="292" height="26"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="계정 관리">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="dcA-Hi-m2F" firstAttribute="leading" secondItem="QT3-9G-E00" secondAttribute="leading" constant="28" id="3Mn-W7-CzF"/>
-                                                <constraint firstAttribute="trailing" secondItem="dcA-Hi-m2F" secondAttribute="trailing" constant="28" id="BIK-KR-chb"/>
-                                                <constraint firstItem="dcA-Hi-m2F" firstAttribute="top" secondItem="QT3-9G-E00" secondAttribute="top" constant="14" id="IKB-xk-og6"/>
-                                                <constraint firstAttribute="bottom" secondItem="dcA-Hi-m2F" secondAttribute="bottom" constant="14" id="JCo-Mv-uzd"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="54" id="w4G-ex-pNn">
-                                        <rect key="frame" x="0.0" y="143" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="89" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w4G-ex-pNn" id="1co-fy-sJM">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="54"/>
@@ -1456,36 +1429,8 @@
                                             <segue destination="GID-KX-Mi1" kind="show" id="dRF-Zr-S7u"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="54" id="eUn-wP-397">
-                                        <rect key="frame" x="0.0" y="197" width="375" height="54"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eUn-wP-397" id="3Zu-X9-77e">
-                                            <rect key="frame" x="0.0" y="0.0" width="348" height="54"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upd-ey-1nO">
-                                                    <rect key="frame" x="28" y="14" width="292" height="26"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="로그아웃">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Upd-ey-1nO" firstAttribute="top" secondItem="3Zu-X9-77e" secondAttribute="top" constant="14" id="arp-QV-qz9"/>
-                                                <constraint firstAttribute="trailing" secondItem="Upd-ey-1nO" secondAttribute="trailing" constant="28" id="pDA-IV-pLJ"/>
-                                                <constraint firstItem="Upd-ey-1nO" firstAttribute="leading" secondItem="3Zu-X9-77e" secondAttribute="leading" constant="28" id="u7o-EB-dO1"/>
-                                                <constraint firstAttribute="bottom" secondItem="Upd-ey-1nO" secondAttribute="bottom" constant="14" id="w8t-w4-LF3"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="61" id="MgS-KU-OMw">
-                                        <rect key="frame" x="0.0" y="251" width="375" height="61"/>
+                                        <rect key="frame" x="0.0" y="143" width="375" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MgS-KU-OMw" id="1Mi-wU-aoK">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
@@ -1514,7 +1459,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="54" id="qc3-IR-eBM">
-                                        <rect key="frame" x="0.0" y="312" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="204" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qc3-IR-eBM" id="dU6-6c-5QE">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
@@ -1542,7 +1487,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="109" id="mC4-mi-ASu">
-                                        <rect key="frame" x="0.0" y="366" width="375" height="109"/>
+                                        <rect key="frame" x="0.0" y="258" width="375" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mC4-mi-ASu" id="t14-6W-utu">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="109"/>
@@ -1600,7 +1545,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="54" id="SUy-NQ-OQG">
-                                        <rect key="frame" x="0.0" y="475" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="367" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SUy-NQ-OQG" id="RDA-Yp-j0q">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="54"/>
@@ -1628,7 +1573,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="54" id="v0M-Q3-V7a">
-                                        <rect key="frame" x="0.0" y="529" width="375" height="54"/>
+                                        <rect key="frame" x="0.0" y="421" width="375" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v0M-Q3-V7a" id="9du-EM-EOp">
                                             <rect key="frame" x="0.0" y="0.0" width="348" height="54"/>
@@ -1637,10 +1582,11 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctg-J2-USo">
                                                     <rect key="frame" x="28" y="14" width="292" height="26"/>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="위젯 설정">
+                                                        <fragment content="회원 탈퇴">
                                                             <attributes>
-                                                                <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="18"/>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>

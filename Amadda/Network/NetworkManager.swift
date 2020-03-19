@@ -259,15 +259,40 @@ class NetworkManager {
         }
     }
     
+    func modifySchedule(number: Int, scheduleName: String, location: String?, alarm: String?, share: Int?, memo: String? ) {
+        let url = baseURL + "schedule/modify"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let param = Schedule(id: nil, number: number, schedule_name: scheduleName, start: nil, end: nil, location: location, alarm: alarm, share: share, key: nil, memo: memo)
+        
+        let request = AF.request(url,
+        method: .put,
+        parameters: param,
+        encoder: JSONParameterEncoder.default,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("일정 수정 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
     func seeAllSchedules(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/private/0"
+        let url = baseURL + "schedule/show/4"
         
         let header:HTTPHeaders = [
             "token": token!
         ]
         
         let request = AF.request(url,
-        method: .post,
+        method: .get,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
@@ -281,14 +306,14 @@ class NetworkManager {
     }
     
     func seeTodaySchedule(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/private/1"
+        let url = baseURL + "schedule/show/5"
         
         let header:HTTPHeaders = [
             "token": token!
         ]
         
         let request = AF.request(url,
-        method: .post,
+        method: .get,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
@@ -303,14 +328,14 @@ class NetworkManager {
     }
     
     func seeWeekSchedule(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/private/2"
+        let url = baseURL + "schedule/show/6"
         
         let header:HTTPHeaders = [
             "token": token!
         ]
         
         let request = AF.request(url,
-        method: .post,
+        method: .get,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
@@ -324,14 +349,14 @@ class NetworkManager {
     }
     
     func seeMonthSchedule(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/private/3"
+        let url = baseURL + "schedule/show/7"
         
         let header:HTTPHeaders = [
             "token": token!
         ]
         
         let request = AF.request(url,
-        method: .post,
+        method: .get,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
@@ -421,6 +446,32 @@ class NetworkManager {
     
     func exitGroup() {
         //잠시 보류 
+    }
+    
+    func seeGroupMember(share: Int) {
+        let url = baseURL + "share/group/member"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let param = Schedule(id: nil, number: nil, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: share, key: nil, memo: nil)
+        
+        let request = AF.request(url,
+        method: .get,
+        parameters: param,
+        encoder: JSONParameterEncoder.default,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("그룹 구성원 보기 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+        
     }
     
 }
