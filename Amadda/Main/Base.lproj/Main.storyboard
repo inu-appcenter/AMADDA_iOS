@@ -1381,7 +1381,7 @@
                                                         <fragment content="학번">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.1764705882352941" green="0.24313725490196078" blue="0.31764705882352939" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="20" name=".AppleSDGothicNeoI-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="20"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -1585,7 +1585,7 @@
                                                         <fragment content="회원 탈퇴">
                                                             <attributes>
                                                                 <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                                <font key="NSFont" size="18" name=".AppleSDGothicNeoI-Regular"/>
+                                                                <font key="NSFont" metaFont="system" size="18"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>

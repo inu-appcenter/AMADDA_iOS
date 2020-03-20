@@ -29,12 +29,18 @@ class AddCourseManualVC: UIViewController, UIGestureRecognizerDelegate {
             return
         }
         var myCourseArray = [Course]()
-        if let myCourse = UserDefaults.standard.array(forKey: "MyCourse") as? [Course] {
-            myCourseArray = myCourse
+        if let data = UserDefaults.standard.value(forKey: "MyCourse") as? Data {
+            if let myCourse = try? PropertyListDecoder().decode(Array<Course>.self, from: data){
+                myCourseArray = myCourse
+            }
         }
-        let newCourse = Course(subject: courseNameTextField.text!, prof: "", day: "", startTime: AddCourseManualTableVC.startTimeLabel.text!, endTime: AddCourseManualTableVC.endTimeLabel.text!, place: AddCourseManualTableVC.placeTextField.text!)
+        let startTimeArray = AddCourseManualTableVC.startTimeLabel.text!.components(separatedBy: " ")
+        
+        print(startTimeArray)
+        let newCourse = Course(subject: courseNameTextField.text!, prof: "", day: startTimeArray[0].stringToDayValue, startTime: startTimeArray[1] + " " + startTimeArray[2], endTime: AddCourseManualTableVC.endTimeLabel.text!, place: AddCourseManualTableVC.placeTextField.text!)
         myCourseArray.append(newCourse)
         print(myCourseArray)
+        UserDefaults.standard.set(try? PropertyListEncoder().encode(myCourseArray), forKey: "MyCourse")
     }
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {

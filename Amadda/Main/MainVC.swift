@@ -29,7 +29,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         NetworkManager().seeProfile(completion: {(response) in
             print(response)
         })
@@ -112,7 +112,24 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         
         self.view.addSubview(floaty)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        // MARK: 개인 일정 UI
+        /**
+        일단 저장 후 불러오는게 성공 했으나 gesture Recognizer & subject.label 이 증발 해버리는 현상 발생.
+         addCourseManual에서 저장 할때마다 UserDefault로 올리는게 아니라 [Course] 전역 변수로 만들고
+         앱 첫 실행 시 받아오고, 앱 꺼졌을때 저장만 해서 하면 해결 가능해 보임.
+         */
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
+        drawManualEvent(collectionView: collectionView, gesture: gesture)
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        for view in collectionView.subviews {
+            if view.accessibilityIdentifier == "MyCourse" {
+                view.removeFromSuperview()
+            }
+        }
+    }
+
     @IBAction func changeCalendar(_ sender: Any) {
         self.tabBarController?.selectedIndex = 1
     }
@@ -173,6 +190,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 cell.layer.borderWidth = 0.0
             }
         }
+        /*
         /// 겹치는 시간표 test
         if indexPath == [0,5] || indexPath == [4,3] {
             let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * 3))
@@ -195,7 +213,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             cell.layer.borderColor = UIColor.white.cgColor
             cell.layer.borderWidth = 0.0
         }
-        
+ */
         // MARK: 오늘을 나타내는 BG Color Set
         if getDayOfWeek() == indexPath.section {
             cell.backgroundColor = UIColor.todayBackGround

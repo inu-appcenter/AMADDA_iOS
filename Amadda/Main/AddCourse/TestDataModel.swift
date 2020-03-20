@@ -28,7 +28,7 @@ struct ComputerScience {
         ]
 }
 
-struct Course {
+struct Course: Codable {
     var subject: String
     var professor: String
     var day: String
@@ -44,8 +44,55 @@ struct Course {
         self.endTime = endTime
         self.place = place
     }
-    var timeAndPlace: String{
+    var timeAndPlace: String {
         return "\(startTime)~\(endTime) \(place)"
+    }
+    /// time형식 "aa HH:mm" 일때만 사용 가능
+    var courseTime: Float {
+        get {
+            // 오전, 시간:분
+            let startTimeArray = startTime.components(separatedBy: " ")
+            var startHourArray = startTimeArray[1].components(separatedBy: ":")
+            if startHourArray[0] == "12" {
+                startHourArray[0] = "00"
+            }
+            var startHour: Float = Float(startHourArray[0])! * 60 + Float(startHourArray[1])!
+            
+            // 오전, 시간:분
+            var endTimeArray = endTime.components(separatedBy: " ")
+            if endTimeArray[0] == "12" {
+                endTimeArray[0] == "00"
+            }
+            let endHourArray = endTimeArray[1].components(separatedBy: ":")
+            var endHour: Float = Float(endHourArray[0])! * 60 + Float(endHourArray[1])!
+            
+            var courseTime: Float = startHour - endHour
+            // 시작시간과 종료시간의 오전,오후가 서로 다르면 12시간 추가, 같으면 어차피 같이 빼지므로 시간만 비교
+            if startTimeArray[0] != endTimeArray[0] {
+                courseTime += 12 * 60
+            }
+            return courseTime / 60
+        }
+    }
+    // 만들다 맘.
+    var startIndexPath: Int {
+        get {
+            var startTimeArray = startTime.components(separatedBy: " ")
+            startTimeArray = startTimeArray[2].components(separatedBy: ":")
+            
+            switch startTimeArray[0] {
+            case "9":
+                return 0
+            case "10":
+                return 1
+            case "11":
+                return 2
+            case "12":
+                return 3
+            default:
+                return -1
+            }
+        }
     }
     func dayString() -> String {
         switch day {
