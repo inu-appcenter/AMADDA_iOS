@@ -40,10 +40,9 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 print("schedules are empty")
             }
         })
-        showAlertController(title: "networkTest", message: "실행?", completionHandler: {(_) in
-            networkTest()
+        showAlertController(title: "", message: "시간표 삭제?", completionHandler: {(_) in
+            UserDefaults.standard.removeObject(forKey: "MyCourse")
         })
-        
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
         var dateFormatter = DateFormatter()
@@ -118,9 +117,16 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         일단 저장 후 불러오는게 성공 했으나 gesture Recognizer & subject.label 이 증발 해버리는 현상 발생.
          addCourseManual에서 저장 할때마다 UserDefault로 올리는게 아니라 [Course] 전역 변수로 만들고
          앱 첫 실행 시 받아오고, 앱 꺼졌을때 저장만 해서 하면 해결 가능해 보임.
+         -> UIGestureRecognizer는 한 view에만 할당 가능. 그냥 UIButton으로 바꿔버리고 action을 push로 하는걸로 해결.
          */
         let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
-        drawManualEvent(collectionView: collectionView, gesture: gesture)
+        drawManualEvent(collectionView: collectionView)
+        for view in collectionView.subviews {
+            if view.accessibilityIdentifier == "MyCourse" {
+                let btn = view as! UIButton
+                btn.addTarget(self, action: #selector(timeTableDidSelect), for: .touchUpInside)
+            }
+        }
     }
     override func viewDidDisappear(_ animated: Bool) {
         for view in collectionView.subviews {
