@@ -471,8 +471,6 @@ class NetworkManager {
             print("Error description is: \(error.localizedDescription)")
            }
         }
-        
     }
-    
 }
 
