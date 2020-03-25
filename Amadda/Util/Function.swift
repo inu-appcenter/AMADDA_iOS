@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 /// 직접 추가한 일정을 불러와서 collectionView에 UI를 그립니다
-func drawManualEvent(collectionView: UICollectionView, gesture: UITapGestureRecognizer) {
+func drawManualEvent(collectionView: UICollectionView) {
     if let data = UserDefaults.standard.value(forKey: "MyCourse") as? Data {
         if let myCourse = try? PropertyListDecoder().decode(Array<Course>.self, from: data){
             print(myCourse)
             for course in myCourse{
                 if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, 3]) as? UICollectionViewCell {
-                    let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(course.courseTime))))
+                    let timeTable = UIButton(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(course.courseTime))))
                     timeTable.backgroundColor = UIColor.orange
                     timeTable.alpha = 0.6
                     timeTable.accessibilityIdentifier = "MyCourse"
@@ -24,15 +24,12 @@ func drawManualEvent(collectionView: UICollectionView, gesture: UITapGestureReco
                     let eventLabel = UILabel(frame: CGRect(x: 0, y: timeTable.bounds.origin.y, width: timeTable.frame.width, height: timeTable.frame.height / 3))
                     eventLabel.text = course.subject
                     eventLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
-                    eventLabel.textColor = UIColor.red
+                    eventLabel.textColor = UIColor.white
                     eventLabel.lineBreakMode = .byCharWrapping
                     eventLabel.numberOfLines = 0
                     eventLabel.sizeToFit()
                     
-                    eventLabel.backgroundColor = .yellow
-                    
                     timeTable.addSubview(eventLabel)
-                    timeTable.addGestureRecognizer(gesture)
                 
                     collectionView.addSubview(timeTable)
                     cell.layer.borderColor = UIColor.white.cgColor
