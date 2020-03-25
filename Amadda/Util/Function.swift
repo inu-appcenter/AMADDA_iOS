@@ -16,18 +16,20 @@ func drawManualEvent(collectionView: UICollectionView, gesture: UITapGestureReco
             print(myCourse)
             for course in myCourse{
                 if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, 3]) as? UICollectionViewCell {
-                    let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height * CGFloat(course.courseTime)))
+                    let timeTable = UIView(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(course.courseTime))))
                     timeTable.backgroundColor = UIColor.orange
                     timeTable.alpha = 0.6
                     timeTable.accessibilityIdentifier = "MyCourse"
                     
-                    let eventLabel = UILabel(frame: CGRect(x: 0, y: 0, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+                    let eventLabel = UILabel(frame: CGRect(x: 0, y: timeTable.bounds.origin.y, width: timeTable.frame.width, height: timeTable.frame.height / 3))
                     eventLabel.text = course.subject
                     eventLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
-                    eventLabel.textColor = UIColor.white
+                    eventLabel.textColor = UIColor.red
                     eventLabel.lineBreakMode = .byCharWrapping
                     eventLabel.numberOfLines = 0
                     eventLabel.sizeToFit()
+                    
+                    eventLabel.backgroundColor = .yellow
                     
                     timeTable.addSubview(eventLabel)
                     timeTable.addGestureRecognizer(gesture)

@@ -40,10 +40,9 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 print("schedules are empty")
             }
         })
-        showAlertController(title: "networkTest", message: "실행?", completionHandler: {(_) in
-            networkTest()
+        showAlertController(title: "", message: "시간표 삭제?", completionHandler: {(_) in
+            UserDefaults.standard.removeObject(forKey: "MyCourse")
         })
-        
         // MARK: Default Setting
         self.tabBarController?.tabBar.isHidden = true
         var dateFormatter = DateFormatter()
