@@ -15,9 +15,13 @@ class NetworkManager {
      - 아마존 URL:  http://13.125.115.8:9000/
      */
     
-    private let baseURL = "http://13.125.115.8:9000/"
-    private let token = UserDefaults.standard.string(forKey: "token")
+    internal let baseURL = "http://13.125.115.8:9000/"
+    internal let token = UserDefaults.standard.string(forKey: "token")
+
     
+    // MARK:- User URI
+    
+    // 로그인
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/login"
         
@@ -43,6 +47,7 @@ class NetworkManager {
         }
     }
     
+    // 프로필 보기
     func seeProfile(completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/account"
         
@@ -64,6 +69,7 @@ class NetworkManager {
         }
     }
     
+    // 비밀번호 수정
     func modifypassword(password: String, newPassword: String, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/passwd"
         
@@ -88,11 +94,13 @@ class NetworkManager {
            }
         }
     }
-        
+    
+    // 프로필 수정
     func modifyProfile() {
         // 보류
     }
     
+    // 임시 비밀번호 발급
     func getTempPassword(id: String, name: String, completion: @escaping (Response?) -> Void ) {
         let url = baseURL + "user/tmpPasswd"
         
@@ -114,6 +122,7 @@ class NetworkManager {
         }
     }
     
+    // 프로필 이미지 업로드 및 수정
     func uploadProfileImg(image: UIImage) {
         let url = baseURL + "image"
         
@@ -140,6 +149,7 @@ class NetworkManager {
         }
     }
     
+    // 프로필 이미지 삭제
     func deleteProfileImg() {
         let url = baseURL + "image"
         
@@ -161,7 +171,8 @@ class NetworkManager {
         }
     }
     
-    func withdraw() {
+    // 회원 탈퇴
+    func requestMemberSecession() {
         let url = baseURL + "user/secession"
         
         let header:HTTPHeaders = [
@@ -180,34 +191,11 @@ class NetworkManager {
             print("Error description is: \(error.localizedDescription)")
            }
         }
-        
     }
     
-    func setInviteOption(flag: Int) {
-        let url = baseURL + "share/invite/users/flag"
-        
-        let header:HTTPHeaders = [
-                   "token": token!
-               ]
-        
-        let param = User(id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: flag)
-        
-        let request = AF.request(url,
-        method: .post,
-        parameters: param,
-        encoder: JSONParameterEncoder.default,
-        headers: header)
-        
-        request.responseDecodable(of: Response.self) { response in
-           switch response.result {
-           case let .success(result):
-            print("초대 옵션 변경 \(result)")
-           case let .failure(error):
-            print("Error description is: \(error.localizedDescription)")
-           }
-        }
-    }
+    // MARK:- Schedule URI
     
+    // 일정추가
     func addSchedule(name: String, start: String, end: String, location: String?, alarm: String?, share: Int?, memo: String?, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/add"
         
@@ -234,6 +222,7 @@ class NetworkManager {
         }
     }
     
+    // 일정 보기(세부 사항)
     func seeScheduleDetail(number: Int, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/detail"
         
@@ -259,6 +248,7 @@ class NetworkManager {
         }
     }
     
+    // 일정 수정
     func modifySchedule(number: Int, scheduleName: String, location: String?, alarm: String?, share: Int?, memo: String? ) {
         let url = baseURL + "schedule/modify"
         
@@ -284,8 +274,9 @@ class NetworkManager {
         }
     }
     
+    // 전체 일정 보기
     func seeAllSchedules(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/4"
+        let url = baseURL + "schedule/show/all"
         
         let header:HTTPHeaders = [
             "token": token!
@@ -305,12 +296,23 @@ class NetworkManager {
         }
     }
     
-    func seeTodaySchedule(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/5"
+    // 하루 일정 보기
+    func seeTodaySchedule(date: Date, completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "schedule/show/day"
         
         let header:HTTPHeaders = [
             "token": token!
         ]
+        
+        // 수정
+        
+//        let param = Schedule(id: nil, number: number, schedule_name: scheduleName, start: nil, end: nil, location: location, alarm: alarm, share: share, key: nil, memo: memo)
+//
+//        let request = AF.request(url,
+//        method: .get,
+//        parameters: param,
+//        encoder: JSONParameterEncoder.default,
+//        headers: header)
         
         let request = AF.request(url,
         method: .get,
@@ -327,8 +329,9 @@ class NetworkManager {
         
     }
     
+    // 주간 일정 보기
     func seeWeekSchedule(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/6"
+        let url = baseURL + "schedule/show/week"
         
         let header:HTTPHeaders = [
             "token": token!
@@ -348,8 +351,9 @@ class NetworkManager {
         }
     }
     
+    // 월간 일정 보기
     func seeMonthSchedule(completion: @escaping (Response?) -> Void) {
-        let url = baseURL + "schedule/show/7"
+        let url = baseURL + "schedule/show/month"
         
         let header:HTTPHeaders = [
             "token": token!
@@ -369,6 +373,29 @@ class NetworkManager {
         }
     }
     
+    // 그룹 일정 보기
+    func seeGroupSchedule(share: Int, completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "schedule/show/group"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .get,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("월간 일정 보기 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
+    // 일정 삭제
     func deleteSchedule(number: Int) {
         let url = baseURL + "schedule/delete"
         
@@ -388,85 +415,6 @@ class NetworkManager {
            switch response.result {
            case let .success(result):
             print("스케줄 삭제 \(result)")
-           case let .failure(error):
-            print("Error description is: \(error.localizedDescription)")
-           }
-        }
-    }
-    
-    func makeGroup(groupName: String, inviters: [String], memo: String? ) {
-        let url = baseURL + "share/group/create"
-        
-        let param = Group(group_name: groupName, inviters: inviters, memo: memo)
-        
-        let header:HTTPHeaders = [
-            "token": token!
-        ]
-        
-        let request = AF.request(url,
-        method: .post,
-        parameters: param,
-        encoder: JSONParameterEncoder.default,
-        headers: header)
-        
-        request.responseDecodable(of: Response.self) { response in
-           switch response.result {
-           case let .success(result):
-            print("그룹 생성 \(result)")
-           case let .failure(error):
-            print("Error description is: \(error.localizedDescription)")
-           }
-        }
-    }
-    
-    func findInvitee() {
-        // 잠깐 보류
-    }
-    
-    func getGroup() {
-        let url = baseURL + "share/groups/show"
-        
-        let header:HTTPHeaders = [
-            "token": token!
-        ]
-        
-        let request = AF.request(url,
-        method: .get,
-        headers: header)
-        
-        request.responseDecodable(of: Response.self) { response in
-           switch response.result {
-           case let .success(result):
-            print("내가 속해있는 그룹 가져오기 \(result)")
-           case let .failure(error):
-            print("Error description is: \(error.localizedDescription)")
-           }
-        }
-    }
-    
-    func exitGroup() {
-        //잠시 보류 
-    }
-    
-    func seeGroupMember(share: Int) {
-        let url = baseURL + "share/group/member"
-        
-        let header:HTTPHeaders = [
-            "token": token!
-        ]
-        
-        let param = Schedule(id: nil, number: nil, schedule_name: nil, start: nil, end: nil, location: nil, alarm: nil, share: share, key: nil, memo: nil)
-        
-        let request = AF.request(url,
-        method: .get,
-        parameters: param,
-        encoder: JSONParameterEncoder.default,
-        headers: header)
-        
-        request.responseDecodable(of: Response.self) { response in
-           switch response.result {
-           case let .success(result):
-            print("그룹 구성원 보기 \(result)")
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }

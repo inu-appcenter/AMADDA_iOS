@@ -12,6 +12,7 @@
 		D15993232411C425006A2E62 /* Spoqa Han Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D159931E2411C41D006A2E62 /* Spoqa Han Sans Light.ttf */; };
 		D15993242411C427006A2E62 /* Spoqa Han Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D15993202411C41D006A2E62 /* Spoqa Han Sans Regular.ttf */; };
 		D15993252411C42A006A2E62 /* Spoqa Han Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D159931F2411C41D006A2E62 /* Spoqa Han Sans Thin.ttf */; };
+		D15D2662242DFEA000B1065E /* NetworkManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15D2661242DFEA000B1065E /* NetworkManager+Extension.swift */; };
 		D1616CA72401B709002C806B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CA62401B709002C806B /* MenuViewController.swift */; };
 		D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CA82401B767002C806B /* ContainerViewController.swift */; };
 		D1616CB32401C470002C806B /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1616CB22401C470002C806B /* GroupCell.swift */; };
@@ -68,6 +69,7 @@
 		D159931F2411C41D006A2E62 /* Spoqa Han Sans Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Thin.ttf"; sourceTree = "<group>"; };
 		D15993202411C41D006A2E62 /* Spoqa Han Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Regular.ttf"; sourceTree = "<group>"; };
 		D15993212411C41E006A2E62 /* Spoqa Han Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Spoqa Han Sans Bold.ttf"; sourceTree = "<group>"; };
+		D15D2661242DFEA000B1065E /* NetworkManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager+Extension.swift"; sourceTree = "<group>"; };
 		D1616CA62401B709002C806B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D1616CA82401B767002C806B /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		D1616CB22401C470002C806B /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				D1616CBF24063D80002C806B /* NetworkManager.swift */,
+				D15D2661242DFEA000B1065E /* NetworkManager+Extension.swift */,
 				D1616CC12406454C002C806B /* Model */,
 			);
 			path = Network;
@@ -435,6 +438,7 @@
 				FA71758B240DE5E600115F55 /* MajorTableVC.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
 				D1D6CA0F240EA83400ADC853 /* AddCourseTableViewCell.swift in Sources */,
+				D15D2662242DFEA000B1065E /* NetworkManager+Extension.swift in Sources */,
 				D1616CA72401B709002C806B /* MenuViewController.swift in Sources */,
 				FA717589240DE07F00115F55 /* TimeTableCollectionViewCell.swift in Sources */,
 				FA8EC19E23EBC991007633D9 /* AppDelegate.swift in Sources */,
