@@ -15,7 +15,7 @@ func drawManualEvent(collectionView: UICollectionView) {
         if let myCourse = try? PropertyListDecoder().decode(Array<Course>.self, from: data){
             print(myCourse)
             for course in myCourse{
-                if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, 3]) as? UICollectionViewCell {
+                if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, course.startIndexPath]) as? UICollectionViewCell {
                     let timeTable = UIButton(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(course.courseTime))))
                     timeTable.backgroundColor = UIColor.orange
                     timeTable.alpha = 0.6

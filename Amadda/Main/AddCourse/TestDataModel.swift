@@ -78,19 +78,45 @@ struct Course: Codable {
     var startIndexPath: Int {
         get {
             var startTimeArray = startTime.components(separatedBy: " ")
-            startTimeArray = startTimeArray[2].components(separatedBy: ":")
+            let startTimeSunPosition = startTimeArray[0]
+            startTimeArray = startTimeArray[1].components(separatedBy: ":")
             
-            switch startTimeArray[0] {
-            case "9":
-                return 0
-            case "10":
-                return 1
-            case "11":
-                return 2
-            case "12":
-                return 3
-            default:
-                return -1
+            if startTimeSunPosition == "오전" {
+                switch startTimeArray[0] {
+                case "09":
+                    return 0
+                case "10":
+                    return 1
+                case "11":
+                    return 2
+                default:
+                    return -1
+                }
+            }else {
+                switch startTimeArray[0] {
+                case "12":
+                    return 3
+                case "01":
+                    return 4
+                case "02":
+                    return 5
+                case "03":
+                    return 6
+                case "04":
+                    return 7
+                case "05":
+                    return 8
+                case "06":
+                    return 9
+                case "07":
+                    return 10
+                case "08":
+                    return 11
+                case "09":
+                    return 12
+                default:
+                    return -1
+                }
             }
         }
     }
