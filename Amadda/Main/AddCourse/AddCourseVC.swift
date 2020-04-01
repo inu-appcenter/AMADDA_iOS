@@ -31,13 +31,29 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         /// 시간표 API 받아올 수 있을때 까지 tableView 가립니다
         tableViewConstraint.constant = 0
         timeLineViewConstraint.constant = 1000
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        drawManualEvent(collectionView: collectionView)
+    }
+        
+    override func viewDidDisappear(_ animated: Bool) {
+        for view in collectionView.subviews {
+            if view.accessibilityIdentifier == "MyCourse" {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
     @IBAction func dismissBtn(_ sender: Any) {
         showAlertController(title: "", message: "변경 사항을 저장하지 않고 끝내시겠습니까?", completionHandler: {(action) in
             self.dismiss(animated: true, completion: nil)
         })
     }
     @IBAction func doneBtn(_ sender: Any) {
+        self.showAlertController(title: "", message: "변경 사항을 저장하시겠습니까?", completionHandler: {(action) in
+            self.dismiss(animated: true, completion: nil)
+        })
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

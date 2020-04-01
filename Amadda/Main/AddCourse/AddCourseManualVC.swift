@@ -41,6 +41,8 @@ class AddCourseManualVC: UIViewController, UIGestureRecognizerDelegate {
         myCourseArray.append(newCourse)
         print(myCourseArray)
         UserDefaults.standard.set(try? PropertyListEncoder().encode(myCourseArray), forKey: "MyCourse")
+        
+        self.navigationController?.popViewController(animated: true)
     }
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
