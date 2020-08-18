@@ -29,7 +29,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         NetworkManager().seeProfile(completion: {(response) in
             print(response)
         })

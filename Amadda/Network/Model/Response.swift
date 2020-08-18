@@ -13,3 +13,4 @@ struct Response: Codable {
     let schedule: Schedule?
     let schedules: [Schedule]?
 }
+

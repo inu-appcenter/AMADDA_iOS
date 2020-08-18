@@ -11,11 +11,11 @@ import Alamofire
 class NetworkManager {
     
     /*
-     - URL : http://117.16.231.66:7004/
+     - URL : http://117.16.191.242:7005
      - 아마존 URL:  http://13.125.115.8:9000/
      */
     
-    internal let baseURL = "http://13.125.115.8:9000/"
+    internal let baseURL = "http://117.16.191.242:7005/"
     internal let token = UserDefaults.standard.string(forKey: "token")
 
     
@@ -25,7 +25,7 @@ class NetworkManager {
     func login(id: String, password: String, completion: @escaping (Response?) -> Void) {
         let url = baseURL + "user/login"
         
-        let param = User(id: id, passwd: password, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+        let param = User(id: id, passwd: password)
             
         let request = AF.request(url,
                    method: .post,
@@ -33,6 +33,7 @@ class NetworkManager {
                    encoder: JSONParameterEncoder.default,
                    headers: nil)
 
+        
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
            case let .success(result):
@@ -44,6 +45,7 @@ class NetworkManager {
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }
+            String(data: response.data!, encoding: .utf8)
         }
     }
     
@@ -77,7 +79,8 @@ class NetworkManager {
             "token": token!
         ]
         
-        let param = User(id: nil, passwd: password, newPasswd: newPassword, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+//        let param = User(id: nil, passwd: password, newPasswd: newPassword, name: nil, major: nil, tel: nil, email: nil, flag: nil)
+        let param = User(passwd: password, newPasswd: newPassword)
         
         let request = AF.request(url,
                    method: .put,
@@ -104,7 +107,8 @@ class NetworkManager {
     func getTempPassword(id: String, name: String, completion: @escaping (Response?) -> Void ) {
         let url = baseURL + "user/tmpPasswd"
         
-        let param = User(id: id, passwd: nil, newPasswd: nil, name: name, major: nil, tel: nil, email: nil, flag: nil)
+//        let param = User(id: id, passwd: nil, newPasswd: nil, name: name, major: nil, tel: nil, email: nil, flag: nil)
+        let param = User(id: id, name: name)
         
         let request = AF.request(url,
                    method: .post,

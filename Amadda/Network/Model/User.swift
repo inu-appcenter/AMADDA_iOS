@@ -14,7 +14,24 @@ struct User: Codable {
     let major: String?
     let tel: String?
     let email: String?
-//    let user_image: String?
+    let path: String?
+    let invite: Int?
+    let user_image: String?
     let flag: Int?
     
+    init(id: String? = nil, name: String? = nil, email: String? = nil, path: String? = nil, invite: Int? = nil, passwd: String? = nil, newPasswd: String? = nil, major: String? = nil, tel: String? = nil, userImage: String? = nil, flag: Int? = nil){
+        self.id = id
+        self.name = name
+        self.email = email
+        self.path = path
+        self.invite = invite
+        
+        self.passwd = passwd
+        self.newPasswd = newPasswd
+        self.major = major
+        self.tel = tel
+        self.user_image = userImage
+        self.flag = flag
+    }
+ 
 }

@@ -46,7 +46,8 @@ extension NetworkManager {
                    "token": token!
                ]
         
-        let param = User(id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: flag)
+//        let param = User(id: nil, passwd: nil, newPasswd: nil, name: nil, major: nil, tel: nil, email: nil, flag: flag)
+        let param = User(flag: flag)
         
         let request = AF.request(url,
         method: .post,

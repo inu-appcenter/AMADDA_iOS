@@ -36,6 +36,15 @@ func drawManualEvent(collectionView: UICollectionView) {
                     eventLabel.numberOfLines = 0
                     eventLabel.sizeToFit()
                     
+                    let placeLabel = UILabel(frame: CGRect(x: eventLabel.frame.minX, y: eventLabel.frame.maxY + 5, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+                    placeLabel.text = course.place
+                    placeLabel.font = UIFont(name: "SpoqaHanSans-Regular", size: 10)
+                    placeLabel.textColor = UIColor.white
+                    placeLabel.lineBreakMode = .byCharWrapping
+                    placeLabel.numberOfLines = 0
+                    placeLabel.sizeToFit()
+                    
+                    timeTable.addSubview(placeLabel)
                     timeTable.addSubview(eventLabel)
                     
                     collectionView.addSubview(timeTable)
