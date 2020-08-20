@@ -20,7 +20,7 @@ var testData = [    ["1-1","1-2","1-3","1-4","1-5","1-6","1-7","1-8","1-9","1-10
 class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     var delegate: HomeViewControllerDelegate?
-    let courseData = ComputerScience()
+//    let courseData = ComputerScience()
     
     @IBOutlet var navigationItemBar: UINavigationItem!
     @IBOutlet var collectionView: UICollectionView!
@@ -166,6 +166,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.3
         
+        /*
         // MARK: 시간표 등록 완료된 item 표시
         for course in courseData.courseList {
             let courseIndexPath = IndexPath(row: Int(course.startTime)!-1, section: Int(course.day)!-1)
@@ -202,6 +203,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 cell.layer.borderWidth = 0.0
             }
         }
+ */
         /*
         /// 겹치는 시간표 test
         if indexPath == [0,5] || indexPath == [4,3] {
