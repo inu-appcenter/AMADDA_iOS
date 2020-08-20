@@ -77,7 +77,7 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: cell.frame.width, height: 20))
         label.text = "\(testData[indexPath.section][indexPath.row])"
         label.textColor = UIColor.black
-        cell.addSubview(label)
+//        cell.addSubview(label)
         
         cell.layer.borderColor = UIColor.gray.cgColor
         cell.layer.borderWidth = 0.3
