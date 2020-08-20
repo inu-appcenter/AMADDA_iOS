@@ -33,14 +33,6 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         NetworkManager().seeProfile(completion: {(response) in
             print(response)
         })
-        NetworkManager().seeAllSchedules(completion: {(response) in
-            if response?.schedules != nil {
-                scheduleList = (response?.schedules)!
-            }else {
-                print("schedules are empty")
-            }
-            self.collectionView.reloadSections(IndexSet(0...0))
-        })
         showAlertController(title: "", message: "시간표 삭제?", completionHandler: {(_) in
             UserDefaults.standard.removeObject(forKey: "MyCourse")
         })
@@ -121,13 +113,21 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
          -> UIGestureRecognizer는 한 view에만 할당 가능. 그냥 UIButton으로 바꿔버리고 action을 push로 하는걸로 해결.
          */
         let gesture = UITapGestureRecognizer(target: self, action: #selector(timeTableDidSelect))
-        drawManualEvent(collectionView: collectionView)
         for view in collectionView.subviews {
             if view.accessibilityIdentifier == "MyCourse" {
                 let btn = view as! UIButton
                 btn.addTarget(self, action: #selector(timeTableDidSelect), for: .touchUpInside)
             }
         }
+        NetworkManager().seeAllSchedules(completion: {(response) in
+            if response?.schedules != nil {
+                scheduleList = (response?.schedules)!
+            }else {
+                print("schedules are empty")
+            }
+        })
+        drawManualEvent(collectionView: self.collectionView)
+        collectionView.reloadInputViews()
     }
     override func viewDidDisappear(_ animated: Bool) {
         for view in collectionView.subviews {
@@ -251,6 +251,56 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     @objc func handleMenuToggle() {
         delegate?.handleMenuToggle()
     }
+    
+    /// 직접 추가한 일정을 불러와서 collectionView에 UI를 그립니다
+    /*
+     viewwillapper, viewdidappear 에 버튼 하나를 추가하면 바로 추가 댐.
+     semaphore 적용해도 안댐
+     if let cell = collectionView.cellForItem 에서 cell을 못 불러오는듯.
+     collectionView가 다 생성 되기 전에 할당하려고 해서 그런가?
+     */
+    private func drawManualEvent(collectionView: UICollectionView) {
+        if let data = UserDefaults.standard.value(forKey: "MyCourse") as? Data {
+            if let myCourse = try? PropertyListDecoder().decode(Array<Course>.self, from: data){
+                print(myCourse)
+                for course in myCourse{
+                    if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, course.startIndexPath]) as? UICollectionViewCell {
+                        
+                        let timeTable = UIButton(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(course.courseTime))))
+                        timeTable.backgroundColor = UIColor.orange
+                        timeTable.alpha = 0.6
+                        timeTable.accessibilityIdentifier = "MyCourse"
+                        
+                        let eventLabel = UILabel(frame: CGRect(x: 0, y: timeTable.bounds.origin.y, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+                        eventLabel.text = course.subject
+                        eventLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
+                        eventLabel.textColor = UIColor.white
+                        eventLabel.lineBreakMode = .byCharWrapping
+                        eventLabel.numberOfLines = 0
+                        eventLabel.sizeToFit()
+                        
+                        let placeLabel = UILabel(frame: CGRect(x: eventLabel.frame.minX, y: eventLabel.frame.maxY + 5, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+                        placeLabel.text = course.place
+                        placeLabel.font = UIFont(name: "SpoqaHanSans-Regular", size: 10)
+                        placeLabel.textColor = UIColor.white
+                        placeLabel.lineBreakMode = .byCharWrapping
+                        placeLabel.numberOfLines = 0
+                        placeLabel.sizeToFit()
+                        
+                        timeTable.addTarget(self, action: #selector(timeTableDidSelect), for: .touchUpInside)
+                        
+                        timeTable.addSubview(placeLabel)
+                        timeTable.addSubview(eventLabel)
+                        
+                        collectionView.addSubview(timeTable)
+                        cell.layer.borderColor = UIColor.white.cgColor
+                        cell.layer.borderWidth = 0.0
+                    }
+                }
+            }
+        }
+        collectionView.reloadInputViews()
+    }
 }
 
 func networkTest() {
@@ -329,3 +379,5 @@ func getDayOfWeek() -> Int {
         return -1
     }
 }
+
+
