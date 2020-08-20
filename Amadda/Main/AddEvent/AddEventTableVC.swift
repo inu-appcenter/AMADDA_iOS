@@ -48,7 +48,10 @@ class AddEventTableVC: UITableViewController {
         let dateformatter = CustomDateFormatter(dateStyle: .none, timeStyle: .short)
         let date = dateformatter.string(from: sender.date)
         
+        guard let onlyDateOfstartDate = startDateValue?.components(separatedBy: " ") else {return}
         endDateValue = CustomDateFormatter().string(from: sender.date)
+        let onlyTimeOfEndDate = endDateValue!.components(separatedBy: " ")
+        endDateValue = onlyDateOfstartDate[0] + " " + onlyTimeOfEndDate[1]
         endLabel.text = "\(date)"
         endLabel.textColor = UIColor.textGray
     }

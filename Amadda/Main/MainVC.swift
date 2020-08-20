@@ -39,6 +39,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
             }else {
                 print("schedules are empty")
             }
+            self.collectionView.reloadSections(IndexSet(0...0))
         })
         showAlertController(title: "", message: "시간표 삭제?", completionHandler: {(_) in
             UserDefaults.standard.removeObject(forKey: "MyCourse")

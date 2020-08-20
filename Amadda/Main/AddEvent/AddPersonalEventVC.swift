@@ -47,6 +47,7 @@ class AddPersonalEventVC: UIViewController {
         if start == nil || end == nil || schedule_name == ""{
             showDefaultAlertController(title: "일정 추가 실패", message: "빈칸을 확인하세요", completionHandler: nil)
         }else {
+            print("startDate: \(start) ## endDate: \(end)")
             NetworkManager().addSchedule(name: schedule_name, start: start, end: end, location: location, alarm: alarm, share: nil, memo: memo, completion: {(response) in
                 guard let response = response else {return}
                 if response.success! {
