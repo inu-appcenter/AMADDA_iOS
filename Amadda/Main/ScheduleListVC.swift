@@ -10,12 +10,13 @@ import UIKit
 
 class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
+    var scheduleList = [Schedule]()
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return scheduleList.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
@@ -32,6 +33,11 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScheduleCell
 
+        cell.dateLabel.text = "\(scheduleList[indexPath.row].start!) ~ \(scheduleList[indexPath.row].end!)"
+//        cell.memoLabel.text = scheduleList[indexPath.row].memo
+//        cell.locationLabel.text = scheduleList[indexPath.row].location
+        cell.scheduleTitle.text = scheduleList[indexPath.row].schedule_name
+        
         return cell
     }
     
@@ -39,6 +45,7 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
 
         return CGSize(width: self.view.frame.width, height: 175)
     }
+    
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         

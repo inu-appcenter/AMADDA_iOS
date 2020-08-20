@@ -48,13 +48,19 @@ func drawManualEvent(collectionView: UICollectionView) {
                     timeTable.addSubview(eventLabel)
                     
                     collectionView.addSubview(timeTable)
+                    collectionView.bringSubviewToFront(timeTable)
                     cell.layer.borderColor = UIColor.white.cgColor
                     cell.layer.borderWidth = 0.0
+                    
+                    print("## ADD SUBVIEW BTN DONE")
                 }
             }
         }
     }
-    collectionView.reloadInputViews()
+    collectionView.awakeFromNib()
+    collectionView.setNeedsDisplay()
+//    collectionView.reloadData()
+//    collectionView.reloadInputViews()
 }
 
 

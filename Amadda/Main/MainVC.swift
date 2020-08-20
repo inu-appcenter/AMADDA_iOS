@@ -126,8 +126,12 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 print("schedules are empty")
             }
         })
+        
+//        collectionView.reloadInputViews()
+        
+    }
+    override func viewDidAppear(_ animated: Bool) {
         drawManualEvent(collectionView: self.collectionView)
-        collectionView.reloadInputViews()
     }
     override func viewDidDisappear(_ animated: Bool) {
         for view in collectionView.subviews {
@@ -137,6 +141,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
         }
     }
 
+    
     @IBAction func changeCalendar(_ sender: Any) {
         self.tabBarController?.selectedIndex = 1
     }
@@ -231,6 +236,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
 
     @objc func timeTableDidSelect(){
         guard let ScheduleListVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleListVC") as? ScheduleListVC else{return}
+        ScheduleListVC.scheduleList = scheduleList
         self.navigationController?.pushViewController(ScheduleListVC, animated: true)
     }
     

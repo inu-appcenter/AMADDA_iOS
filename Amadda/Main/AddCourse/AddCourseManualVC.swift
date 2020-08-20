@@ -39,8 +39,11 @@ class AddCourseManualVC: UIViewController, UIGestureRecognizerDelegate {
         print(startTimeArray)
         let newCourse = Course(subject: courseNameTextField.text!, prof: "", day: startTimeArray[0].stringToDayValue, startTime: startTimeArray[1] + " " + startTimeArray[2], endTime: AddCourseManualTableVC.endTimeLabel.text!, place: AddCourseManualTableVC.placeTextField.text!)
         myCourseArray.append(newCourse)
-        print(myCourseArray)
-        UserDefaults.standard.set(try? PropertyListEncoder().encode(myCourseArray), forKey: "MyCourse")
+        guard let parentVC = self.navigationController?.viewControllers.first as? AddCourseVC else {
+            print("## init parentVC Failure")
+            return
+        }
+        parentVC.myCourseArray = myCourseArray
         
         self.navigationController?.popViewController(animated: true)
     }
