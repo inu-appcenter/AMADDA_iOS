@@ -21,6 +21,13 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     var myCourseArray = [Course]()
     
     override func viewDidLoad() {
+        /// Fetch Course Data
+        if let data = UserDefaults.standard.value(forKey: "MyCourse") as? Data {
+            if let myCourse = try? PropertyListDecoder().decode(Array<Course>.self, from: data){
+                myCourseArray = myCourse
+            }
+        }
+        
         /// Collection View
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -37,7 +44,7 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     override func viewWillAppear(_ animated: Bool) {
     }
     override func viewDidAppear(_ animated: Bool) {
-        drawManualEvent(collectionView: collectionView)
+        drawTmpAddCourse(collectionView: collectionView, tmpCourse: myCourseArray)
     }
     override func viewDidDisappear(_ animated: Bool) {
         for view in collectionView.subviews {
@@ -79,5 +86,43 @@ class AddCourseVC: UIViewController, UICollectionViewDelegate, UICollectionViewD
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width / 5.0, height: timeLineStackView.frame.height / CGFloat(14))
+    }
+}
+
+private func drawTmpAddCourse(collectionView: UICollectionView, tmpCourse: [Course]) {
+    for course in tmpCourse{
+        if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, course.startIndexPath]) as? UICollectionViewCell {
+            
+            let timeTable = UIButton(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(course.courseTime))))
+            timeTable.backgroundColor = UIColor.orange
+            timeTable.alpha = 0.6
+            timeTable.accessibilityIdentifier = "MyCourse"
+            
+            let eventLabel = UILabel(frame: CGRect(x: 0, y: timeTable.bounds.origin.y, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+            eventLabel.text = course.subject
+            eventLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
+            eventLabel.textColor = UIColor.white
+            eventLabel.lineBreakMode = .byCharWrapping
+            eventLabel.numberOfLines = 0
+            eventLabel.sizeToFit()
+            
+            let placeLabel = UILabel(frame: CGRect(x: eventLabel.frame.minX, y: eventLabel.frame.maxY + 5, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+            placeLabel.text = course.place
+            placeLabel.font = UIFont(name: "SpoqaHanSans-Regular", size: 10)
+            placeLabel.textColor = UIColor.white
+            placeLabel.lineBreakMode = .byCharWrapping
+            placeLabel.numberOfLines = 0
+            placeLabel.sizeToFit()
+            
+            timeTable.addSubview(placeLabel)
+            timeTable.addSubview(eventLabel)
+            
+            collectionView.addSubview(timeTable)
+            collectionView.bringSubviewToFront(timeTable)
+            cell.layer.borderColor = UIColor.white.cgColor
+            cell.layer.borderWidth = 0.0
+            
+            print("## ADD SUBVIEW BTN DONE")
+        }
     }
 }

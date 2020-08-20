@@ -47,6 +47,7 @@ class AddCourseManualVC: UIViewController, UIGestureRecognizerDelegate {
         
         self.navigationController?.popViewController(animated: true)
     }
+    
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             let keyboardRectangle = keyboardFrame.cgRectValue
