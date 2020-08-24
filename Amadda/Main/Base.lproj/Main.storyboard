@@ -1763,9 +1763,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-gk-gEQ">
-                                                    <rect key="frame" x="25" y="32" width="42" height="42"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="cUg-gk-gEQ">
+                                                    <rect key="frame" x="25" y="33" width="42" height="40.666666666666671"/>
+                                                    <color key="tintColor" red="0.11764705882352941" green="0.69411764705882351" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="EKc-gV-C12"/>
                                                         <constraint firstAttribute="height" constant="42" id="WjQ-UA-YYy"/>
@@ -1802,9 +1802,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="57.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9ho-kM-J6w">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_personalEvent" translatesAutoresizingMaskIntoConstraints="NO" id="9ho-kM-J6w">
                                                     <rect key="frame" x="19" y="19.666666666666668" width="16" height="17.000000000000004"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="aFM-JW-c5p"/>
                                                         <constraint firstAttribute="width" constant="16" id="c3B-4C-m5e"/>
@@ -1833,9 +1832,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uIF-SJ-xfw">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_groupEvent" translatesAutoresizingMaskIntoConstraints="NO" id="uIF-SJ-xfw">
                                                     <rect key="frame" x="19" y="19" width="16" height="17"/>
-                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="MvE-qW-RZ3"/>
                                                         <constraint firstAttribute="width" constant="16" id="sI4-TD-K1b"/>
@@ -1875,6 +1873,11 @@
                             <outlet property="delegate" destination="v6e-k9-MD5" id="zwI-gV-2Ye"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="majorLabel" destination="kxb-cM-Fvr" id="C7n-xu-QtR"/>
+                        <outlet property="nameLabel" destination="V5j-7Q-dt9" id="Yx6-iU-GFE"/>
+                        <outlet property="profileImage" destination="cUg-gk-gEQ" id="Wg3-kX-TbF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fi4-yg-m8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2942,6 +2945,9 @@
         <image name="icon_Share" width="16" height="18"/>
         <image name="icon_email" width="15" height="14.333333015441895"/>
         <image name="icon_groupColor" width="18" height="18"/>
+        <image name="icon_groupEvent" width="16" height="17"/>
+        <image name="icon_personalEvent" width="16" height="17"/>
         <image name="icon_profile" width="134" height="144"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

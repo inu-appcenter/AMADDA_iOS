@@ -30,9 +30,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkManager().seeProfile(completion: {(response) in
-            print(response)
-        })
+        
         showAlertController(title: "", message: "시간표 삭제?", completionHandler: {(_) in
             UserDefaults.standard.removeObject(forKey: "MyCourse")
         })
