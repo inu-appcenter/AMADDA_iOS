@@ -117,16 +117,6 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 btn.addTarget(self, action: #selector(timeTableDidSelect), for: .touchUpInside)
             }
         }
-        NetworkManager().seeAllSchedules(completion: {(response) in
-            if response?.schedules != nil {
-                scheduleList = (response?.schedules)!
-            }else {
-                print("schedules are empty")
-            }
-        })
-        
-//        collectionView.reloadInputViews()
-        
     }
     override func viewDidAppear(_ animated: Bool) {
         drawManualEvent(collectionView: self.collectionView)

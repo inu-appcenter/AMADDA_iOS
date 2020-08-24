@@ -2061,8 +2061,8 @@
                                                 <constraint firstAttribute="width" constant="6" id="qKb-Wx-xgD"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-CI-Lhz">
-                                            <rect key="frame" x="55" y="65" width="234" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-CI-Lhz">
+                                            <rect key="frame" x="55" y="65.333333333333329" width="234" height="19.333333333333329"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -2127,6 +2127,7 @@
                                     <outlet property="locationLabel" destination="GJG-Ie-jsf" id="osL-Ad-3Fx"/>
                                     <outlet property="memoLabel" destination="2Q0-FV-GEy" id="bgd-fu-wpl"/>
                                     <outlet property="scheduleTitle" destination="oSH-z2-Zh5" id="O4y-6y-Ouu"/>
+                                    <segue destination="yvj-Wg-XcO" kind="push" id="jRS-rm-t89"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -2163,6 +2164,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46h-lQ-KAF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2568.8000000000002" y="1850.9852216748768"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eRW-aX-UVG">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="yvj-Wg-XcO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ELA-PR-67X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="i2o-ia-La3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Oq-dF-jwx"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FUi-jV-uL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2569" y="2534"/>
         </scene>
         <!--Item-->
         <scene sceneID="bzk-MI-V5P">

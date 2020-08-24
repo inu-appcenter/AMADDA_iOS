@@ -12,10 +12,19 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     var scheduleList = [Schedule]()
     override func viewDidLoad() {
+        NetworkManager().seeAllSchedules(completion: {(response) in
+            if response?.schedules != nil {
+                self.scheduleList = (response?.schedules)!
+            }else {
+                print("schedules are empty")
+            }
+            self.collectionView.reloadData()
+        })
         super.viewDidLoad()
     }
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        print(scheduleList.count)
         return scheduleList.count
     }
     
@@ -25,15 +34,19 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         let cellId: String
         
         switch indexPath.row {
-        case 0: cellId = "cellWithDate"
-        case 1: cellId = "cellWithDateEtc"
-        case 2: cellId = "cellWithAllComp"
+//        case 0: cellId = "cellWithDate"
+//        case 1: cellId = "cellWithDateEtc"
+//        case 2: cellId = "cellWithAllComp"
         default: cellId = "cellWithAllComp"
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScheduleCell
 
-        cell.dateLabel.text = "\(scheduleList[indexPath.row].start!) ~ \(scheduleList[indexPath.row].end!)"
+        let dateValue = scheduleList[indexPath.row].getDate(time: .startDay)
+        let timeValue = scheduleList[indexPath.row].getDate(time: .onlyTime)
+//        cell.dateLabel.text = "\(scheduleList[indexPath.row].start!) ~ \(scheduleList[indexPath.row].end!)"
+        cell.dateLabel.text = "\(dateValue)\n\(timeValue)"
+        
 //        cell.memoLabel.text = scheduleList[indexPath.row].memo
 //        cell.locationLabel.text = scheduleList[indexPath.row].location
         cell.scheduleTitle.text = scheduleList[indexPath.row].schedule_name
@@ -59,4 +72,5 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     }
 
 }
+
 

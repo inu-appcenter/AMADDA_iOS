@@ -294,6 +294,7 @@ class NetworkManager {
            switch response.result {
            case let .success(result):
             print("모든 스케줄 보기 \(result)")
+            completion(result)
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }
