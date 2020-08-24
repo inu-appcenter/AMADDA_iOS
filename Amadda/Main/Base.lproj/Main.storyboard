@@ -2045,9 +2045,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKr-l6-rLf">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="PKr-l6-rLf">
                                             <rect key="frame" x="29" y="67" width="16" height="16"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="16" id="i1b-jo-49v"/>
                                                 <constraint firstAttribute="width" constant="16" id="zwA-3m-vXV"/>
@@ -2067,9 +2066,8 @@
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iHL-3o-B9L">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_place" translatesAutoresizingMaskIntoConstraints="NO" id="iHL-3o-B9L">
                                             <rect key="frame" x="30" y="103" width="14" height="17"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="4hZ-fK-mNo"/>
                                                 <constraint firstAttribute="width" constant="14" id="akv-pK-5KV"/>
@@ -2081,9 +2079,8 @@
                                             <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3G1-L4-Tk3">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_Memo" translatesAutoresizingMaskIntoConstraints="NO" id="3G1-L4-Tk3">
                                             <rect key="frame" x="30" y="140" width="14" height="14"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="14" id="bF4-mG-AhR"/>
                                                 <constraint firstAttribute="height" constant="14" id="fQR-Za-AJO"/>
@@ -2964,7 +2961,9 @@
         <image name="icon_groupColor" width="18" height="18"/>
         <image name="icon_groupEvent" width="16" height="17"/>
         <image name="icon_personalEvent" width="16" height="17"/>
+        <image name="icon_place" width="17" height="18"/>
         <image name="icon_profile" width="134" height="144"/>
+        <image name="icon_time" width="17" height="17"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

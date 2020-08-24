@@ -41,15 +41,24 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScheduleCell
-
-        let dateValue = scheduleList[indexPath.row].getDate(time: .startDay)
-        let timeValue = scheduleList[indexPath.row].getDate(time: .onlyTime)
-//        cell.dateLabel.text = "\(scheduleList[indexPath.row].start!) ~ \(scheduleList[indexPath.row].end!)"
-        cell.dateLabel.text = "\(dateValue)\n\(timeValue)"
+        let currentSchedule = scheduleList[indexPath.row]
         
-//        cell.memoLabel.text = scheduleList[indexPath.row].memo
-//        cell.locationLabel.text = scheduleList[indexPath.row].location
+        let dateValue = currentSchedule.getDate(time: .startDay)
+        let timeValue = currentSchedule.getDate(time: .onlyTime)
+        cell.dateLabel.text = "\(dateValue)\n\(timeValue)"
         cell.scheduleTitle.text = scheduleList[indexPath.row].schedule_name
+        
+        cell.dateLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        cell.scheduleTitle.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        
+        if currentSchedule.memo != nil {
+            cell.memoLabel.text = currentSchedule.memo
+            cell.memoLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        }
+        if currentSchedule.location != nil {
+            cell.locationLabel.text = currentSchedule.location
+            cell.locationLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        }
         
         return cell
     }
