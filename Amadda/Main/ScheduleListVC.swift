@@ -68,6 +68,13 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         return CGSize(width: self.view.frame.width, height: 175)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let currentSchedule = scheduleList[indexPath.row]
+        guard let ScheduleDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleDetailVC") as? ScheduleDetailVC else {return}
+        
+        ScheduleDetailVC.scheduleNumber = currentSchedule.number
+        self.navigationController?.pushViewController(ScheduleDetailVC, animated: true)
+    }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         

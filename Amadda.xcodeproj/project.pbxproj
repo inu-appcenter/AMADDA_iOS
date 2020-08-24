@@ -56,6 +56,7 @@
 		FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */; };
 		FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BE23EBE218007633D9 /* AddEventTableVC.swift */; };
 		FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */; };
+		FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */; };
 		FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F6572407AFC500407644 /* TestDataModel.swift */; };
 		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
 		FAEF9D34240CC14100C1F20F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF9D33240CC14100C1F20F /* AlertController.swift */; };
@@ -115,6 +116,7 @@
 		FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonalEventVC.swift; sourceTree = "<group>"; };
 		FA8EC1BE23EBE218007633D9 /* AddEventTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableVC.swift; sourceTree = "<group>"; };
 		FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectVC.swift; sourceTree = "<group>"; };
+		FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailVC.swift; sourceTree = "<group>"; };
 		FAC1F6572407AFC500407644 /* TestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataModel.swift; sourceTree = "<group>"; };
 		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
 		FAEF9D33240CC14100C1F20F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				FA78CF2723F16A1500F91372 /* CustomCell.swift */,
 				FA78CF0C23F060F800F91372 /* MainCalendarVC.swift */,
 				D1616CCC2408A73A002C806B /* ScheduleListVC.swift */,
+				FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */,
 				D1616CCE2408A83F002C806B /* ScheduleCell.swift */,
 				D1D6CA142410E11B00ADC853 /* SettingVC.swift */,
 				D16BEBC02412FDE000F375A1 /* ProfileVC.swift */,
@@ -422,6 +425,7 @@
 				D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */,
 				FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
+				FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */,
 				D16BEBC12412FDE000F375A1 /* ProfileVC.swift in Sources */,
 				FA71758D240DE94900115F55 /* MajorTableViewCell.swift in Sources */,
 				D1616CB32401C470002C806B /* GroupCell.swift in Sources */,

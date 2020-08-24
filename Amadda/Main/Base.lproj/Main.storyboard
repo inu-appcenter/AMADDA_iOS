@@ -286,7 +286,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="AddEventTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dvg-bk-4iN" customClass="AddEventTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GPg-L9-8Hn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="475.66666666666669"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="489.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -2124,7 +2124,6 @@
                                     <outlet property="locationLabel" destination="GJG-Ie-jsf" id="osL-Ad-3Fx"/>
                                     <outlet property="memoLabel" destination="2Q0-FV-GEy" id="bgd-fu-wpl"/>
                                     <outlet property="scheduleTitle" destination="oSH-z2-Zh5" id="O4y-6y-Ouu"/>
-                                    <segue destination="yvj-Wg-XcO" kind="push" id="jRS-rm-t89"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -2162,17 +2161,62 @@
             </objects>
             <point key="canvasLocation" x="2568.8000000000002" y="1850.9852216748768"/>
         </scene>
-        <!--View Controller-->
+        <!--Schedule DetailVC-->
         <scene sceneID="eRW-aX-UVG">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="yvj-Wg-XcO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleDetailVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yvj-Wg-XcO" customClass="ScheduleDetailVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ELA-PR-67X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="일정 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-TO-KP3">
+                                <rect key="frame" x="28" y="108.00000000000001" width="327" height="52.666666666666671"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="29"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zi-UR-uYJ">
+                                <rect key="frame" x="0.0" y="180.66666666666666" width="375" height="489.33333333333337"/>
+                                <connections>
+                                    <segue destination="dvg-bk-4iN" kind="embed" id="37O-Br-ce5"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLH-9y-CVB">
+                                <rect key="frame" x="71" y="700" width="233" height="48"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.69411764710000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="pPZ-2X-nMM"/>
+                                </constraints>
+                                <state key="normal" image="btn_editComplete"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="i2o-ia-La3" firstAttribute="trailing" secondItem="p9O-TO-KP3" secondAttribute="trailing" constant="20" id="2bt-Ck-CQQ"/>
+                            <constraint firstItem="i2o-ia-La3" firstAttribute="trailing" secondItem="iLH-9y-CVB" secondAttribute="trailing" constant="71" id="CdJ-MW-gSq"/>
+                            <constraint firstItem="9Zi-UR-uYJ" firstAttribute="top" secondItem="p9O-TO-KP3" secondAttribute="bottom" constant="20" id="KCd-zB-OSl"/>
+                            <constraint firstItem="i2o-ia-La3" firstAttribute="trailing" secondItem="9Zi-UR-uYJ" secondAttribute="trailing" id="TvF-sZ-O2e"/>
+                            <constraint firstItem="iLH-9y-CVB" firstAttribute="top" secondItem="9Zi-UR-uYJ" secondAttribute="bottom" constant="30" id="UTd-xY-T1k"/>
+                            <constraint firstItem="9Zi-UR-uYJ" firstAttribute="leading" secondItem="i2o-ia-La3" secondAttribute="leading" id="atc-M7-rgz"/>
+                            <constraint firstItem="iLH-9y-CVB" firstAttribute="leading" secondItem="i2o-ia-La3" secondAttribute="leading" constant="71" id="h7p-tF-mOR"/>
+                            <constraint firstItem="p9O-TO-KP3" firstAttribute="leading" secondItem="i2o-ia-La3" secondAttribute="leading" constant="28" id="qtn-ST-FSN"/>
+                            <constraint firstItem="p9O-TO-KP3" firstAttribute="top" secondItem="i2o-ia-La3" secondAttribute="top" constant="20" id="vBQ-U5-8wH"/>
+                            <constraint firstItem="i2o-ia-La3" firstAttribute="bottom" secondItem="iLH-9y-CVB" secondAttribute="bottom" constant="30" id="zue-tI-PVz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="i2o-ia-La3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Oq-dF-jwx"/>
+                    <navigationItem key="navigationItem" id="2Oq-dF-jwx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="dHI-ga-d61">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5E7-HM-gow">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="삭제">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FUi-jV-uL2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2939,7 +2983,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LwS-GM-39V"/>
+        <segue reference="37O-Br-ce5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
@@ -2949,6 +2993,7 @@
         <image name="btn_cancel2" width="16.333333969116211" height="16.333333969116211"/>
         <image name="btn_checkBox" width="21" height="27.333333969116211"/>
         <image name="btn_down" width="11.666666984558105" height="7.3333334922790527"/>
+        <image name="btn_editComplete" width="233" height="48"/>
         <image name="btn_emptyCheckBox" width="21" height="21"/>
         <image name="btn_setting" width="25.666666030883789" height="29"/>
         <image name="icon_Alarm" width="15" height="15"/>
