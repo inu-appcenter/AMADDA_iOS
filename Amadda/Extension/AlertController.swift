@@ -26,7 +26,7 @@ extension UIViewController {
     /// 네/아니오 alert
     func showAlertController(title: String, message: String, completionHandler: ((UIAlertAction) -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "취소", style: .destructive, handler: nil)
         let confirmAction = UIAlertAction(title: "확인", style: .default) { (action) in
             completionHandler?(action)
         }

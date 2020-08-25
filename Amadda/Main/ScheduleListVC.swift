@@ -12,6 +12,10 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
 
     var scheduleList = [Schedule]()
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         NetworkManager().seeAllSchedules(completion: {(response) in
             if response?.schedules != nil {
                 self.scheduleList = (response?.schedules)!
@@ -20,9 +24,7 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
             }
             self.collectionView.reloadData()
         })
-        super.viewDidLoad()
     }
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(scheduleList.count)
         return scheduleList.count
@@ -73,6 +75,7 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         guard let ScheduleDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleDetailVC") as? ScheduleDetailVC else {return}
         
         ScheduleDetailVC.scheduleNumber = currentSchedule.number
+        ScheduleDetailVC.schedule = currentSchedule
         self.navigationController?.pushViewController(ScheduleDetailVC, animated: true)
     }
     
