@@ -89,6 +89,11 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
             return Header
         }
     }
+    @IBAction func addPersonalEventBtn(_ sender: Any) {
+        guard let AddPersonalEventNavigation = storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventNavigation") as? UINavigationController else {return}
+        self.present(AddPersonalEventNavigation, animated: true, completion: nil)
+    }
+    
 
 }
 
