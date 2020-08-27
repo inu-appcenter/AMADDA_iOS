@@ -302,13 +302,18 @@ class NetworkManager {
     }
     
     // 하루 일정 보기
-    func seeTodaySchedule(date: Date, completion: @escaping (Response?) -> Void) {
+    func seeTodaySchedule(completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/show/day"
         
         let header:HTTPHeaders = [
             "token": token!
         ]
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        let currentDate = formatter.string(from: date)
+        let param = ["date" : currentDate]
         // 수정
         
 //        let param = Schedule(id: nil, number: number, schedule_name: scheduleName, start: nil, end: nil, location: location, alarm: alarm, share: share, key: nil, memo: memo)
@@ -321,11 +326,13 @@ class NetworkManager {
         
         let request = AF.request(url,
         method: .get,
+        parameters: param,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
            case let .success(result):
+            completion(result)
             print("오늘 일정 보기 \(result)")
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
@@ -342,14 +349,22 @@ class NetworkManager {
             "token": token!
         ]
         
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "YYYY-MM-dd"
+        let currentDate = formatter.string(from: date)
+        let param = ["date" : currentDate]
+        
         let request = AF.request(url,
         method: .get,
+        parameters: param,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
            case let .success(result):
-            print("주간 일정 보기 \(result)")
+            print("오늘 일정 보기 \(result)")
+            completion(result)
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }

@@ -19,7 +19,7 @@ import UIKit
 func drawManualEvent(collectionView: UICollectionView) {
     if let data = UserDefaults.standard.value(forKey: "MyCourse") as? Data {
         if let myCourse = try? PropertyListDecoder().decode(Array<Course>.self, from: data){
-            print(myCourse)
+            print("##Course:\n\(myCourse)")
             for course in myCourse{
                 if let cell = collectionView.cellForItem(at: [Int(course.day)! - 1, course.startIndexPath]) as? UICollectionViewCell {
                     

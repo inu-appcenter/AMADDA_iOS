@@ -117,6 +117,13 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                 btn.addTarget(self, action: #selector(timeTableDidSelect), for: .touchUpInside)
             }
         }
+        
+        NetworkManager().seeWeekSchedule(completion: {(response) in
+            if let schedules = response?.schedules{
+                self.drawPersonalEvent(collectionView: self.collectionView, schedules: schedules)
+            }
+        })
+ 
     }
     override func viewDidAppear(_ animated: Bool) {
         drawManualEvent(collectionView: self.collectionView)
@@ -293,6 +300,44 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                         cell.layer.borderWidth = 0.0
                     }
                 }
+            }
+        }
+        collectionView.reloadInputViews()
+    }
+    
+    private func drawPersonalEvent(collectionView: UICollectionView, schedules: [Schedule]) {
+        for schedule in schedules{
+            if let cell = collectionView.cellForItem(at: [schedule.day - 1, schedule.startIndexPath]) as? UICollectionViewCell {
+                            
+                let timeTable = UIButton(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(schedule.scheduleTime))))
+                timeTable.backgroundColor = UIColor.blue
+                timeTable.alpha = 0.6
+                timeTable.accessibilityIdentifier = "MyCourse"
+                            
+                let eventLabel = UILabel(frame: CGRect(x: 0, y: timeTable.bounds.origin.y, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+                eventLabel.text = schedule.schedule_name
+                eventLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 12)
+                eventLabel.textColor = UIColor.white
+                eventLabel.lineBreakMode = .byCharWrapping
+                eventLabel.numberOfLines = 0
+                eventLabel.sizeToFit()
+                            
+                let placeLabel = UILabel(frame: CGRect(x: eventLabel.frame.minX, y: eventLabel.frame.maxY + 5, width: timeTable.frame.width, height: timeTable.frame.height / 3))
+                placeLabel.text = schedule.location
+                placeLabel.font = UIFont(name: "SpoqaHanSans-Regular", size: 10)
+                placeLabel.textColor = UIColor.white
+                placeLabel.lineBreakMode = .byCharWrapping
+                placeLabel.numberOfLines = 0
+                placeLabel.sizeToFit()
+                            
+                timeTable.addTarget(self, action: #selector(timeTableDidSelect), for: .touchUpInside)
+                            
+                timeTable.addSubview(placeLabel)
+                timeTable.addSubview(eventLabel)
+                            
+                collectionView.addSubview(timeTable)
+                cell.layer.borderColor = UIColor.white.cgColor
+                cell.layer.borderWidth = 0.0
             }
         }
         collectionView.reloadInputViews()
