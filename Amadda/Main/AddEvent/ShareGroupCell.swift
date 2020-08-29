@@ -12,5 +12,5 @@ import UIKit
 class ShareGroupCell: UITableViewCell {
     @IBOutlet var groupNameLabel: UILabel!
     @IBOutlet var selectImageView: UIImageView!
-    
+    var selectedGroupKey: Int?
 }

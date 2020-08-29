@@ -16,7 +16,7 @@ extension NetworkManager {
     func makeGroup(groupName: String, inviters: [String], memo: String? ) {
         let url = baseURL + "share/group/create"
         
-        let param = Group(group_name: groupName, inviters: inviters, memo: memo)
+        let param = Group(group_name: groupName, inviters: inviters, share: nil, memo: memo)
         
         let header:HTTPHeaders = [
             "token": token!

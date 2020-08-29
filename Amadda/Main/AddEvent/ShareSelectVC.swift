@@ -12,12 +12,13 @@ import UIKit
 class ShareSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var groups = [Group]()
     var selectedGroupName: String?
-    
+    var selectedGroupKey: Int?
     
     @IBOutlet var tableView: UITableView!
     @IBAction func backBtn(_ sender: Any) {
         guard let addShareEventVC = self.navigationController?.viewControllers.first as? AddShareEventVC else {return}
         addShareEventVC.groupName = selectedGroupName
+        addShareEventVC.groupKey = selectedGroupKey
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -40,6 +41,7 @@ class ShareSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShareGroupCell") as? ShareGroupCell else {return UITableViewCell()}
         cell.groupNameLabel.text = groups[indexPath.row].group_name
+        cell.selectedGroupKey = groups[indexPath.row].share
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -50,7 +52,9 @@ class ShareSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         guard let cell = tableView.cellForRow(at: indexPath) as? ShareGroupCell else {return}
         cell.selectImageView.image = UIImage(named: "icon_group_Select")
         selectedGroupName = cell.groupNameLabel.text
+        selectedGroupKey = cell.selectedGroupKey
         print(selectedGroupName)
+        print(selectedGroupKey)
     }
     
 }

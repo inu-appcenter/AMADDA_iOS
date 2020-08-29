@@ -311,6 +311,9 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
                             
                 let timeTable = UIButton(frame: CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: -(cell.frame.height * CGFloat(schedule.scheduleTime))))
                 timeTable.backgroundColor = UIColor.blue
+                if schedule.share != nil {
+                    timeTable.backgroundColor = UIColor.green
+                }
                 timeTable.alpha = 0.6
                 timeTable.accessibilityIdentifier = "MyCourse"
                             

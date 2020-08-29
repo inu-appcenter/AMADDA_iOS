@@ -17,6 +17,7 @@ class AddShareEventVC: UIViewController {
     var alarm: String!
     var memo: String!
     var groupName: String?
+    var groupKey: Int?
     
     @IBOutlet var scheduleNameTextField: UITextField!
     
@@ -37,7 +38,7 @@ class AddShareEventVC: UIViewController {
             showDefaultAlertController(title: "일정 추가 실패", message: "빈칸을 확인하세요", completionHandler: nil)
         }else {
             print("startDate: \(start) ## endDate: \(end)")
-            NetworkManager().addSchedule(name: schedule_name, start: start, end: end, location: location, alarm: alarm, share: nil, memo: memo, completion: {(response) in
+            NetworkManager().addSchedule(name: schedule_name, start: start, end: end, location: location, alarm: alarm, share: groupKey, memo: memo, completion: {(response) in
                 guard let response = response else {return}
                 if response.success! {
                     self.showDefaultAlertController(title: "추가 완료", message: "일정 추가가 완료되었습니다", completionHandler: {(action) in
