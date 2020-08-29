@@ -12,5 +12,6 @@ struct Response: Codable {
     let user: User?
     let schedule: Schedule?
     let schedules: [Schedule]?
+    let groups: [Group]?
 }
 

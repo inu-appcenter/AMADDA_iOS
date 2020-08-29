@@ -441,6 +441,28 @@ class NetworkManager {
         }
     }
     
+    // MARK:- 그룹
+    func showGroupList(completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "share/groups/show"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .get,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("그룹 리스트 \(result)")
+            completion(result)
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
     // MARK:- 초대
     func showInvitation(completion: @escaping () -> Void) {
         let url = baseURL + "share/invitations/show"
@@ -457,6 +479,28 @@ class NetworkManager {
            switch response.result {
            case let .success(result):
             print("초대 \(result)")
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
+    // MARK:- 강의 검색
+    func searchLecture(name: String, completion: @escaping () -> Void) {
+        let url = baseURL + "time/table/search" + "?name=\(name)"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .get,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("강의 \(result)")
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }
