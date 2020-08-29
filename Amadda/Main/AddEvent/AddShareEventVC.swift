@@ -16,6 +16,7 @@ class AddShareEventVC: UIViewController {
     var location: String!
     var alarm: String!
     var memo: String!
+    var groupName: String?
     
     @IBOutlet var scheduleNameTextField: UITextField!
     
@@ -46,6 +47,12 @@ class AddShareEventVC: UIViewController {
                     self.showDefaultAlertController(title: "추가 실패", message: "일정 추가를 실패했습니다", completionHandler: nil)
                 }
             })
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        guard let AddEventTableVC = self.children.last as? AddEventTableVC else {return}
+        if groupName != nil {
+            AddEventTableVC.shareLabel.text = groupName
         }
     }
     
