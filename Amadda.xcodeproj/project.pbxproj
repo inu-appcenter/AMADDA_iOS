@@ -56,6 +56,7 @@
 		FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */; };
 		FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1BE23EBE218007633D9 /* AddEventTableVC.swift */; };
 		FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */; };
+		FA9861AB24FA5D1700A8D7F7 /* InvitationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861AA24FA5D1700A8D7F7 /* InvitationVC.swift */; };
 		FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */; };
 		FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F6572407AFC500407644 /* TestDataModel.swift */; };
 		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
@@ -116,6 +117,7 @@
 		FA8EC1BC23EBDDE8007633D9 /* AddPersonalEventVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonalEventVC.swift; sourceTree = "<group>"; };
 		FA8EC1BE23EBE218007633D9 /* AddEventTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventTableVC.swift; sourceTree = "<group>"; };
 		FA8EC1C023EBF5F0007633D9 /* ShareSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSelectVC.swift; sourceTree = "<group>"; };
+		FA9861AA24FA5D1700A8D7F7 /* InvitationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationVC.swift; sourceTree = "<group>"; };
 		FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailVC.swift; sourceTree = "<group>"; };
 		FAC1F6572407AFC500407644 /* TestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataModel.swift; sourceTree = "<group>"; };
 		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 		D1616CA52401B6C5002C806B /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
+				FA9861A924FA5D0B00A8D7F7 /* Invitation */,
 				D1616CA62401B709002C806B /* MenuViewController.swift */,
 				D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */,
 				D1616CA82401B767002C806B /* ContainerViewController.swift */,
@@ -309,6 +312,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		FA9861A924FA5D0B00A8D7F7 /* Invitation */ = {
+			isa = PBXGroup;
+			children = (
+				FA9861AA24FA5D1700A8D7F7 /* InvitationVC.swift */,
+			);
+			path = Invitation;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -434,6 +445,7 @@
 				D1616CC5240668A6002C806B /* Response.swift in Sources */,
 				FA78CF2823F16A1500F91372 /* CustomCell.swift in Sources */,
 				FA8EC1BD23EBDDE8007633D9 /* AddPersonalEventVC.swift in Sources */,
+				FA9861AB24FA5D1700A8D7F7 /* InvitationVC.swift in Sources */,
 				D1616CC7240668D7002C806B /* User.swift in Sources */,
 				FA8EC1C123EBF5F0007633D9 /* ShareSelectVC.swift in Sources */,
 				FA8EC1B923EBD772007633D9 /* AddCourseVC.swift in Sources */,

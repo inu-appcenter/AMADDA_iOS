@@ -28,9 +28,16 @@ class MenuConatinerViewControllerTableViewController: UITableViewController {
         })
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-
+        switch tableView.cellForRow(at: indexPath)?.reuseIdentifier {
+        case "invitationCell":
+            guard let invitaionNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "invitationNavigationController") as? UINavigationController else {return}
+            self.present(invitaionNavigationController, animated: true, completion: nil)
+        default:
+            return
         }
     }
 
