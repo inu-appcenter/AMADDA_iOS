@@ -553,7 +553,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h68-ae-8YN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9503.2000000000007" y="738.54679802955673"/>
+            <point key="canvasLocation" x="10445.6" y="738.54679802955673"/>
         </scene>
         <!--Share SelectVC-->
         <scene sceneID="Nif-dQ-8Mi">
@@ -632,7 +632,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxj-Ct-tca" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10341.6" y="738.91625615763553"/>
+            <point key="canvasLocation" x="11284" y="738.91625615763553"/>
         </scene>
         <!--수업 추가-->
         <scene sceneID="rC7-pl-3sg">
@@ -1185,7 +1185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpw-Ip-qMC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8618.3999999999996" y="1056.6502463054187"/>
+            <point key="canvasLocation" x="9560.7999999999993" y="1056.6502463054187"/>
         </scene>
         <!--Main CalendarVC-->
         <scene sceneID="A9H-ti-ca4">
@@ -2044,7 +2044,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bv-QO-W10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5396" y="1002.7093596059113"/>
+            <point key="canvasLocation" x="6338.3999999999996" y="1002.7093596059113"/>
         </scene>
         <!--Schedule ListVC-->
         <scene sceneID="6Kb-cg-Iyh">
@@ -2613,7 +2613,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wSF-Kf-sG4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7823.1999999999998" y="1056.6502463054187"/>
+            <point key="canvasLocation" x="8765.6000000000004" y="1056.6502463054187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eSc-eP-JUx">
@@ -3178,7 +3178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eB9-ZW-WJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4596" y="1002.7093596059113"/>
+            <point key="canvasLocation" x="5538.3999999999996" y="1002.7093596059113"/>
         </scene>
         <!--Group Schedule ListVC-->
         <scene sceneID="8HN-QR-Gzz">
@@ -3196,7 +3196,7 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="45"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QI-Nz-7ov">
-                                        <rect key="frame" x="25" y="11.666666666666664" width="22" height="22"/>
+                                        <rect key="frame" x="10" y="11.666666666666664" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="2QI-Nz-7ov" secondAttribute="height" id="8y8-3R-IMU"/>
                                         </constraints>
@@ -3206,19 +3206,32 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLH-hD-19J">
-                                        <rect key="frame" x="162.33333333333334" y="12" width="50.666666666666657" height="21"/>
+                                        <rect key="frame" x="160" y="9.3333333333333375" width="55.333333333333343" height="26.666666666666671"/>
                                         <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="18"/>
                                         <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K44-ey-fid">
+                                        <rect key="frame" x="340" y="10" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="K44-ey-fid" secondAttribute="height" multiplier="1:1" id="b8T-mR-veK"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="btn_setting2"/>
+                                        <connections>
+                                            <segue destination="n3b-s6-QPr" kind="push" id="eCk-U5-d0j"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.074509803920000006" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="MLH-hD-19J" firstAttribute="centerX" secondItem="yZ6-Mo-oHb" secondAttribute="centerX" id="0Pt-vR-vqS"/>
+                                    <constraint firstItem="K44-ey-fid" firstAttribute="centerY" secondItem="yZ6-Mo-oHb" secondAttribute="centerY" id="3Fr-Sf-Oer"/>
                                     <constraint firstItem="2QI-Nz-7ov" firstAttribute="centerY" secondItem="yZ6-Mo-oHb" secondAttribute="centerY" id="Ibk-Cr-2gK"/>
                                     <constraint firstItem="MLH-hD-19J" firstAttribute="centerY" secondItem="yZ6-Mo-oHb" secondAttribute="centerY" id="OBi-P6-Tdh"/>
-                                    <constraint firstItem="2QI-Nz-7ov" firstAttribute="leading" secondItem="yZ6-Mo-oHb" secondAttribute="leading" constant="25" id="Rxk-as-jlb"/>
+                                    <constraint firstItem="2QI-Nz-7ov" firstAttribute="leading" secondItem="yZ6-Mo-oHb" secondAttribute="leading" constant="10" id="Rxk-as-jlb"/>
                                     <constraint firstAttribute="height" constant="45" id="gC6-2t-sKy"/>
+                                    <constraint firstAttribute="trailing" secondItem="K44-ey-fid" secondAttribute="trailing" constant="10" id="hUx-1C-UF4"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-fM-1hA">
@@ -3366,6 +3379,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ni8-P2-c3e"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jt9-l6-gYq"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="E4u-fM-1hA" id="w5k-HB-eYs"/>
@@ -3374,7 +3388,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ks-H7-n0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1669.5999999999999" y="1002.7093596059113"/>
+            <point key="canvasLocation" x="1670" y="1003"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7g8-2u-liv">
+            <objects>
+                <viewController id="n3b-s6-QPr" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hns-Gq-0CN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6zM-y2-bcE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ma8-1m-7rn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NsA-hP-LLz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2420" y="1003"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -3393,6 +3423,7 @@
         <image name="btn_editComplete" width="233" height="48"/>
         <image name="btn_emptyCheckBox" width="21" height="21"/>
         <image name="btn_setting" width="25.666666030883789" height="29"/>
+        <image name="btn_setting2" width="22" height="25"/>
         <image name="icon_Alarm" width="15" height="15"/>
         <image name="icon_Calendar" width="18" height="18.666666030883789"/>
         <image name="icon_Exit" width="16.666666030883789" height="16.666666030883789"/>

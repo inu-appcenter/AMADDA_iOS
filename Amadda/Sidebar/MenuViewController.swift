@@ -54,8 +54,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         guard let groupScheduleListVC = self.storyboard?.instantiateViewController(withIdentifier: "GroupScheduleListVC") as? GroupScheduleListVC else {return}
         groupScheduleListVC.groupKey = groups[indexPath.row].share
         groupScheduleListVC.groupName = groups[indexPath.row].group_name
+        let navigation = UINavigationController(rootViewController: groupScheduleListVC)
         print(groupScheduleListVC.groupKey)
-        self.present(groupScheduleListVC, animated: true, completion: nil)
+        self.present(navigation, animated: true, completion: nil)
     }
         
 }
