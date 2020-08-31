@@ -58,6 +58,8 @@
 		FA9861AB24FA5D1700A8D7F7 /* InvitationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861AA24FA5D1700A8D7F7 /* InvitationVC.swift */; };
 		FA9861AD24FA64DA00A8D7F7 /* ShareGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861AC24FA64DA00A8D7F7 /* ShareGroupCell.swift */; };
 		FA9861AF24FA65EB00A8D7F7 /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861AE24FA65EB00A8D7F7 /* GroupCell.swift */; };
+		FA9861B124FCFAB400A8D7F7 /* GroupScheduleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */; };
+		FA9861B324FD087300A8D7F7 /* GroupScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */; };
 		FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */; };
 		FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F6572407AFC500407644 /* TestDataModel.swift */; };
 		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
@@ -120,6 +122,8 @@
 		FA9861AA24FA5D1700A8D7F7 /* InvitationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationVC.swift; sourceTree = "<group>"; };
 		FA9861AC24FA64DA00A8D7F7 /* ShareGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareGroupCell.swift; sourceTree = "<group>"; };
 		FA9861AE24FA65EB00A8D7F7 /* GroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleListVC.swift; sourceTree = "<group>"; };
+		FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleCell.swift; sourceTree = "<group>"; };
 		FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailVC.swift; sourceTree = "<group>"; };
 		FAC1F6572407AFC500407644 /* TestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataModel.swift; sourceTree = "<group>"; };
 		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */,
 				D1616CA82401B767002C806B /* ContainerViewController.swift */,
 				FA9861AE24FA65EB00A8D7F7 /* GroupCell.swift */,
+				FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */,
+				FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */,
 			);
 			path = Sidebar;
 			sourceTree = "<group>";
@@ -437,6 +443,7 @@
 				FA8A964C24239ED500D2D775 /* Function.swift in Sources */,
 				FAEF9D34240CC14100C1F20F /* AlertController.swift in Sources */,
 				D1616CCD2408A73A002C806B /* ScheduleListVC.swift in Sources */,
+				FA9861B324FD087300A8D7F7 /* GroupScheduleCell.swift in Sources */,
 				FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */,
 				FA8000B223EC32EE00BF7CA7 /* AddShareEventVC.swift in Sources */,
 				FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */,
@@ -468,6 +475,7 @@
 				FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */,
 				FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */,
 				D16BEBCB2414733B00F375A1 /* MKSharedGroupVC.swift in Sources */,
+				FA9861B124FCFAB400A8D7F7 /* GroupScheduleListVC.swift in Sources */,
 				FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */,
 				D1D6CA13240FDB0300ADC853 /* CustomDateFormatter.swift in Sources */,
 				FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */,

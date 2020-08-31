@@ -70,7 +70,7 @@ extension NetworkManager {
     }
     
     // 내가 속해있는 그룹 가져오기
-    func getGroup() {
+    func getGroup(completion: @escaping(Response?) -> Void) {
         let url = baseURL + "share/groups/show"
         
         let header:HTTPHeaders = [
@@ -85,6 +85,7 @@ extension NetworkManager {
            switch response.result {
            case let .success(result):
             print("내가 속해있는 그룹 가져오기 \(result)")
+            completion(result)
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }

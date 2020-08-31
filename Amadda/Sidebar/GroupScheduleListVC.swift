@@ -1,38 +1,50 @@
 //
-//  ScheduleListVC.swift
+//  GroupScheduleListVC.swift
 //  Amadda
 //
-//  Created by seunghwan Lee on 2020/02/28.
+//  Created by mong on 2020/08/31.
 //  Copyright © 2020 mong. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var groupNameLabel: UILabel!
     var scheduleList = [Schedule]()
+    var groupName: String?
     var groupKey: Int?
     
     override func viewDidLoad() {
-        
+        groupNameLabel.text = groupName
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
-        NetworkManager().seeAllSchedules(completion: {(response) in
+        NetworkManager().seeGroupSchedule(share: groupKey!, completion: {(response) in
             if response?.schedules != nil {
                 self.scheduleList = (response?.schedules)!
             }else {
                 print("schedules are empty")
             }
-               self.collectionView.reloadData()
+            self.collectionView.reloadData()
+            print("reload complete")
         })
     }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    @IBAction func backBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print(scheduleList.count)
         return scheduleList.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         
 //        let cellId = data == nil ? "Cell" : "CellWith"
         let cellId: String
@@ -44,7 +56,7 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         default: cellId = "cellWithAllComp"
         }
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScheduleCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GroupScheduleCell else {return UICollectionViewCell()}
         let currentSchedule = scheduleList[indexPath.row]
         cell.colorBadgeView.isHidden = true
         
@@ -73,7 +85,7 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         return CGSize(width: self.view.frame.width, height: 175)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let currentSchedule = scheduleList[indexPath.row]
         guard let ScheduleDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleDetailVC") as? ScheduleDetailVC else {return}
         
@@ -82,22 +94,18 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         self.navigationController?.pushViewController(ScheduleDetailVC, animated: true)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         if kind == UICollectionView.elementKindSectionFooter {
             let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "footer", for: indexPath)
+            footer.isHidden = true
             return footer
         } else {
             let Header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
             return Header
         }
     }
-    @IBAction func addPersonalEventBtn(_ sender: Any) {
-        guard let AddPersonalEventNavigation = storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventNavigation") as? UINavigationController else {return}
-        self.present(AddPersonalEventNavigation, animated: true, completion: nil)
-    }
+
     
 
 }
-
-

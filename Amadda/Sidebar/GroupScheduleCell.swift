@@ -1,22 +1,23 @@
 //
-//  ScheduleCell.swift
+//  GroupScheduleCell.swift
 //  Amadda
 //
-//  Created by seunghwan Lee on 2020/02/28.
+//  Created by mong on 2020/08/31.
 //  Copyright © 2020 mong. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ScheduleCell: UICollectionViewCell {
+class GroupScheduleCell: UICollectionViewCell {
     
     var widthConst: NSLayoutConstraint?
     
+    @IBOutlet var colorBadgeView: UIView!
     @IBOutlet var scheduleTitle: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var memoLabel: UILabel!
-    @IBOutlet var colorBadgeView: UIView!
     
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
@@ -25,7 +26,7 @@ class ScheduleCell: UICollectionViewCell {
     }
     
     override func updateConstraints() {
-        widthConst?.constant = superview!.bounds.width * 0.94 
+        widthConst?.constant = superview!.bounds.width * 0.94
         widthConst?.isActive = true
         super.updateConstraints()
     }
@@ -50,5 +51,3 @@ class ScheduleCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
 }
-
-

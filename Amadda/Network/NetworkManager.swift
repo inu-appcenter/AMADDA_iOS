@@ -401,14 +401,17 @@ class NetworkManager {
             "token": token!
         ]
         
+        let param = ["share" : share]
         let request = AF.request(url,
         method: .get,
+        parameters: param,
         headers: header)
         
         request.responseDecodable(of: Response.self) { response in
            switch response.result {
            case let .success(result):
-            print("월간 일정 보기 \(result)")
+            print("그룹 일정 보기 \(result)")
+            completion(result)
            case let .failure(error):
             print("Error description is: \(error.localizedDescription)")
            }
