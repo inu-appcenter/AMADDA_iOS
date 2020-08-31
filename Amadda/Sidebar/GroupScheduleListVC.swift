@@ -12,13 +12,12 @@ import UIKit
 class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet var collectionView: UICollectionView!
-    @IBOutlet var groupNameLabel: UILabel!
     var scheduleList = [Schedule]()
     var groupName: String?
     var groupKey: Int?
     
     override func viewDidLoad() {
-        groupNameLabel.text = groupName
+        self.navigationController?.navigationBar.topItem?.title = groupName
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         super.viewDidLoad()

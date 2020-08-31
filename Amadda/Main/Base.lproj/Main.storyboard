@@ -3188,54 +3188,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8w-qV-f4Q">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="backgroundColor" red="0.074509803920000006" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yZ6-Mo-oHb">
-                                <rect key="frame" x="0.0" y="44" width="375" height="45"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QI-Nz-7ov">
-                                        <rect key="frame" x="10" y="11.666666666666664" width="22" height="22"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="2QI-Nz-7ov" secondAttribute="height" id="8y8-3R-IMU"/>
-                                        </constraints>
-                                        <state key="normal" image="btn_cancel2"/>
-                                        <connections>
-                                            <action selector="backBtn:" destination="hyM-6V-sTT" eventType="touchUpInside" id="0iH-TZ-7Qm"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MLH-hD-19J">
-                                        <rect key="frame" x="160" y="9.3333333333333375" width="55.333333333333343" height="26.666666666666671"/>
-                                        <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="18"/>
-                                        <color key="textColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K44-ey-fid">
-                                        <rect key="frame" x="340" y="10" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="K44-ey-fid" secondAttribute="height" multiplier="1:1" id="b8T-mR-veK"/>
-                                        </constraints>
-                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" image="btn_setting2"/>
-                                        <connections>
-                                            <segue destination="n3b-s6-QPr" kind="push" id="eCk-U5-d0j"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.074509803920000006" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstItem="MLH-hD-19J" firstAttribute="centerX" secondItem="yZ6-Mo-oHb" secondAttribute="centerX" id="0Pt-vR-vqS"/>
-                                    <constraint firstItem="K44-ey-fid" firstAttribute="centerY" secondItem="yZ6-Mo-oHb" secondAttribute="centerY" id="3Fr-Sf-Oer"/>
-                                    <constraint firstItem="2QI-Nz-7ov" firstAttribute="centerY" secondItem="yZ6-Mo-oHb" secondAttribute="centerY" id="Ibk-Cr-2gK"/>
-                                    <constraint firstItem="MLH-hD-19J" firstAttribute="centerY" secondItem="yZ6-Mo-oHb" secondAttribute="centerY" id="OBi-P6-Tdh"/>
-                                    <constraint firstItem="2QI-Nz-7ov" firstAttribute="leading" secondItem="yZ6-Mo-oHb" secondAttribute="leading" constant="10" id="Rxk-as-jlb"/>
-                                    <constraint firstAttribute="height" constant="45" id="gC6-2t-sKy"/>
-                                    <constraint firstAttribute="trailing" secondItem="K44-ey-fid" secondAttribute="trailing" constant="10" id="hUx-1C-UF4"/>
-                                </constraints>
-                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="E4u-fM-1hA">
-                                <rect key="frame" x="0.0" y="89" width="375" height="689"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="H8j-Jr-41w">
                                     <size key="itemSize" width="128" height="128"/>
@@ -3253,7 +3207,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="스케쥴 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2nJ-nX-v0k">
                                                     <rect key="frame" x="29" y="25" width="260" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -3364,26 +3318,45 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="yZ6-Mo-oHb" firstAttribute="top" secondItem="u8w-qV-f4Q" secondAttribute="bottom" id="3fu-Zc-pEJ"/>
                             <constraint firstItem="ni8-P2-c3e" firstAttribute="trailing" secondItem="E4u-fM-1hA" secondAttribute="trailing" id="5vc-XN-Jfi"/>
-                            <constraint firstItem="u8w-qV-f4Q" firstAttribute="leading" secondItem="f2k-wk-gdF" secondAttribute="leading" id="A5f-7I-2xd"/>
-                            <constraint firstItem="E4u-fM-1hA" firstAttribute="top" secondItem="yZ6-Mo-oHb" secondAttribute="bottom" id="Lml-BB-8ed"/>
-                            <constraint firstItem="yZ6-Mo-oHb" firstAttribute="top" secondItem="ni8-P2-c3e" secondAttribute="top" id="Ohb-Uu-N27"/>
                             <constraint firstItem="ni8-P2-c3e" firstAttribute="bottom" secondItem="E4u-fM-1hA" secondAttribute="bottom" id="OiP-vS-xmv"/>
                             <constraint firstItem="E4u-fM-1hA" firstAttribute="leading" secondItem="ni8-P2-c3e" secondAttribute="leading" id="P2W-90-lUl"/>
-                            <constraint firstItem="u8w-qV-f4Q" firstAttribute="top" secondItem="f2k-wk-gdF" secondAttribute="top" id="cTM-Ih-jtL"/>
-                            <constraint firstItem="yZ6-Mo-oHb" firstAttribute="leading" secondItem="ni8-P2-c3e" secondAttribute="leading" id="dqH-bv-pZn"/>
-                            <constraint firstItem="yZ6-Mo-oHb" firstAttribute="centerX" secondItem="f2k-wk-gdF" secondAttribute="centerX" id="jYu-lP-SuQ"/>
-                            <constraint firstAttribute="trailing" secondItem="u8w-qV-f4Q" secondAttribute="trailing" id="lW3-GS-1i6"/>
-                            <constraint firstItem="ni8-P2-c3e" firstAttribute="trailing" secondItem="yZ6-Mo-oHb" secondAttribute="trailing" id="nau-Dx-n4y"/>
+                            <constraint firstItem="E4u-fM-1hA" firstAttribute="top" secondItem="ni8-P2-c3e" secondAttribute="top" id="RjE-FK-wiw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ni8-P2-c3e"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jt9-l6-gYq"/>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="Jt9-l6-gYq">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="tie-OV-Ib8">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2QI-Nz-7ov">
+                                <rect key="frame" x="16" y="11" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2QI-Nz-7ov" secondAttribute="height" id="8y8-3R-IMU"/>
+                                </constraints>
+                                <state key="normal" image="btn_cancel2"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="hyM-6V-sTT" eventType="touchUpInside" id="0iH-TZ-7Qm"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="0pj-Ki-tuK">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="K44-ey-fid">
+                                <rect key="frame" x="334" y="9.6666666666666643" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="K44-ey-fid" secondAttribute="height" multiplier="1:1" id="b8T-mR-veK"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="btn_setting2"/>
+                                <connections>
+                                    <segue destination="n3b-s6-QPr" kind="push" id="eCk-U5-d0j"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="collectionView" destination="E4u-fM-1hA" id="w5k-HB-eYs"/>
-                        <outlet property="groupNameLabel" destination="MLH-hD-19J" id="tgN-Le-beh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ks-H7-n0F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

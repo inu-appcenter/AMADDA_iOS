@@ -55,7 +55,11 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         groupScheduleListVC.groupKey = groups[indexPath.row].share
         groupScheduleListVC.groupName = groups[indexPath.row].group_name
         let navigation = UINavigationController(rootViewController: groupScheduleListVC)
+        navigation.navigationBar.barTintColor = UIColor(displayP3Red: 30/255, green: 177/255, blue: 252/255, alpha: 1)
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "SpoqaHanSans-Bold", size: 18)!]
+        navigation.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         print(groupScheduleListVC.groupKey)
+        navigation.modalPresentationStyle = .fullScreen
         self.present(navigation, animated: true, completion: nil)
     }
         
