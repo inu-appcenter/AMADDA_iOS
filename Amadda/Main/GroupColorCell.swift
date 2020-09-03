@@ -9,7 +9,7 @@
 import UIKit
 
 class GroupColorCell: UITableViewCell {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

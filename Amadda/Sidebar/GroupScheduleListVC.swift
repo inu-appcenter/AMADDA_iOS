@@ -13,6 +13,7 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
 
     @IBOutlet var collectionView: UICollectionView!
     var scheduleList = [Schedule]()
+    var group: Group?
     var groupName: String?
     var groupKey: Int?
     
@@ -36,6 +37,12 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
     
     @IBAction func backBtn(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func settingBtn(_ sender: Any) {
+        guard let GroupInfoVC = self.storyboard?.instantiateViewController(withIdentifier: "GroupInfoVC") as? GroupInfoVC else {return}
+        GroupInfoVC.group = group
+        self.navigationController?.pushViewController(GroupInfoVC, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

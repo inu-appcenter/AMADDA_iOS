@@ -36,6 +36,8 @@
 		D1D6CA152410E11B00ADC853 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6CA142410E11B00ADC853 /* SettingVC.swift */; };
 		FA49CE842500F69D009C427C /* GroupInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE832500F69D009C427C /* GroupInfoVC.swift */; };
 		FA49CE862500F7E9009C427C /* GroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE852500F7E9009C427C /* GroupInfoCell.swift */; };
+		FA49CE8A25012F86009C427C /* GroupColorSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */; };
+		FA49CE8C25013F4B009C427C /* GroupColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8B25013F4B009C427C /* GroupColorPickerCell.swift */; };
 		FA5EEE4724174AA100FB1844 /* AddCourseManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EEE4624174AA100FB1844 /* AddCourseManualVC.swift */; };
 		FA5EEE49241754B300FB1844 /* AddCourseManualTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EEE48241754B300FB1844 /* AddCourseManualTableVC.swift */; };
 		FA717589240DE07F00115F55 /* TimeTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */; };
@@ -100,6 +102,8 @@
 		D1D6CA142410E11B00ADC853 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		FA49CE832500F69D009C427C /* GroupInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoVC.swift; sourceTree = "<group>"; };
 		FA49CE852500F7E9009C427C /* GroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoCell.swift; sourceTree = "<group>"; };
+		FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupColorSelectVC.swift; sourceTree = "<group>"; };
+		FA49CE8B25013F4B009C427C /* GroupColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupColorPickerCell.swift; sourceTree = "<group>"; };
 		FA5EEE4624174AA100FB1844 /* AddCourseManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseManualVC.swift; sourceTree = "<group>"; };
 		FA5EEE48241754B300FB1844 /* AddCourseManualTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseManualTableVC.swift; sourceTree = "<group>"; };
 		FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -235,7 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				FA49CE832500F69D009C427C /* GroupInfoVC.swift */,
+				FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */,
 				FA49CE852500F7E9009C427C /* GroupInfoCell.swift */,
+				FA49CE8B25013F4B009C427C /* GroupColorPickerCell.swift */,
 			);
 			path = GroupInfo;
 			sourceTree = "<group>";
@@ -448,6 +454,7 @@
 				D1616CC92407575B002C806B /* Group.swift in Sources */,
 				D16BEBC924146D4C00F375A1 /* GroupColorCell.swift in Sources */,
 				FA5EEE49241754B300FB1844 /* AddCourseManualTableVC.swift in Sources */,
+				FA49CE8C25013F4B009C427C /* GroupColorPickerCell.swift in Sources */,
 				D1D6CA152410E11B00ADC853 /* SettingVC.swift in Sources */,
 				D16BEBC724146D3500F375A1 /* SelectedColorCell.swift in Sources */,
 				D1616CC024063D80002C806B /* NetworkManager.swift in Sources */,
@@ -488,6 +495,7 @@
 				FA5EEE4724174AA100FB1844 /* AddCourseManualVC.swift in Sources */,
 				D1616CBB24029DA2002C806B /* UIColor.swift in Sources */,
 				FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */,
+				FA49CE8A25012F86009C427C /* GroupColorSelectVC.swift in Sources */,
 				FA8EC1B723EBCC21007633D9 /* LoginVC.swift in Sources */,
 				D16BEBCB2414733B00F375A1 /* MKSharedGroupVC.swift in Sources */,
 				FA9861B124FCFAB400A8D7F7 /* GroupScheduleListVC.swift in Sources */,
