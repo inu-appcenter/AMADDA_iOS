@@ -1,24 +1,28 @@
 PODS:
   - Alamofire (5.0.2)
+  - ChromaColorPicker (2.0.2)
   - Floaty (4.2.0)
   - FSCalendar (2.8.1)
 
 DEPENDENCIES:
   - Alamofire
+  - ChromaColorPicker
   - Floaty (~> 4.2.0)
   - FSCalendar
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - ChromaColorPicker
     - Floaty
     - FSCalendar
 
 SPEC CHECKSUMS:
   Alamofire: 3ba7a4db18b4f62c4a1c0e1cb39d7f3d52e10ada
+  ChromaColorPicker: 307585f2dc23d4d72f24cad320c1e08825cb5c09
   Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
   FSCalendar: 5245140456fcbcac5824c203b98bd8068bdfee1a
 
-PODFILE CHECKSUM: 01d838f220bb5b56c813143a7b740c6810aaf1b0
+PODFILE CHECKSUM: ae7073550e07a9377aebe77f99c72360fcedaf2e
 
 COCOAPODS: 1.8.4

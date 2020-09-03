@@ -8,5 +8,6 @@ use_modular_headers!
     pod 'Floaty', '~> 4.2.0'
     pod 'FSCalendar'
     pod 'Alamofire'
+    pod 'ChromaColorPicker'
   # Pods for Amadda
 end
