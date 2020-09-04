@@ -38,6 +38,8 @@
 		FA49CE862500F7E9009C427C /* GroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE852500F7E9009C427C /* GroupInfoCell.swift */; };
 		FA49CE8A25012F86009C427C /* GroupColorSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */; };
 		FA49CE8C25013F4B009C427C /* GroupColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8B25013F4B009C427C /* GroupColorPickerCell.swift */; };
+		FA49CE8E250217BD009C427C /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8D250217BD009C427C /* Member.swift */; };
+		FA49CE9025021843009C427C /* GroupMemberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8F25021843009C427C /* GroupMemberVC.swift */; };
 		FA5EEE4724174AA100FB1844 /* AddCourseManualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EEE4624174AA100FB1844 /* AddCourseManualVC.swift */; };
 		FA5EEE49241754B300FB1844 /* AddCourseManualTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EEE48241754B300FB1844 /* AddCourseManualTableVC.swift */; };
 		FA717589240DE07F00115F55 /* TimeTableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */; };
@@ -65,6 +67,7 @@
 		FA9861B124FCFAB400A8D7F7 /* GroupScheduleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */; };
 		FA9861B324FD087300A8D7F7 /* GroupScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */; };
 		FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */; };
+		FAB0D1472502239E00490537 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0D1462502239E00490537 /* MemberCell.swift */; };
 		FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F6572407AFC500407644 /* TestDataModel.swift */; };
 		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
 		FAEF9D34240CC14100C1F20F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF9D33240CC14100C1F20F /* AlertController.swift */; };
@@ -104,6 +107,8 @@
 		FA49CE852500F7E9009C427C /* GroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoCell.swift; sourceTree = "<group>"; };
 		FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupColorSelectVC.swift; sourceTree = "<group>"; };
 		FA49CE8B25013F4B009C427C /* GroupColorPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupColorPickerCell.swift; sourceTree = "<group>"; };
+		FA49CE8D250217BD009C427C /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		FA49CE8F25021843009C427C /* GroupMemberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberVC.swift; sourceTree = "<group>"; };
 		FA5EEE4624174AA100FB1844 /* AddCourseManualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseManualVC.swift; sourceTree = "<group>"; };
 		FA5EEE48241754B300FB1844 /* AddCourseManualTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCourseManualTableVC.swift; sourceTree = "<group>"; };
 		FA717588240DE07F00115F55 /* TimeTableCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTableCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +138,7 @@
 		FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleListVC.swift; sourceTree = "<group>"; };
 		FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleCell.swift; sourceTree = "<group>"; };
 		FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailVC.swift; sourceTree = "<group>"; };
+		FAB0D1462502239E00490537 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		FAC1F6572407AFC500407644 /* TestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataModel.swift; sourceTree = "<group>"; };
 		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
 		FAEF9D33240CC14100C1F20F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -219,6 +225,7 @@
 				D1616CC6240668D6002C806B /* User.swift */,
 				D1616CC82407575B002C806B /* Group.swift */,
 				D1616CCA24075CDB002C806B /* Schedule.swift */,
+				FA49CE8D250217BD009C427C /* Member.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -240,8 +247,10 @@
 			children = (
 				FA49CE832500F69D009C427C /* GroupInfoVC.swift */,
 				FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */,
+				FA49CE8F25021843009C427C /* GroupMemberVC.swift */,
 				FA49CE852500F7E9009C427C /* GroupInfoCell.swift */,
 				FA49CE8B25013F4B009C427C /* GroupColorPickerCell.swift */,
+				FAB0D1462502239E00490537 /* MemberCell.swift */,
 			);
 			path = GroupInfo;
 			sourceTree = "<group>";
@@ -451,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB0D1472502239E00490537 /* MemberCell.swift in Sources */,
 				D1616CC92407575B002C806B /* Group.swift in Sources */,
 				D16BEBC924146D4C00F375A1 /* GroupColorCell.swift in Sources */,
 				FA5EEE49241754B300FB1844 /* AddCourseManualTableVC.swift in Sources */,
@@ -470,6 +480,7 @@
 				FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */,
 				D16BEBC12412FDE000F375A1 /* ProfileVC.swift in Sources */,
 				FA71758D240DE94900115F55 /* MajorTableViewCell.swift in Sources */,
+				FA49CE8E250217BD009C427C /* Member.swift in Sources */,
 				D169FBC124161924009E0BFE /* AddEmailCell.swift in Sources */,
 				D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */,
 				D1616CC5240668A6002C806B /* Response.swift in Sources */,
@@ -502,6 +513,7 @@
 				FA8EC1BF23EBE218007633D9 /* AddEventTableVC.swift in Sources */,
 				FA49CE862500F7E9009C427C /* GroupInfoCell.swift in Sources */,
 				D1D6CA13240FDB0300ADC853 /* CustomDateFormatter.swift in Sources */,
+				FA49CE9025021843009C427C /* GroupMemberVC.swift in Sources */,
 				FA78CF0D23F060F800F91372 /* MainCalendarVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

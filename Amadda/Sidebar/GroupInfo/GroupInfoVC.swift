@@ -25,6 +25,9 @@ class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         tableView.isScrollEnabled = false
         groupNameTextField.text = group?.group_name
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.title = "공유 그룹 관리"
+    }
 
     @IBAction func backBtn(_ sender: Any) {
 //        self.dismiss(animated: true, completion: nil)
@@ -88,14 +91,13 @@ class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         // 0 = invite, 1 = color, 2 = memo
         switch indexPath.row {
         case 0:
-            print("invite")
+            performSegue(withIdentifier: "memberSegue", sender: nil)
         case 1:
             performSegue(withIdentifier: "colorSegue", sender: nil)
         default:
             print("else")
         }
     }
-    
-    
+
     
 }

@@ -18,12 +18,12 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
     var groupKey: Int?
     
     override func viewDidLoad() {
-        self.navigationController?.navigationBar.topItem?.title = groupName
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         super.viewDidLoad()
     }
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.topItem?.title = groupName
         NetworkManager().seeGroupSchedule(share: groupKey!, completion: {(response) in
             if response?.schedules != nil {
                 self.scheduleList = (response?.schedules)!

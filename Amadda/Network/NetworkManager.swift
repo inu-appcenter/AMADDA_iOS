@@ -466,6 +466,34 @@ class NetworkManager {
            }
         }
     }
+    func showGroupMember(share: Int?, completion: @escaping (Response?) -> Void) {
+        if share == nil {
+            print("##Share nil")
+            return
+        }
+        let url = baseURL + "share/group/member"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let param = ["share" : share]
+        let request = AF.request(url,
+        method: .get,
+        parameters: param,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("그룹 멤버 리스트 \(result)")
+            completion(result)
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
+    
     // MARK:- 초대
     func showInvitation(completion: @escaping () -> Void) {
         let url = baseURL + "share/invitations/show"
