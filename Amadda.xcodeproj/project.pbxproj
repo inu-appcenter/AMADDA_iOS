@@ -68,6 +68,7 @@
 		FA9861B324FD087300A8D7F7 /* GroupScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */; };
 		FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */; };
 		FAB0D1472502239E00490537 /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0D1462502239E00490537 /* MemberCell.swift */; };
+		FAB0D1492502320D00490537 /* InvitationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB0D1482502320D00490537 /* InvitationCell.swift */; };
 		FAC1F6582407AFC500407644 /* TestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC1F6572407AFC500407644 /* TestDataModel.swift */; };
 		FAE6C17D24065A76006AE137 /* SearchCourseTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */; };
 		FAEF9D34240CC14100C1F20F /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEF9D33240CC14100C1F20F /* AlertController.swift */; };
@@ -139,6 +140,7 @@
 		FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScheduleCell.swift; sourceTree = "<group>"; };
 		FAB0ACBA24F3A188009452EC /* ScheduleDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleDetailVC.swift; sourceTree = "<group>"; };
 		FAB0D1462502239E00490537 /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
+		FAB0D1482502320D00490537 /* InvitationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationCell.swift; sourceTree = "<group>"; };
 		FAC1F6572407AFC500407644 /* TestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDataModel.swift; sourceTree = "<group>"; };
 		FAE6C17C24065A76006AE137 /* SearchCourseTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCourseTableVC.swift; sourceTree = "<group>"; };
 		FAEF9D33240CC14100C1F20F /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				FA9861AA24FA5D1700A8D7F7 /* InvitationVC.swift */,
+				FAB0D1482502320D00490537 /* InvitationCell.swift */,
 			);
 			path = Invitation;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				FAB0ACBB24F3A188009452EC /* ScheduleDetailVC.swift in Sources */,
 				D16BEBC12412FDE000F375A1 /* ProfileVC.swift in Sources */,
 				FA71758D240DE94900115F55 /* MajorTableViewCell.swift in Sources */,
+				FAB0D1492502320D00490537 /* InvitationCell.swift in Sources */,
 				FA49CE8E250217BD009C427C /* Member.swift in Sources */,
 				D169FBC124161924009E0BFE /* AddEmailCell.swift in Sources */,
 				D1616CA92401B767002C806B /* ContainerViewController.swift in Sources */,

@@ -30,6 +30,10 @@ class GroupMemberVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         })
     }
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return members.count
     }
