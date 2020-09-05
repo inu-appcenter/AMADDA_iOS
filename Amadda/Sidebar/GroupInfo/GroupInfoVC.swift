@@ -12,7 +12,7 @@ import UIKit
 class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var group: Group?
-    var groupColorDic = Dictionary<String, String>()
+    var groupColorDic = Dictionary<String, Any>()
     var selectedColor: UIColor?
     
     @IBOutlet var tableView: UITableView!
@@ -36,6 +36,9 @@ class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBAction func confirmBtn(_ sender: Any) {
         if selectedColor != nil {
             print("##SelectedColor: \(selectedColor)")
+            if userDefaults.dictionary(forKey: "groupColor") != nil {
+                groupColorDic = userDefaults.dictionary(forKey: "groupColor")!
+            }
             groupColorDic.updateValue((selectedColor!.toHexString()), forKey: "\(group!.share!)")
             print("##groupColorDic: \(groupColorDic)")
             userDefaults.set(groupColorDic, forKey: "groupColor")
