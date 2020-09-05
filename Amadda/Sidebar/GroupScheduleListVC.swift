@@ -16,7 +16,6 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
     var group: Group?
     var groupName: String?
     var groupKey: Int?
-    
     override func viewDidLoad() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -33,6 +32,7 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
             self.collectionView.reloadData()
             print("reload complete")
         })
+        collectionView.reloadData()
     }
     
     @IBAction func backBtn(_ sender: Any) {
@@ -64,7 +64,10 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as? GroupScheduleCell else {return UICollectionViewCell()}
         let currentSchedule = scheduleList[indexPath.row]
-        cell.colorBadgeView.isHidden = true
+//        cell.colorBadgeView.isHidden = true
+        if let groupColor = userDefaults.dictionary(forKey: "groupColor")?["\(group!.share!)"] as? String {
+            cell.colorBadgeView.backgroundColor = UIColor(hex: groupColor)
+        }
         
         let dateValue = currentSchedule.getDate(time: .startDay)
         let timeValue = currentSchedule.getDate(time: .onlyTime)

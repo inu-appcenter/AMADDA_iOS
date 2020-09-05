@@ -8,7 +8,7 @@
 
 struct Group: Codable {
     let group_name: String?
-    let inviters: [String?]?
+    let inviters: [String]?
     let share: Int?
     let memo: String?
 }

@@ -48,6 +48,13 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
         cell.groupNameLabel.text = groups[indexPath.row].group_name
+        
+        if let groupColorDic = userDefaults.dictionary(forKey: "groupColor") {
+            if let hexColor = groupColorDic["\(groups[indexPath.row].share!)"] as? String {
+                cell.groupColorLabelView.backgroundColor = UIColor(hex: hexColor)
+            }
+        }
+        
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

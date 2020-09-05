@@ -12,7 +12,7 @@ import UIKit
 class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var group: Group?
-    var groupColorDefault = UserDefaults.standard.dictionary(forKey: "groupColor")
+    var groupColorDic = Dictionary<String, String>()
     var selectedColor: UIColor?
     
     @IBOutlet var tableView: UITableView!
@@ -35,9 +35,13 @@ class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     @IBAction func confirmBtn(_ sender: Any) {
         if selectedColor != nil {
-            groupColorDefault?.updateValue([group!.group_name: selectedColor], forKey: "groupColor")
-            print(groupColorDefault)
+            print("##SelectedColor: \(selectedColor)")
+            groupColorDic.updateValue((selectedColor!.toHexString()), forKey: "\(group!.share!)")
+            print("##groupColorDic: \(groupColorDic)")
+            userDefaults.set(groupColorDic, forKey: "groupColor")
+            print(userDefaults.dictionary(forKey: "groupColor"))
         }
+        self.dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,10 +62,10 @@ class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ColorCell") as? GroupColorPickerCell else {return UITableViewCell()}
             cell.iconImageView.image = UIImage(named: "icon_color")
             
-            if groupColorDefault?[group?.group_name ?? ""] != nil {
-                let color = groupColorDefault![group!.group_name!] as? UIColor
+            if userDefaults.dictionary(forKey: "groupColor")?["\(group!.share!)"] != nil {
+                let color = userDefaults.dictionary(forKey: "groupColor")!["\(group!.share!)"] as! String
                 cell.colorLabel.text = "   \(color)"
-                cell.colorView.backgroundColor = color
+                cell.colorView.backgroundColor = UIColor(hex: color)
             }else if selectedColor != nil {
                 cell.colorLabel.text = "   \(selectedColor!.toHexString())"
                 cell.colorView.backgroundColor = selectedColor
