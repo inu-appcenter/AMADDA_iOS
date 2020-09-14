@@ -48,6 +48,7 @@ class ShareSelectVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         for cell in tableView.visibleCells {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShareGroupCell") as? ShareGroupCell else {return}
             cell.selectImageView.image = UIImage(named: "icon_group_unSelect")
+            tableView.reloadSections(IndexSet(0...0), with: .automatic)
         }
         guard let cell = tableView.cellForRow(at: indexPath) as? ShareGroupCell else {return}
         cell.selectImageView.image = UIImage(named: "icon_group_Select")

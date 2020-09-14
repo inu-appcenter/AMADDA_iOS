@@ -643,12 +643,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="수업 이름" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="coT-Cx-ihu">
-                                <rect key="frame" x="27.999999999999993" y="108" width="113.33333333333331" height="43"/>
+                                <rect key="frame" x="27.999999999999993" y="108.00000000000001" width="113.33333333333331" height="44.666666666666671"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="29"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xp6-QP-rMC">
-                                <rect key="frame" x="0.0" y="171" width="375" height="499"/>
+                                <rect key="frame" x="0.0" y="172.66666666666666" width="375" height="497.33333333333337"/>
                                 <connections>
                                     <segue destination="nis-ib-xON" kind="embed" identifier="addCourseManualTableVC" id="nQw-NX-zYY"/>
                                 </connections>
@@ -694,7 +694,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="AddCourseManualTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nis-ib-xON" customClass="AddCourseManualTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="dDF-l5-Cnx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="497.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -815,7 +815,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="위치" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkf-ZK-plX">
-                                                    <rect key="frame" x="70" y="14" width="295" height="24"/>
+                                                    <rect key="frame" x="70" y="13.333333333333334" width="295" height="25.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -2586,12 +2586,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="일정 이름" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p9O-TO-KP3">
-                                <rect key="frame" x="28" y="108" width="327" height="51"/>
+                                <rect key="frame" x="28" y="108.00000000000001" width="327" height="52.666666666666671"/>
                                 <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="29"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Zi-UR-uYJ">
-                                <rect key="frame" x="0.0" y="179" width="375" height="491"/>
+                                <rect key="frame" x="0.0" y="180.66666666666666" width="375" height="489.33333333333337"/>
                                 <connections>
                                     <segue destination="dvg-bk-4iN" kind="embed" id="37O-Br-ce5"/>
                                 </connections>

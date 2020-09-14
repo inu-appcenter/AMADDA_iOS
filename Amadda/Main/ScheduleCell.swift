@@ -49,6 +49,12 @@ class ScheduleCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
     }
+    
+    override func prepareForReuse() {
+        locationLabel.text = ""
+        memoLabel.text = ""
+        colorBadgeView.backgroundColor = UIColor.white
+    }
 }
 
 

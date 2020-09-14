@@ -76,14 +76,18 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
         
         cell.dateLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
         cell.scheduleTitle.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        cell.memoLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        cell.locationLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
         
         if currentSchedule.memo != nil {
             cell.memoLabel.text = currentSchedule.memo
-            cell.memoLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        }else {
+            cell.memoLabel.text = "메모"
         }
         if currentSchedule.location != nil {
             cell.locationLabel.text = currentSchedule.location
-            cell.locationLabel.font = UIFont(name: "SpoqaHanSans-Bold", size: 16)
+        }else {
+            cell.locationLabel.text = "장소"
         }
         
         return cell
@@ -114,7 +118,5 @@ class GroupScheduleListVC: UIViewController, UICollectionViewDelegate, UICollect
             return Header
         }
     }
-
-    
 
 }
