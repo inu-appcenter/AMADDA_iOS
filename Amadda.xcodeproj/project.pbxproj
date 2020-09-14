@@ -34,6 +34,7 @@
 		D1D6CA0F240EA83400ADC853 /* AddCourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6CA0E240EA83400ADC853 /* AddCourseTableViewCell.swift */; };
 		D1D6CA13240FDB0300ADC853 /* CustomDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6CA12240FDB0300ADC853 /* CustomDateFormatter.swift */; };
 		D1D6CA152410E11B00ADC853 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D6CA142410E11B00ADC853 /* SettingVC.swift */; };
+		FA1BA77F250FC3A10092753F /* AddNewGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1BA77E250FC3A10092753F /* AddNewGroupVC.swift */; };
 		FA49CE842500F69D009C427C /* GroupInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE832500F69D009C427C /* GroupInfoVC.swift */; };
 		FA49CE862500F7E9009C427C /* GroupInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE852500F7E9009C427C /* GroupInfoCell.swift */; };
 		FA49CE8A25012F86009C427C /* GroupColorSelectVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */; };
@@ -104,6 +105,7 @@
 		D1D6CA0E240EA83400ADC853 /* AddCourseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseTableViewCell.swift; sourceTree = "<group>"; };
 		D1D6CA12240FDB0300ADC853 /* CustomDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDateFormatter.swift; sourceTree = "<group>"; };
 		D1D6CA142410E11B00ADC853 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		FA1BA77E250FC3A10092753F /* AddNewGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewGroupVC.swift; sourceTree = "<group>"; };
 		FA49CE832500F69D009C427C /* GroupInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoVC.swift; sourceTree = "<group>"; };
 		FA49CE852500F7E9009C427C /* GroupInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoCell.swift; sourceTree = "<group>"; };
 		FA49CE8925012F86009C427C /* GroupColorSelectVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupColorSelectVC.swift; sourceTree = "<group>"; };
@@ -189,14 +191,11 @@
 		D1616CA52401B6C5002C806B /* Sidebar */ = {
 			isa = PBXGroup;
 			children = (
-				FA49CE872500FE7C009C427C /* GroupInfo */,
+				FA1BA77D250FC36F0092753F /* ShareGroup */,
 				FA9861A924FA5D0B00A8D7F7 /* Invitation */,
 				D1616CA62401B709002C806B /* MenuViewController.swift */,
 				D1616CB62401EC2B002C806B /* MenuConatinerViewControllerTableViewController.swift */,
 				D1616CA82401B767002C806B /* ContainerViewController.swift */,
-				FA9861AE24FA65EB00A8D7F7 /* GroupCell.swift */,
-				FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */,
-				FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */,
 			);
 			path = Sidebar;
 			sourceTree = "<group>";
@@ -230,6 +229,18 @@
 				FA49CE8D250217BD009C427C /* Member.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FA1BA77D250FC36F0092753F /* ShareGroup */ = {
+			isa = PBXGroup;
+			children = (
+				FA9861AE24FA65EB00A8D7F7 /* GroupCell.swift */,
+				FA9861B024FCFAB400A8D7F7 /* GroupScheduleListVC.swift */,
+				FA9861B224FD087300A8D7F7 /* GroupScheduleCell.swift */,
+				FA49CE872500FE7C009C427C /* GroupInfo */,
+				FA1BA77E250FC3A10092753F /* AddNewGroupVC.swift */,
+			);
+			path = ShareGroup;
 			sourceTree = "<group>";
 		};
 		FA47A309240BA8B00049434F /* AddEvent */ = {
@@ -499,6 +510,7 @@
 				D16BEBC524146D0700F375A1 /* MemoCell.swift in Sources */,
 				FA71758B240DE5E600115F55 /* MajorTableVC.swift in Sources */,
 				FA8EC1B523EBCBE7007633D9 /* SplashVC.swift in Sources */,
+				FA1BA77F250FC3A10092753F /* AddNewGroupVC.swift in Sources */,
 				FA9861AD24FA64DA00A8D7F7 /* ShareGroupCell.swift in Sources */,
 				FA9861AF24FA65EB00A8D7F7 /* GroupCell.swift in Sources */,
 				D1D6CA0F240EA83400ADC853 /* AddCourseTableViewCell.swift in Sources */,

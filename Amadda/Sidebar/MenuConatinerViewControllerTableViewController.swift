@@ -14,6 +14,11 @@ class MenuConatinerViewControllerTableViewController: UITableViewController {
     @IBOutlet var majorLabel: UILabel!
     @IBOutlet var nameLabel: UILabel!
     
+    @IBAction func addNewGroupBtn(_ sender: Any) {
+        guard let AddNewGroupNav = storyboard?.instantiateViewController(withIdentifier: "AddNewGroupNav") as? UINavigationController else {return}
+        AddNewGroupNav.modalPresentationStyle = .fullScreen
+        present(AddNewGroupNav, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NetworkManager().seeProfile(completion: {(response) in
