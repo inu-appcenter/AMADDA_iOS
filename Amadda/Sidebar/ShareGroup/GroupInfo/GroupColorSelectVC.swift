@@ -11,10 +11,12 @@ import UIKit
 import ChromaColorPicker
 
 class GroupColorSelectVC: UIViewController, ChromaColorPickerDelegate {
+    var groupName: String?
     
     @IBOutlet var colorPickerView: ChromaColorPicker!
     @IBOutlet var colorSliderView: ChromaBrightnessSlider!
     @IBOutlet var selectedColorView: UIView!
+    @IBOutlet var groupNameLabel: UILabel!
     
     
     @IBAction func confirmBtn(_ sender: Any) {
@@ -30,6 +32,7 @@ class GroupColorSelectVC: UIViewController, ChromaColorPickerDelegate {
     
     override func viewDidLoad() {
         initColorPickerView(colorPicker: colorPickerView, colorSlider: colorSliderView)
+        groupNameLabel.text = groupName
     }
     
     func colorPickerHandleDidChange(_ colorPicker: ChromaColorPicker, handle: ChromaColorHandle, to color: UIColor) {

@@ -105,6 +105,12 @@ class GroupInfoVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
             print("else")
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let GroupColorSelectVC = segue.destination as? GroupColorSelectVC else {
+            return
+        }
+        GroupColorSelectVC.groupName = group?.group_name
+    }
 
     
 }
