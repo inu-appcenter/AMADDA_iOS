@@ -66,6 +66,14 @@ extension UIColor {
     @nonobjc class var todayBackGround: UIColor {
         return UIColor(red: 30 / 255.0, green: 177 / 255.0, blue: 252 / 255.0, alpha: 0.1)
     }
+    
+    @nonobjc class var timaTableClassColorSet: [UIColor] {
+        let darkBlue = UIColor(displayP3Red: 70/255.0, green: 109/255.0, blue: 129/255.0, alpha: 1)
+        let middleBlue = UIColor(displayP3Red: 102/255.0, green: 145/255.0, blue: 167/255.0, alpha: 1)
+        let lightBlue = UIColor(displayP3Red: 137/255.0, green: 173/255.0, blue: 191/255.0, alpha: 1)
+        let colorSet = [lightBlue, middleBlue, darkBlue]
+        return colorSet
+    }
 }
 
 
