@@ -15,6 +15,9 @@ class ScheduleDetailVC: UIViewController {
     
     @IBOutlet var scheduleTitle: UITextField!
     
+    @IBAction func backBtn(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func deleteBtn(_ sender: Any) {
         showAlertController(title: "일정을 삭제하시겠어요?", message: "삭제된 일정은 복원할 수 없습니다.", completionHandler: {(alert) in
             guard let scheduleNumber = self.scheduleNumber else {

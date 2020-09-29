@@ -694,7 +694,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="AddCourseManualTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nis-ib-xON" customClass="AddCourseManualTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="dDF-l5-Cnx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="506.33333333333331"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="506"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -2651,6 +2651,9 @@
                                 <rect key="frame" x="16" y="11" width="20" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn_back"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="yvj-Wg-XcO" eventType="touchUpInside" id="W9v-pQ-uVA"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="dHI-ga-d61">
@@ -3560,7 +3563,7 @@
                                                     <rect key="frame" x="34" y="17.666666666666668" width="17" height="17.000000000000004"/>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="초대하기" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="30B-xQ-cBL">
-                                                    <rect key="frame" x="70" y="14" width="59" height="24"/>
+                                                    <rect key="frame" x="70" y="13.333333333333334" width="59" height="25.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -3628,7 +3631,7 @@
                                                     <rect key="frame" x="34" y="18.666666666666668" width="15.333333333333336" height="15.000000000000004"/>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="메모" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tGw-g7-foJ">
-                                                    <rect key="frame" x="69" y="14" width="29.666666666666671" height="24"/>
+                                                    <rect key="frame" x="69" y="13.333333333333334" width="29.666666666666671" height="25.666666666666664"/>
                                                     <fontDescription key="fontDescription" name="SpoqaHanSans-Regular" family="SpoqaHanSans" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
