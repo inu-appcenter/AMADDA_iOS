@@ -21,8 +21,11 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         }
     }
     override func viewDidLoad() {
-        if groupKey == -1 {
-            initNavUI(nav: self.navigationController!)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        if self.navigationController?.restorationIdentifier == "ScheduleListNav" {
+            self.title = "개인일정"
+        }else {
+            self.title = "전체일정"
         }
         super.viewDidLoad()
     }
@@ -115,28 +118,6 @@ class ScheduleListVC: UICollectionViewController, UICollectionViewDelegateFlowLa
     @IBAction func addPersonalEventBtn(_ sender: Any) {
         guard let AddPersonalEventNavigation = storyboard?.instantiateViewController(withIdentifier: "AddPersonalEventNavigation") as? UINavigationController else {return}
         self.present(AddPersonalEventNavigation, animated: true, completion: nil)
-    }
-    
-
-    private func initNavUI(nav: UINavigationController) {
-        let backBtn = UIButton()
-        backBtn.setImage(UIImage(named: "btn_back"), for: .normal)
-        backBtn.imageView?.contentMode = .scaleAspectFit
-        backBtn.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-        backBtn.addTarget(self, action: #selector(back(nav:)), for: .touchUpInside)
-//        let leftBtn = UIBarButtonItem(image: UIImage(named: "btn_back"), style: .done, target: self, action: #selector(back(nav:)))
-
-        let navigationItem = UINavigationItem()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
-        nav.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
-        nav.navigationBar.barTintColor = .blue
-        nav.navigationBar.tintColor = .white
-        nav.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "취소", style: .plain, target: self, action: nil)
-        nav.navigationBar.items = [navigationItem]
-    }
-    @objc func back(nav: UINavigationController){
-        print("tapped")
-        nav.dismiss(animated: true, completion: nil)
     }
 }
 
