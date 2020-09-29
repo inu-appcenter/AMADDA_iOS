@@ -694,7 +694,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="AddCourseManualTableVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nis-ib-xON" customClass="AddCourseManualTableVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="static" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="52" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" id="dDF-l5-Cnx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="506"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="506.33333333333331"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
@@ -2317,7 +2317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Bv-QO-W10" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4912.8000000000002" y="1850.9852216748768"/>
+            <point key="canvasLocation" x="5855.1999999999998" y="1850.9852216748768"/>
         </scene>
         <!--Schedule ListVC-->
         <scene sceneID="6Kb-cg-Iyh">
@@ -2596,11 +2596,22 @@
                             <outlet property="delegate" destination="Mjt-g4-kXC" id="qta-vU-WtR"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="GEF-Pj-lbw"/>
+                    <navigationItem key="navigationItem" id="GEF-Pj-lbw">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="Xru-k6-hWq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T3l-vs-n3d">
+                                <rect key="frame" x="16" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn_back"/>
+                                <connections>
+                                    <action selector="backBtn:" destination="Mjt-g4-kXC" eventType="touchUpInside" id="js7-O9-OLF"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="46h-lQ-KAF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="1851"/>
+            <point key="canvasLocation" x="2612" y="1851"/>
         </scene>
         <!--일정 세부사항-->
         <scene sceneID="eRW-aX-UVG">
@@ -3322,7 +3333,7 @@
                     </items>
                 </navigationBar>
             </objects>
-            <point key="canvasLocation" x="3348" y="1851"/>
+            <point key="canvasLocation" x="4290.3999999999996" y="1850.9852216748768"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="83u-ju-Asn">
@@ -3347,7 +3358,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eB9-ZW-WJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4146" y="1851"/>
+            <point key="canvasLocation" x="5087.1999999999998" y="1850.9852216748768"/>
         </scene>
         <!--Group Schedule ListVC-->
         <scene sceneID="8HN-QR-Gzz">
@@ -3855,6 +3866,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wG6-fJ-JKp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="102" y="621"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="y1H-AP-mWU">
+            <objects>
+                <navigationController storyboardIdentifier="ScheduleListNav" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L2K-Rk-nWJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RhV-pC-aT8">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.074509803921568626" green="0.69411764705882351" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mjt-g4-kXC" kind="relationship" relationship="rootViewController" id="RAT-2m-7sm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ewX-Ac-o6s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="1190"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

@@ -41,10 +41,27 @@ class MenuConatinerViewControllerTableViewController: UITableViewController {
         case "invitationCell":
             guard let invitaionNavigationController = self.storyboard?.instantiateViewController(withIdentifier: "invitationNavigationController") as? UINavigationController else {return}
             self.present(invitaionNavigationController, animated: true, completion: nil)
+        case "myScheduleCell":
+            guard let ScheduleListVC = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleListVC") as? ScheduleListVC else {return}
+            ScheduleListVC.groupKey = -1
+            
+            guard let ScheduleListNav = self.storyboard?.instantiateViewController(withIdentifier: "ScheduleListNav") as? UINavigationController else {return}
+            present(ScheduleListNav, animated: true, completion: nil)
+            /*
+            let nav = initScheduleListNav(viewControllers: [ScheduleListVC])
+            
+            present(initScheduleListNav(viewControllers: [ScheduleListVC]), animated: true, completion: nil)
+ */
         default:
             return
         }
     }
 
-
+    
+    private func initScheduleListNav(viewControllers: [UIViewController]) -> UINavigationController {
+        let nav = UINavigationController()
+        nav.setViewControllers(viewControllers, animated: true)
+        nav.modalPresentationStyle = .fullScreen
+        return nav
+    }
 }

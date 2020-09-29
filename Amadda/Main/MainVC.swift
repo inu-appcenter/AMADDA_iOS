@@ -29,7 +29,7 @@ class MainVC: UIViewController, UIScrollViewDelegate, UICollectionViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("##token: \(UserDefaults.standard.string(forKey: "token"))")
         
         showAlertController(title: "", message: "시간표 삭제?", completionHandler: {(_) in
             UserDefaults.standard.removeObject(forKey: "MyCourse")

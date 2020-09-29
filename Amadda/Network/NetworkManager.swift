@@ -301,6 +301,28 @@ class NetworkManager {
         }
     }
     
+    /// 개인 일정 보기
+    func seePersonalSchedules(completion: @escaping (Response?) -> Void) {
+        let url = baseURL + "schedule/show/me"
+        
+        let header:HTTPHeaders = [
+            "token": token!
+        ]
+        
+        let request = AF.request(url,
+        method: .get,
+        headers: header)
+        
+        request.responseDecodable(of: Response.self) { response in
+           switch response.result {
+           case let .success(result):
+            print("개인 일정 보기 \(result)")
+            completion(result)
+           case let .failure(error):
+            print("Error description is: \(error.localizedDescription)")
+           }
+        }
+    }
     // 하루 일정 보기
     func seeTodaySchedule(completion: @escaping (Response?) -> Void) {
         let url = baseURL + "schedule/show/day"
