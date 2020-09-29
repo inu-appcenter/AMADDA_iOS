@@ -2602,7 +2602,7 @@
             </objects>
             <point key="canvasLocation" x="2535" y="1851"/>
         </scene>
-        <!--Schedule DetailVC-->
+        <!--일정 세부사항-->
         <scene sceneID="eRW-aX-UVG">
             <objects>
                 <viewController storyboardIdentifier="ScheduleDetailVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yvj-Wg-XcO" customClass="ScheduleDetailVC" customModule="Amadda" customModuleProvider="target" sceneMemberID="viewController">
@@ -2645,15 +2645,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i2o-ia-La3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2Oq-dF-jwx">
+                    <navigationItem key="navigationItem" title="일정 세부사항" id="2Oq-dF-jwx">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="D2Z-Tc-hR0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yse-Hk-9B0">
+                                <rect key="frame" x="16" y="11" width="20" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btn_back"/>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="dHI-ga-d61">
-                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5E7-HM-gow">
+                            <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="5E7-HM-gow">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="SpoqaHanSans-Bold" family="SpoqaHanSans" pointSize="16"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="삭제">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
+                                <state key="normal" title="삭제"/>
                                 <connections>
                                     <action selector="deleteBtn:" destination="yvj-Wg-XcO" eventType="touchUpInside" id="byr-Fk-mIT"/>
                                 </connections>
